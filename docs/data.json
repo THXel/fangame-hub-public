@@ -1,0 +1,44 @@
+{
+  "last_updated": "2026-01-16 18:00",
+  "stats": {
+    "total_games": 3,
+    "completed_games": 1,
+    "in_progress_games": 1,
+    "total_deaths": 729,
+    "total_time": "01:41:27",
+    "avg_deaths_completed": 123,
+    "avg_time_completed": "00:45:00"
+  },
+  "games": [
+    {
+      "name": "Collections-1024 Mode",
+      "category": "IWBTG",
+      "status": "Beendet",
+      "completed": true,
+      "in_progress": false,
+      "deaths": 729,
+      "time": "01:41:27.72",
+      "thumbnail": "assets/thumbs/placeholder.png"
+    },
+    {
+      "name": "I Wanna Example",
+      "category": "IWBTG",
+      "status": "In Arbeit",
+      "completed": false,
+      "in_progress": true,
+      "deaths": 42,
+      "time": "00:20:15",
+      "thumbnail": "assets/thumbs/placeholder.png"
+    },
+    {
+      "name": "Another Fangame",
+      "category": "Other",
+      "status": "—",
+      "completed": false,
+      "in_progress": false,
+      "deaths": null,
+      "time": "—",
+      "thumbnail": "assets/thumbs/placeholder.png"
+    }
+  ]
+}
