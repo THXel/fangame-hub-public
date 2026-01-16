@@ -130,40 +130,32 @@ h3{ font-size:1.02rem; line-height:1.35; margin:.9rem 0 .4rem; }
 .links a:hover{ border-bottom-style: solid; }
 
 
-/* --- Library controls (Search / Filter) --- */
-.controls{ display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
-.ctrlGroup{ display:flex; gap:.55rem; flex-wrap:wrap; align-items:center; }
-.ctrlLabel{ font-family: var(--pixel); font-size: .72rem; opacity:.9; white-space:nowrap; }
-.ctrlInput, .ctrlSelect{
+/* --- Library controls (Search / Filter / Sort) --- */
+#libControls.card{ padding: 14px 16px; }
+.controlsRow{ display:grid; grid-template-columns: 1.65fr 1fr 1fr; gap: 14px; align-items:end; }
+@media (max-width: 960px){ .controlsRow{ grid-template-columns: 1fr; } }
+.field{ display:flex; flex-direction:column; gap: 6px; min-width: 0; }
+.fieldLabel{ font-family: var(--pixel); font-size: .72rem; opacity:.92; letter-spacing:.04em; }
+.fieldInput, .fieldSelect{
+  width: 100%;
   border-radius: 14px;
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
   color: var(--text);
-  padding: .55rem .65rem;
+  padding: .65rem .75rem;
   outline: none;
   box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset;
-}
-.ctrlInput{
-  flex: 1 1 auto;
-  min-width: 220px;
   font-family: var(--mono);
-  font-size: 1.15rem;
+  font-size: 1.10rem;
+  min-height: 44px;
+  appearance: none;
+  -webkit-appearance: none;
 }
-.ctrlSelect{ font-family: var(--mono); font-size: 1.05rem; }
-.ctrlInput:focus, .ctrlSelect:focus{
+.fieldInput::placeholder{ color: rgba(255,255,255,.42); }
+.fieldInput:focus, .fieldSelect:focus{
   border-color: rgba(99,102,241,.55);
   box-shadow: 0 0 0 2px rgba(99,102,241,.22), 0 0 20px rgba(99,102,241,.12);
 }
-.btnSmall{
-  border-radius: 14px;
-  padding: .55rem .75rem;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.12);
-  color: var(--text);
-  cursor: pointer;
-  font-family: var(--pixel);
-  font-size: .72rem;
-}
-.btnSmall:hover{ border-color: rgba(255,255,255,.22); }
+
 
 .hr{ height:1px; background: rgba(255,255,255,.10); margin: 1rem 0; }
