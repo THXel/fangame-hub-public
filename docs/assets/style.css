@@ -52,8 +52,8 @@ h3{ font-size:1.02rem; line-height:1.35; margin:.9rem 0 .4rem; }
 
 .muted{ color: var(--muted); }
 .tiny{ font-size: .86rem; opacity: .75; }
-.mini{ font-size: 1.14rem; }
-.num{ font-variant-numeric: tabular-nums; font-weight: 950; font-size: 1.22rem; font-family: var(--mono); }
+.mini{ font-size: 1.65rem; }
+.num{ font-variant-numeric: tabular-nums; font-weight: 950; font-size: 1.82rem; font-family: var(--mono); }
 
 .topbar{ display:flex; align-items:center; gap:14px; padding-top:28px; padding-bottom:10px; }
 .topbar .grow{ flex:1 1 auto; }
@@ -164,16 +164,6 @@ h3{ font-size:1.02rem; line-height:1.35; margin:.9rem 0 .4rem; }
 .dfBtn:active{ transform: translateY(1px); }
 
 .dfbox{ border: 1px dashed rgba(255,255,255,.18); border-radius: 14px; padding: 8px 10px; background: rgba(255,255,255,.02); }
-
-/* Per-card comment (also used as DF comment) */
-.noteBox{ margin-top: .65rem; border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: .55rem .70rem; background: rgba(255,255,255,.03); }
-.noteLabel{ font-family: var(--pixel); font-size: .72rem; opacity: .80; margin-bottom: .25rem; }
-.noteText{ font-family: var(--mono); font-size: 1.18rem; line-height: 1.25; white-space: pre-wrap; word-break: break-word; }
-
-/* DF-style spoiler blocks inside comments */
-details.spoiler{ margin-top:.45rem; border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: .40rem .60rem; background: rgba(0,0,0,.18); }
-details.spoiler summary{ cursor:pointer; font-family: var(--pixel); font-size: .72rem; opacity:.88; }
-details.spoiler .spoilerBody{ margin-top:.35rem; font-family: var(--mono); font-size: 1.18rem; line-height: 1.25; }
 
 .badge{ display:inline-flex; align-items:center; gap:.45rem; padding:.28rem .60rem; border-radius: 999px; font-size: .74rem; font-weight: 800; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.03); font-family: var(--pixel); }
 .badge:before{ content:"▣"; opacity:.9; }
