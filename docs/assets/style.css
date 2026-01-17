@@ -50,10 +50,10 @@ h1{ font-size:2.1rem; line-height:1.2; margin:.4rem 0 .1rem; }
 h2{ font-size:1.25rem; margin:1.2rem 0 .5rem; }
 h3{ font-size:1.02rem; line-height:1.35; margin:.9rem 0 .4rem; }
 
-.muted{ color: var(--muted); opacity:.78; }
+.muted{ color: var(--muted); }
 .tiny{ font-size: .86rem; opacity: .75; }
-.mini{ font-size: 1.50rem; line-height: 1.35; }
-.num{ font-variant-numeric: tabular-nums; font-weight: 950; font-size: 1.58rem; font-family: var(--mono); }
+.mini{ font-size: 1.00rem; }
+.num{ font-variant-numeric: tabular-nums; font-weight: 950; font-size: 1.08rem; font-family: var(--mono); }
 
 .topbar{ display:flex; align-items:center; gap:14px; padding-top:28px; padding-bottom:10px; }
 .topbar .grow{ flex:1 1 auto; }
@@ -111,9 +111,37 @@ h3{ font-size:1.02rem; line-height:1.35; margin:.9rem 0 .4rem; }
 .thumbWrap img{ width: 100%; height: 100%; object-fit: cover; display:block; }
 
 .rowgap{ display:flex; gap:.55rem; flex-wrap: wrap; align-items:center; }
-.deathsBig{ font-variant-numeric: tabular-nums; font-weight: 1000; font-size: 1.55rem; line-height: 1.05; margin: .28rem 0 .15rem 0; font-family: var(--mono); }
-.deathsGame{ font-variant-numeric: tabular-nums; font-weight: 1000; font-size: 3.15rem; line-height: 1.05; margin: .28rem 0 .15rem 0; font-family: var(--mono); }
-.stars{ letter-spacing: .06rem; font-size: 1.55rem; font-weight: 900; }
+.deathsBig{ font-variant-numeric: tabular-nums; font-weight: 1000; font-size: 2.15rem; line-height: 1.05; margin: .28rem 0 .15rem 0; font-family: var(--mono); }
+.stars{ letter-spacing: .06rem; font-size: 1.05rem; font-weight: 900; }
+
+/* Game card title + DF button row */
+.gameHead{ display:flex; align-items:flex-start; justify-content:space-between; gap: 14px; }
+.gameHeadLeft{ min-width: 0; }
+.gameTitle{ font-size: 1.20rem; line-height: 1.35; margin: .1rem 0 .25rem; }
+
+/* Align "My rating" with DF rating in a single row */
+.ratingGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items:start; margin-top: .45rem; }
+@media (max-width: 960px){ .ratingGrid{ grid-template-columns: 1fr; } }
+.myRatings{ display:flex; flex-direction:column; gap: .35rem; }
+
+/* DF button */
+.dfBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  padding:.55rem .85rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+  font-family: var(--pixel);
+  font-size: .76rem;
+  white-space: nowrap;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset;
+}
+.dfBtn:hover{ border-color: rgba(99,102,241,.55); box-shadow: 0 0 0 2px rgba(99,102,241,.18), 0 0 20px rgba(99,102,241,.10); }
+.dfBtn:active{ transform: translateY(1px); }
 
 .dfbox{ border: 1px dashed rgba(255,255,255,.18); border-radius: 14px; padding: 8px 10px; background: rgba(255,255,255,.02); }
 
