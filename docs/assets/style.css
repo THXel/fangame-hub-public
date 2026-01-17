@@ -117,12 +117,15 @@ h3{ font-size:1.02rem; line-height:1.35; margin:.9rem 0 .4rem; }
 /* Game card title + DF button row */
 .gameHead{ display:flex; align-items:flex-start; justify-content:space-between; gap: 14px; }
 .gameHeadLeft{ min-width: 0; }
-.gameTitle{ font-size: 1.20rem; line-height: 1.35; margin: .1rem 0 .25rem; }
+.gameTitle{ font-size: 1.34rem; line-height: 1.25; margin: .1rem 0 .25rem; }
 
 /* Align "My rating" with DF rating in a single row */
-.ratingGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items:start; margin-top: .45rem; }
+.ratingGrid{ display:grid; grid-template-columns: auto 1fr; gap: 14px; align-items:center; margin-top: .45rem; }
 @media (max-width: 960px){ .ratingGrid{ grid-template-columns: 1fr; } }
 .myRatings{ display:flex; flex-direction:column; gap: .35rem; }
+
+/* Keep the DF bars block from stretching too far right on wide screens */
+.dfWrap{ justify-self:start; max-width: 560px; width: 100%; }
 
 /* DF button */
 .dfBtn{
