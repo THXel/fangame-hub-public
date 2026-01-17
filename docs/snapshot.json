@@ -20,8 +20,8 @@
     "used_df_rating": 21,
     "avg_df_diff": 52.661904761904765,
     "used_df_diff": 21,
-    "deaths_sum_played": 6901,
-    "deaths_sum_all": 6907,
+    "deaths_sum_played": 6902,
+    "deaths_sum_all": 6908,
     "total_minutes_played": 92,
     "total_minutes_all": 94
   },
@@ -48,7 +48,7 @@
     {
       "title": "I wanna Lovy lavie",
       "status": "Beendet",
-      "deaths": "182",
+      "deaths": "183",
       "playtime_str": "",
       "playtime_min": 0,
       "last_played_str": "2026-01-16 23:05",
