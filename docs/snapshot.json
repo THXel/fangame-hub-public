@@ -3,29 +3,48 @@
   "version": "SPLIT03H",
   "stats": {
     "total": 34,
-    "played": 34,
-    "planned": 0,
+    "played": 33,
+    "planned": 1,
     "done": 0,
     "hard": 0,
     "playing": 0,
-    "excluded_not_played": 0,
+    "excluded_not_played": 1,
     "missing_comment": 0,
-    "avg_my_rating": 0.3333333333333333,
-    "used_my_rating": 30,
+    "avg_my_rating": 0.0,
+    "used_my_rating": 29,
     "played_unrated": 4,
     "avg_my_diff": 0.0,
-    "used_my_diff": 2,
+    "used_my_diff": 1,
     "played_undiff": 32,
-    "avg_df_rating": 8.173333333333334,
-    "used_df_rating": 30,
-    "avg_df_diff": 48.17666666666666,
-    "used_df_diff": 30,
+    "avg_df_rating": 8.117241379310345,
+    "used_df_rating": 29,
+    "avg_df_diff": 49.07931034482758,
+    "used_df_diff": 29,
     "deaths_sum_played": 315,
     "deaths_sum_all": 315,
     "total_minutes_played": 94,
     "total_minutes_all": 94
   },
   "games": [
+    {
+      "title": "I wanna Lovy lavie",
+      "status": "Planned",
+      "deaths": "187",
+      "playtime_str": "",
+      "playtime_min": 0,
+      "last_played_str": "2026-01-18 01:03",
+      "commented": "No",
+      "rating_10": 0.0,
+      "difficulty_10": NaN,
+      "df_avg_rating": 7.1,
+      "df_avg_difficulty": 28.7,
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26093_00008144",
+      "custom_thumb_url": "",
+      "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=26093",
+      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26093",
+      "notes": "",
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26093_00008144"
+    },
     {
       "title": "I wanna clear the easy Miku 2",
       "status": "Planned",
@@ -46,25 +65,6 @@
       "thumb_public": "https://delicious-fruit.com/ratings/screenshots/12270_00002998"
     },
     {
-      "title": "I wanna Lovy lavie",
-      "status": "Planned",
-      "deaths": "187",
-      "playtime_str": "",
-      "playtime_min": 0,
-      "last_played_str": "2026-01-18 00:55",
-      "commented": "No",
-      "rating_10": 0.0,
-      "difficulty_10": NaN,
-      "df_avg_rating": 7.1,
-      "df_avg_difficulty": 28.7,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26093_00008144",
-      "custom_thumb_url": "",
-      "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=26093",
-      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26093",
-      "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26093_00008144"
-    },
-    {
       "title": "I Wanna Be The Planet Doku",
       "status": "Planned",
       "deaths": "75",
@@ -76,12 +76,12 @@
       "difficulty_10": 0.0,
       "df_avg_rating": 8.3,
       "df_avg_difficulty": 44.3,
-      "df_thumb_url": "https://delicious-fruit.com/img/cherry.gif",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/27422_0000913f",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=27422",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=27422",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/img/cherry.gif"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/27422_0000913f"
     },
     {
       "title": "Aiwanna Academia",
@@ -114,12 +114,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 8.0,
       "df_avg_difficulty": 66.6,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/11890_00000022",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/11890_0000001e",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=11890",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=11890",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11890_00000022"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11890_0000001e"
     },
     {
       "title": "I wanna follow it ",
@@ -133,12 +133,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 8.0,
       "df_avg_difficulty": 33.2,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/17755_00001c08",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/17755_00001c09",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=17755",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=17755",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/17755_00001c08"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/17755_00001c09"
     },
     {
       "title": "IWBTG Remastered",
@@ -209,12 +209,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 9.1,
       "df_avg_difficulty": 51.8,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/16992_00002d80",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/16992_00002e6f",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=16992",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=16992",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/16992_00002d80"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/16992_00002e6f"
     },
     {
       "title": "I Wanna Kill The Guy",
@@ -228,12 +228,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 9.0,
       "df_avg_difficulty": 47.3,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/12373_000008d4",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/12373_000028d1",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=12373",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=12373",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/12373_000008d4"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/12373_000028d1"
     },
     {
       "title": "I Wanna Find A Cure",
@@ -247,12 +247,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 8.4,
       "df_avg_difficulty": 56.7,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/19920_0000515a",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/19920_00005158",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=19920",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=19920",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/19920_0000515a"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/19920_00005158"
     },
     {
       "title": "I Wanna Get Cultured",
@@ -266,12 +266,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 7.0,
       "df_avg_difficulty": 54.9,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/12333_000000f5",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/12333_000000f7",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=12333",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=12333",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/12333_000000f5"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/12333_000000f7"
     },
     {
       "title": "Collections-1024",
@@ -285,12 +285,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 8.4,
       "df_avg_difficulty": 60.7,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26633_00009672",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26633_00008dcf",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=26633",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26633",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26633_00009672"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26633_00008dcf"
     },
     {
       "title": "Delicious Level Design Contest ",
@@ -323,12 +323,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 8.4,
       "df_avg_difficulty": 65.1,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/18722_000065b3",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/18722_000065b4",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=18722",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=18722",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/18722_000065b3"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/18722_000065b4"
     },
     {
       "title": "Kid World",
@@ -380,12 +380,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 8.8,
       "df_avg_difficulty": 50.1,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/19110_00002190",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/19110_00005125",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=19110",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=19110",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/19110_00002190"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/19110_00005125"
     },
     {
       "title": "I wanna be the Orbit Trap",
@@ -399,12 +399,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 7.2,
       "df_avg_difficulty": 35.4,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/22187_000053e3",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/22187_000053e6",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=22187",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=22187",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/22187_000053e3"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/22187_000053e6"
     },
     {
       "title": "I wanna be the Forsenbaj",
@@ -418,12 +418,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 4.9,
       "df_avg_difficulty": 36.1,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/19936_00004afa",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/19936_00002785",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=19936",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=19936",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/19936_00004afa"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/19936_00002785"
     },
     {
       "title": "Oaildlo Needle",
@@ -551,12 +551,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 8.6,
       "df_avg_difficulty": 48.8,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/23221_0000627b",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/23221_00006130",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=23221",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=23221",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/23221_0000627b"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/23221_00006130"
     },
     {
       "title": "Wannafest22",
@@ -589,21 +589,21 @@
       "difficulty_10": NaN,
       "df_avg_rating": 9.1,
       "df_avg_difficulty": 89.5,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/27435_0000e028",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/27435_00009094",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=27435",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=27435",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/27435_0000e028"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/27435_00009094"
     },
     {
       "title": "I Wanna Start A Party",
-      "status": "Planned",
+      "status": "Geplant",
       "deaths": "",
       "playtime_str": "",
       "playtime_min": 0,
       "last_played_str": "",
-      "commented": "Yes",
+      "commented": "Nein",
       "rating_10": 10.0,
       "difficulty_10": 0.0,
       "df_avg_rating": 9.8,
@@ -646,12 +646,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 9.0,
       "df_avg_difficulty": 41.9,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/22742_00005b29",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/22742_00005b2a",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=22742",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=22742",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/22742_00005b29"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/22742_00005b2a"
     },
     {
       "title": "I wanna challenge 100 trials",
@@ -665,12 +665,12 @@
       "difficulty_10": NaN,
       "df_avg_rating": 7.1,
       "df_avg_difficulty": 28.9,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/11461_00002461",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/11461_000024ca",
       "custom_thumb_url": "",
       "game_url": "https://delicious-fruit.com/ratings/game_details.php?id=11461",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=11461",
       "notes": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11461_00002461"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11461_000024ca"
     }
   ]
 }
