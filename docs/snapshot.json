@@ -21,7 +21,7 @@
     "avg_df_diff": 0.0,
     "used_df_diff": 0,
     "deaths_sum_played": 0,
-    "deaths_sum_all": 315,
+    "deaths_sum_all": 240,
     "total_minutes_played": 14,
     "total_minutes_all": 94
   },
@@ -40,11 +40,11 @@
       "difficulty_100": 0.0,
       "df_avg_rating": 7.1,
       "df_avg_difficulty": 28.7,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26093_00008144",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26093_000081fc",
       "custom_thumb_url": "",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26093",
       "comment": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26093_00008144"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26093_000081fc"
     },
     {
       "lutris_id": 67,
@@ -70,20 +70,20 @@
       "lutris_id": 40,
       "title": "I Wanna Be The Planet Doku",
       "status": "Planned",
-      "deaths": "75",
+      "deaths": "0",
       "playtime_str": "9 min",
       "playtime_override_text": "~320min",
       "playtime_min": 9,
       "last_played_str": "2026-01-18 00:26",
       "commented": "Yes",
-      "rating_10": 0.0,
+      "rating_10": 8.0,
       "difficulty_100": 50.0,
       "df_avg_rating": 8.3,
       "df_avg_difficulty": 44.3,
       "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/27422_0000913f",
       "custom_thumb_url": "",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=27422",
-      "comment": "I had a lot of fun with this game. I like games with many WTF moments and it has some really cool gimmicks. I had to look something up at one point because, as a beginner I don't have the knowledge to figure it out on my own.\nHere and there, I had a bit of trouble understanding some of the memes, but that’s also part of what makes the WTF moments fun.\n[spoiler]Thank you for finally letting me visit the Chicken Nugget Universe and that flamingo earworm. It makes my life a bit happier[/spoiler]\nThe final boss was super cool and really creative. This game isn’t too difficult and you can play through it on a relaxing Sunday.\nBossfight\n[spoiler]I found the Miku fight a bit monotonous in terms of the attacks. For example even just having different colored fruits would be an upgrade.[/spoiler]\nLevel\n[spoiler]The part with the Super Mario game and the various mini-bosses was a bit annoying in terms of the path. The bosses were cool especially the Goomba but the overworld was a bit frustrating with the endless invisible blocks. Also the stop-motion with the Boo ghost was really hard to follow since the photo was always in a different position. Maybe that was part of the joke, but for me, it was eye strain[/spoiler]",
+      "comment": "I had a lot of fun with this game. I like games with many WTF moments and it has some really cool gimmicks. I had to look something up at one point because, as a beginner I don't have the knowledge to figure it out on my own.\nHere and there, I had a bit of trouble understanding some of the memes, but that’s also part of what makes the WTF moments fun.\nThank you for finally letting me visit the Chicken Nugget Universe and that flamingo earworm. It makes my life a bit happier\nThe final boss was super cool and really creative. This game isn’t too difficult and you can play through it on a relaxing Sunday.\nBossfight\nI found the Miku fight a bit monotonous in terms of the attacks. For example even just having different colored fruits would be an upgrade.\nLevel\nThe part with the Super Mario game and the various mini-bosses was a bit annoying in terms of the path. The bosses were cool especially the Goomba but the overworld was a bit frustrating with the endless invisible blocks. Also the stop-motion with the Boo ghost was really hard to follow since the photo was always in a different position. Maybe that was part of the joke, but for me, it was eye strain",
       "thumb_public": "https://delicious-fruit.com/ratings/screenshots/27422_0000913f"
     },
     {
@@ -120,11 +120,11 @@
       "difficulty_100": 0.0,
       "df_avg_rating": 8.0,
       "df_avg_difficulty": 66.6,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/11890_0000001e",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/11890_00000014",
       "custom_thumb_url": "",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=11890",
       "comment": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11890_0000001e"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11890_00000014"
     },
     {
       "lutris_id": 65,
@@ -140,11 +140,11 @@
       "difficulty_100": 0.0,
       "df_avg_rating": 8.0,
       "df_avg_difficulty": 33.2,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/17755_00001c09",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/17755_00001787",
       "custom_thumb_url": "",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=17755",
       "comment": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/17755_00001c09"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/17755_00001787"
     },
     {
       "lutris_id": 45,
@@ -180,11 +180,11 @@
       "difficulty_100": 0.0,
       "df_avg_rating": 7.9,
       "df_avg_difficulty": 47.2,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/22316_000055d9",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/22316_00005697",
       "custom_thumb_url": "",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=22316",
       "comment": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/22316_000055d9"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/22316_00005697"
     },
     {
       "lutris_id": 66,
@@ -200,11 +200,11 @@
       "difficulty_100": 0.0,
       "df_avg_rating": 9.1,
       "df_avg_difficulty": 49.7,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26517_00008cc0",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26517_000086d3",
       "custom_thumb_url": "",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26517",
       "comment": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26517_00008cc0"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26517_000086d3"
     },
     {
       "lutris_id": 47,
@@ -635,16 +635,16 @@
       "playtime_override_text": "",
       "playtime_min": 0,
       "last_played_str": "",
-      "commented": "No",
+      "commented": "Yes",
       "rating_10": 10.0,
       "difficulty_100": 39.0,
       "df_avg_rating": 9.8,
       "df_avg_difficulty": 22.0,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26245_000082c8",
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26245_0000829f",
       "custom_thumb_url": "",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26245",
       "comment": "Definitely the better Mario Party !!!",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26245_000082c8"
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/26245_0000829f"
     },
     {
       "lutris_id": 94,
