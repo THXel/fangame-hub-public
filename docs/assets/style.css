@@ -165,7 +165,7 @@ h3{ font-size:1.02rem; line-height:1.35; margin:.9rem 0 .4rem; }
 
 .dfbox{ border: 1px dashed rgba(255,255,255,.18); border-radius: 14px; padding: 8px 10px; background: rgba(255,255,255,.02); }
 
-.badge{ display:inline-flex; align-items:center; gap:.45rem; padding:.28rem .60rem; border-radius: 999px; font-size: 1.00rem; font-weight: 800; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.03); font-family: var(--pixel); }
+.badge{ display:inline-flex; align-items:center; gap:.45rem; padding:.34rem .70rem; border-radius: 999px; font-size: 1.00rem; font-weight: 800; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.03); font-family: var(--pixel); }
 .badge:before{ content:"▣"; opacity:.9; }
 .b-planned{ box-shadow: 0 0 0 1px rgba(56,189,248,.25) inset; }
 .b-playing{ box-shadow: 0 0 0 1px rgba(250,204,21,.25) inset; }
