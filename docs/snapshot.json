@@ -20,21 +20,21 @@
     "used_df_rating": 23,
     "avg_df_diff": 51.25652173913044,
     "used_df_diff": 23,
-    "deaths_sum_played": 14547,
-    "deaths_sum_all": 14555,
-    "total_minutes_played": 96,
-    "total_minutes_all": 98
+    "deaths_sum_played": 15107,
+    "deaths_sum_all": 15115,
+    "total_minutes_played": 97,
+    "total_minutes_all": 99
   },
   "games": [
     {
       "lutris_id": 93,
       "title": "Delicious Level Design Contest ",
       "status": "Playing",
-      "deaths": "533",
-      "playtime_str": "4 min",
+      "deaths": "1093",
+      "playtime_str": "5 min",
       "playtime_override_text": "01:01:54",
-      "playtime_min": 4,
-      "last_played_str": "2026-01-22 19:33",
+      "playtime_min": 5,
+      "last_played_str": "2026-01-22 20:26",
       "commented": "No",
       "rating_10": 0,
       "difficulty_100": 0,
@@ -46,7 +46,7 @@
       "youtube_url": "",
       "comment": "",
       "thumb_public": "https://delicious-fruit.com/ratings/screenshots/45880_0000e272",
-      "last_played_sort_ts": 1769106780
+      "last_played_sort_ts": 1769109960
     },
     {
       "lutris_id": 65,
