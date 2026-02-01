@@ -344,3 +344,33 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
   background: rgba(130,180,255,0.08);
 }
 .boshy-muted{ opacity: .75; }
+
+
+/* === Boshy tab highlight === */
+.tabBtn[data-tab='boshy']{
+  border: 1px solid rgba(120,200,255,.35) !important;
+  box-shadow: 0 0 0 1px rgba(120,200,255,.15), 0 8px 24px rgba(0,0,0,.25);
+}
+.tabBtn[data-tab='boshy'].active{
+  box-shadow: 0 0 0 1px rgba(120,200,255,.25), 0 10px 28px rgba(0,0,0,.35);
+}
+
+/* Leaderboards */
+.boshyLbTop{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.boshyLbControls{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center;}
+.boshyLbControls .pill{display:flex;gap:8px;align-items:center;}
+.boshyLbTableWrap{margin-top:12px; overflow:auto; max-height: 340px; border-radius: 12px;}
+.boshyLbTable{width:100%;border-collapse:collapse;font-size:12.5px;}
+.boshyLbTable th,.boshyLbTable td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:middle;}
+.boshy-lb .me{outline:1px solid rgba(130,180,255,.45);border-radius:10px;background:rgba(130,180,255,.08);}
+
+/* Splits table */
+.boshySplitsWrap{overflow:auto;}
+.boshySplitsTable{width:100%;border-collapse:collapse;font-size:12.5px;}
+.boshySplitsTable th,.boshySplitsTable td{padding:7px 8px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:middle;}
+.splitNameCell{min-width:260px;}
+.splitNameInline{display:flex;align-items:center;gap:8px;}
+.splitIcon{width:20px;height:20px;image-rendering:pixelated;}
+.splitIconPh{width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.08);}
+.splitMiniBar{margin-top:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;}
+.splitMiniFill{height:100%;background:rgba(120,200,255,.55);}

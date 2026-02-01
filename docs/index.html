@@ -162,14 +162,54 @@
 <div id='boshyRoot' style='display:none;'>
   <div class='card boshyHeaderCard'>
     <div id='boshyHdr'></div>
-    <div class='boshySearchRow'>
-      <div class='field' style='flex:1;min-width:240px;'>
-        <div class='fieldLabel'>Split-Suche</div>
-        <input id='boshySearch' class='input' placeholder='z.B. Ryu, Kirby, …'/>
-      </div>
-      <div class='tiny muted' style='align-self:flex-end; padding-bottom:.2rem;'>Shown: <span id='boshyShown'>—</span></div>
+  
+  <!-- speedrun.com Leaderboards -->
+  <div class="card boshy-lb" id="boshyLeaderboards" style="margin-top:10px;">
+    <div class="boshyLbTop">
+      <h3 style="margin:0;">speedrun.com Leaderboards</h3>
+      <div class="boshy-muted" id="boshyLbStatus">lädt…</div>
     </div>
+
+    <div class="boshyLbControls">
+      <label class="pill">
+        Kategorie
+        <select id="boshyCatSel">
+          <option value="any" selected>Any% (No WW, DBO)</option>
+          <option value="100">100%</option>
+        </select>
+      </label>
+
+      <label class="pill" id="boshyDiffWrap">
+        Difficulty
+        <select id="boshyDiffSel">
+          <option value="Ez">Ez</option>
+          <option value="Average" selected>Average</option>
+          <option value="Rage">Rage</option>
+        </select>
+      </label>
+
+      <span class="pill boshy-muted">scroll = mehr als Top 10</span>
+    </div>
+
+    <div class="boshyLbTableWrap">
+      <table class="boshyLbTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Runner</th>
+            <th>Zeit</th>
+            <th>Datum</th>
+            <th>Run</th>
+          </tr>
+        </thead>
+        <tbody id="boshyLbRows"></tbody>
+      </table>
+    </div>
+
+    <div id="boshyMeBox" style="margin-top:10px;"></div>
   </div>
+</div>
+</div>
 
   <div id='boshyCards' class='boshyCards'></div>
 
@@ -274,9 +314,7 @@
       const boshyHdr   = document.getElementById('boshyHdr');
       const boshyCards = document.getElementById('boshyCards');
       const boshySplits= document.getElementById('boshySplits');
-      const boshySearch= document.getElementById('boshySearch');
-
-      function fmtTime(s){
+            function fmtTime(s){
         if(!s) return '—';
         return String(s).replace(/(\.\d{3})\d+$/, '$1');
       }
@@ -325,7 +363,7 @@
 
         // Header
         if(boshyHdr){
-          const gameIcon = data.game_icon_data_url ? `<img class="boshyGameIcon" src="${data.game_icon_data_url}" alt="game"/>` : '';
+          const gameIcon = data.game_icon_data_url ? `<img class="boshyGameIcon" src="${String(data.game_icon_data_url).trim()}" alt="game"/>` : '';
           const title = safeText(data.game || 'I Wanna Be The Boshy');
           const cat = safeText(data.category || '');
           const tm = safeText(data.timing_method || 'RealTime');
@@ -347,13 +385,13 @@
           const last = data.last_run || {};
           boshyCards.innerHTML =
             cardHTML('fa-solid fa-trophy', 'PB Total', fmtTime(data.pb_total), 'from .lss (RealTime)') +
-            cardHTML('fa-solid fa-bolt', 'Sum of Best', fmtTime(data.sum_of_best), 'sum of best segments') +
+            cardHTML('fa-solid fa-bolt', 'Sum of Best (Best Segments)', fmtTime(data.sum_of_best), 'sum of best segments') +
             cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'last stream recap') +
-            cardHTML('fa-solid fa-chart-line', 'Delta', safeText(last.delta || '—'), 'vs comparison') +
-            cardHTML('fa-solid fa-rotate-left', 'Resets (stream)', fmtNum(t.resets ?? 0), '') +
-            cardHTML('fa-solid fa-check', 'Finishes (stream)', fmtNum(t.finishes ?? 0), '') +
-            cardHTML('fa-solid fa-list-ol', 'Splits', fmtNum(data.splits.length), '') +
-            cardHTML('fa-solid fa-skull', 'Deaths (stream)', fmtNum(t.deaths ?? 0), 'overlay counter');
+            cardHTML('fa-solid fa-chart-line', 'Delta (vs Vergleich)', safeText(last.delta || '—'), 'vs comparison') +
+            cardHTML('fa-solid fa-rotate-left', 'Resets (Stream)', fmtNum(t.resets ?? 0), '') +
+            cardHTML('fa-solid fa-check', 'Finishes (Stream)', fmtNum(t.finishes ?? 0), '') +
+            cardHTML('fa-solid fa-list-ol', 'Anzahl Splits', fmtNum(data.splits.length), '') +
+            cardHTML('fa-solid fa-skull', 'Deaths (Stream)', fmtNum(t.deaths ?? 0), 'overlay counter');
         }
 
         const splits = data.splits.slice();
@@ -364,63 +402,64 @@
         }
 
         function splitRow(sp){
-          const icon = sp.icon_data_url ? `<img class="splitIcon" src="${sp.icon_data_url}" alt="i"/>` : `<div class="splitIconPh"><i class="fa-solid fa-circle"></i></div>`;
-          const name = safeText(sp.name || '');
-          const pbSeg = fmtTime(sp.pb_segment_time);
-          const bestSeg = fmtTime(sp.best_segment_time);
-          const pbCum = fmtTime(sp.pb_split_time);
-          const histN = (sp.history && sp.history.count) ? sp.history.count : 0;
-          const histAvg = sp.history && sp.history.avg ? fmtTime(sp.history.avg) : '—';
-          const segSec = parseTsToSeconds(sp.pb_segment_time) || 0;
-          const w = maxSeg ? pct(segSec, maxSeg) : 0;
+  const icon = sp.icon_data_url ? `<img class="splitIcon" src="${String(sp.icon_data_url).trim()}" alt="i"/>` : `<div class="splitIconPh"></div>`;
+  const name = safeText(sp.name || '');
+  const pbSeg = fmtTime(sp.pb_segment_time);
+  const bestSeg = fmtTime(sp.best_segment_time);
+  const pbCum = fmtTime(sp.pb_split_time);
 
-          const streamTime = sp.stream && sp.stream.time_on_split ? fmtTime(sp.stream.time_on_split) : '—';
-          const streamVisits = sp.stream && sp.stream.visits !== undefined ? fmtNum(sp.stream.visits) : '—';
-          const streamDeaths = sp.stream && sp.stream.deaths !== undefined ? fmtNum(sp.stream.deaths) : '—';
+  const histN = (sp.history && sp.history.count) ? sp.history.count : 0;
+  const histAvg = sp.history && sp.history.avg ? fmtTime(sp.history.avg) : '—';
 
-          return `
-            <div class="splitRow" data-name="${norm(name)}">
-              <div class="splitMain">
-                <div class="splitName">${icon}<span>${name}</span></div>
-                <div class="splitMeta tiny">
-                  <span title="Personal Best (segment)">PB seg: <span class="num">${pbSeg}</span></span>
-                  <span title="Best segment (gold)">Best: <span class="num">${bestSeg}</span></span>
-                  <span title="PB cumulative at this split">PB split: <span class="num">${pbCum}</span></span>
-                </div>
-                <div class="barRow">
-                  <div class="barWrap"><div class="barFill" style="width:${w}%;"></div></div>
-                  <div class="barLabel tiny">${pbSeg}</div>
-                </div>
-              </div>
-              <div class="splitSide">
-                <div class="pill"><i class="fa-solid fa-clock"></i> avg: <span class="num">${histAvg}</span></div>
-                <div class="pill"><i class="fa-solid fa-database"></i> n: <span class="num">${histN}</span></div>
-                <div class="pill"><i class="fa-solid fa-hourglass-half"></i> stream: <span class="num">${streamTime}</span></div>
-                <div class="pill"><i class="fa-solid fa-repeat"></i> visits: <span class="num">${streamVisits}</span></div>
-                <div class="pill"><i class="fa-solid fa-skull"></i> deaths: <span class="num">${streamDeaths}</span></div>
-              </div>
-            </div>
-          `;
-        }
+  const streamTime = sp.stream && sp.stream.time_on_split ? fmtTime(sp.stream.time_on_split) : '—';
+  const streamVisits = sp.stream && sp.stream.visits !== undefined ? fmtNum(sp.stream.visits) : '—';
+  const streamDeaths = sp.stream && sp.stream.deaths !== undefined ? fmtNum(sp.stream.deaths) : '—';
 
-        if(boshySplits){
-          boshySplits.innerHTML = splits.map(splitRow).join('');
-        }
+  const segSec = parseTsToSeconds(sp.pb_segment_time) || 0;
+  const w = maxSeg ? pct(segSec, maxSeg) : 0;
 
-        function applyBoshyFilter(){
-          const q = norm(boshySearch ? boshySearch.value : '');
-          const rows = Array.from(document.querySelectorAll('.splitRow'));
-          let shown = 0;
-          for(const r of rows){
-            const ok = (!q) || (r.dataset.name || '').includes(q);
-            r.style.display = ok ? '' : 'none';
-            if(ok) shown++;
-          }
-          const el = document.getElementById('boshyShown');
-          if(el) el.textContent = `${shown}/${rows.length}`;
-        }
-        if(boshySearch) boshySearch.addEventListener('input', applyBoshyFilter);
-        try{ applyBoshyFilter(); }catch(e){}
+  return `
+    <tr>
+      <td class="splitNameCell">
+        <div class="splitNameInline">${icon}<span>${name}</span></div>
+        <div class="splitMiniBar"><div class="splitMiniFill" style="width:${w}%;"></div></div>
+      </td>
+      <td class="num">${pbSeg}</td>
+      <td class="num">${bestSeg}</td>
+      <td class="num">${pbCum}</td>
+      <td class="num">${histAvg}</td>
+      <td class="num">${histN}</td>
+      <td class="num">${streamTime}</td>
+      <td class="num">${streamVisits}</td>
+      <td class="num">${streamDeaths}</td>
+    </tr>
+  `;
+}
+
+if(boshySplits){
+  boshySplits.innerHTML = `
+    <div class="boshySplitsWrap">
+      <table class="boshySplitsTable">
+        <thead>
+          <tr>
+            <th>Split</th>
+            <th>PB Segment</th>
+            <th>Best Segment</th>
+            <th>PB Split</th>
+            <th>Ø Segment</th>
+            <th>n</th>
+            <th>Stream Time</th>
+            <th>Visits</th>
+            <th>Deaths</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${splits.map(splitRow).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
       }
 
       async function loadBoshy(){
@@ -438,54 +477,6 @@
 
     </script>
   
-<!-- =======================
-     speedrun.com Leaderboards (Boshy)
-======================= -->
-<section class="card boshy-lb" id="boshyLeaderboards">
-  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-    <h3 style="margin:0;">speedrun.com Leaderboards</h3>
-    <div class="boshy-muted" id="boshyLbStatus">lädt…</div>
-  </div>
-
-  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-    <label class="pill" style="display:flex; gap:8px; align-items:center;">
-      Kategorie
-      <select id="boshyCatSel">
-        <option value="any" selected>Any% (No WW, DBO)</option>
-        <option value="100">100%</option>
-      </select>
-    </label>
-
-    <label class="pill" style="display:flex; gap:8px; align-items:center;">
-      Difficulty
-      <select id="boshyDiffSel">
-        <option value="Ez">Ez</option>
-        <option value="Average" selected>Average</option>
-        <option value="Rage">Rage</option>
-      </select>
-    </label>
-
-    <span class="pill boshy-muted">Top 10 + dein Rank</span>
-  </div>
-
-  <div style="margin-top:12px; overflow:auto;">
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Runner</th>
-          <th>Zeit</th>
-          <th>Datum</th>
-        </tr>
-      </thead>
-      <tbody id="boshyLbRows"></tbody>
-    </table>
-  </div>
-
-  <div id="boshyMeBox" style="margin-top:10px;"></div>
-</section>
-
-
 <script>
 (async function(){
   const SRC_GAME_ABBR = "iwbtboshy";
@@ -556,7 +547,7 @@
   }
 
   async function getLeaderboard(gameId, catId, varId=null, valId=null){
-    let url = `${API}/leaderboards/${gameId}/category/${catId}?top=10&embed=players`;
+    let url = `${API}/leaderboards/${gameId}/category/${catId}?top=200&embed=players`;
     if(varId && valId) url += `&var-${varId}=${valId}`;
     return (await jget(url)).data;
   }
@@ -585,37 +576,40 @@
   }
 
   function renderRows(lb){
-    const runs = lb?.runs || [];
-    elRows.innerHTML = "";
+  const runs = lb?.runs || [];
+  elRows.innerHTML = "";
 
-    for(const row of runs){
-      const place = row.place;
-      const run = row.run;
-      const t = run?.times?.primary_t ?? null;
-      const date = run?.date || "—";
+  for(const row of runs){
+    const place = row.place;
+    const run = row.run;
+    const t = run?.times?.primary_t ?? null;
+    const date = run?.date || "—";
+    const link = run?.weblink || null;
 
-      let playerName = "—";
-      const pl = run?.players?.[0];
-      if(pl?.rel === "user"){
-        const pd = (lb?.players?.data || []).find(x=>x.id===pl.id);
-        playerName = pd?.names?.international || pd?.name || ME_NAME;
-      } else if(pl?.rel === "guest") {
-        playerName = pl.name || "Guest";
-      }
-
-      const isMe = playerName.toLowerCase() === ME_NAME.toLowerCase();
-      const tr = document.createElement("tr");
-      if(isMe) tr.classList.add("me");
-
-      tr.innerHTML = `
-        <td>${place ?? ""}</td>
-        <td>${playerName}</td>
-        <td>${fmtTime(t)}</td>
-        <td class="boshy-muted">${date}</td>
-      `;
-      elRows.appendChild(tr);
+    let playerName = "—";
+    const pl = run?.players?.[0];
+    if(pl?.rel === "user"){
+      const pd = (lb?.players?.data || []).find(x=>x.id===pl.id);
+      playerName = pd?.names?.international || pd?.name || ME_NAME;
+    } else if(pl?.rel === "guest") {
+      playerName = pl.name || "Guest";
     }
+
+    const isMe = playerName.toLowerCase() === ME_NAME.toLowerCase();
+    const tr = document.createElement("tr");
+    if(isMe) tr.classList.add("me");
+
+    tr.innerHTML = `
+      <td>${place ?? ""}</td>
+      <td>${playerName}</td>
+      <td>${fmtTime(t)}</td>
+      <td class="boshy-muted">${date}</td>
+      <td>${link ? `<a href="${link}" target="_blank" rel="noreferrer">open</a>` : "—"}</td>
+    `;
+    elRows.appendChild(tr);
   }
+}
+
 
   function renderMe(pbInfo, catName, diffLabel){
     if(!pbInfo){
@@ -647,7 +641,8 @@
       const which = selCat.value;
       const diff = selDiff.value;
 
-      selDiff.closest("label").style.display = (which==="100") ? "none" : "flex";
+      const diffWrap = document.getElementById('boshyDiffWrap');
+      if(diffWrap) diffWrap.style.display = (which==="100") ? "none" : "flex";
 
       const catId = pickCategoryId(categories, which);
       if(!catId) throw new Error("Kategorie nicht gefunden");
