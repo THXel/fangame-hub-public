@@ -426,3 +426,8 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 .boshyRight #boshyLeaderboards{ height: 100%; display:flex; flex-direction:column; }
 .boshyRight #boshyLeaderboards .boshyLbTableWrap{ flex: 1;  }
 .boshyRight #boshyLeaderboards .boshyLbTableWrap{ overflow:auto; }
+
+
+/* boshy split time bump */
+.boshySplitsTable td.mono, .boshySplitsTable .mono{ font-size: 13.8px; }
+.boshySplitsTable th{ font-size: 14px; }

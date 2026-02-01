@@ -400,7 +400,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         // Header
         if(boshyHdr){
           const gi = cleanDataUrl(data.game_icon_data_url);
-          const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async"/>` : '';
+          const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async" onerror="this.style.display='none'"/>` : '';
           const title = safeText(data.game || 'I Wanna Be The Boshy');
           const cat = safeText(data.category || '');
           const tm = safeText(data.timing_method || 'RealTime');
@@ -440,7 +440,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 
         function splitRow(sp){
   const si = cleanDataUrl(sp.icon_data_url);
-  const icon = si ? `<img class="splitIcon" src="${si}" alt="i" decoding="async"/>` : `<div class="splitIconPh"></div>`;
+  const icon = si ? `<img class="splitIcon" src="${si}" alt="i" decoding="async" onerror="this.style.display='none'; this.classList.add('hidden')"/>` : `<div class="splitIconPh"></div>`;
   const name = safeText(sp.name || '');
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
@@ -547,79 +547,201 @@ loadBoshy(boshyMode);
 
 
 
-  function renderMe(pbInfo, catName, diffLabel){
+  
+/* === speedrun.com module (boshy) === */
+(function(){
+  const elStatus = document.getElementById("boshyLbStatus");
+  const elRows   = document.getElementById("boshyLbRows");
+  const elMeBox  = document.getElementById("boshyMeBox");
+  const elPills  = document.getElementById("boshyLbModePills");
+  const ME_NAME  = "THXel";
+  const API      = "https://www.speedrun.com/api/v1";
+
+  function fmtTime(sec){
+    if(sec === null || sec === undefined) return "—";
+    const s = Number(sec);
+    if(!isFinite(s)) return "—";
+    const h = Math.floor(s/3600);
+    const m = Math.floor((s%3600)/60);
+    const r = Math.floor(s%60);
+    const ms = Math.round((s - Math.floor(s))*1000);
+    const hh = h>0 ? String(h).padStart(2,'0')+":" : "";
+    return hh + String(m).padStart(2,'0') + ":" + String(r).padStart(2,'0') + (ms? "."+String(ms).padStart(3,'0') : "");
+  }
+
+  async function j(url){
+    const r = await fetch(url, {cache:"no-store"});
+    if(!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+    const js = await r.json();
+    return js.data;
+  }
+
+  async function getGame(){
+    // Prefer abbreviation; fallback to name search.
+    let data = await j(`${API}/games?abbreviation=iwbtboshy&max=1`);
+    if(!data || !data.length){
+      data = await j(`${API}/games?name=${encodeURIComponent("I Wanna Be The Boshy")}&max=1`);
+    }
+    if(!data || !data.length) throw new Error("Game nicht gefunden");
+    return data[0];
+  }
+
+  async function getCategories(gameId){
+    return await j(`${API}/games/${gameId}/categories`);
+  }
+
+  function pickCategory(categories, which){
+    const list = (categories||[]).filter(c=>c.type==="per-game");
+    if(which==="100"){
+      return list.find(c=>/100/i.test(c.name)) || list.find(c=>/complete|all/i.test(c.name)) || list[0];
+    }
+    // Any%: try match "Any" and optionally "No WW" / "DBO"
+    return list.find(c=>/any/i.test(c.name) && /ww|dbo|no/i.test(c.name)) 
+        || list.find(c=>/any/i.test(c.name))
+        || list[0];
+  }
+
+  async function getDifficultyVar(catId){
+    const vars = await j(`${API}/categories/${catId}/variables`);
+    // find variable named difficulty (or has Ez/Average/Rage in values)
+    const v = (vars||[]).find(v=>/diff/i.test(v.name) || /diff/i.test(v.variable) || /difficulty/i.test(v.name));
+    if(v) return v;
+    return (vars||[]).find(v=>{
+      const vals = v.values?.values || {};
+      const names = Object.values(vals).map(x=>String(x.label||"").toLowerCase());
+      return names.some(n=>n.includes("ez")||n.includes("easy")||n.includes("average")||n.includes("rage"));
+    }) || null;
+  }
+
+  function pickVarValueId(v, diff){
+    const vals = v?.values?.values || {};
+    const entries = Object.entries(vals);
+    const want = diff.toLowerCase();
+    const hit = entries.find(([id,obj])=>{
+      const lab = String(obj.label||"").toLowerCase();
+      return lab.includes(want);
+    });
+    return hit ? hit[0] : (entries[0]?.[0] || null);
+  }
+
+  async function getLeaderboard(gameId, catId, varId, valId){
+    let url = `${API}/leaderboards/${gameId}/category/${catId}?top=200&embed=players`;
+    if(varId && valId){
+      url += `&var-${encodeURIComponent(varId)}=${encodeURIComponent(valId)}`;
+    }
+    return await j(url);
+  }
+
+  async function getUserByName(name){
+    const users = await j(`${API}/users?name=${encodeURIComponent(name)}&max=1`);
+    return (users && users.length) ? users[0] : null;
+  }
+
+  async function getPersonalBests(userId){
+    return await j(`${API}/users/${userId}/personal-bests`);
+  }
+
+  function renderRows(lb){
+    const runs = lb?.runs || [];
+    // clear
+    elRows.innerHTML = "";
+    runs.forEach((row, idx)=>{
+      const r = row.run;
+      const t = r?.times?.primary_t;
+      const date = r?.date || "—";
+      const player = row.place ? (r.players?.[0]?.name || r.players?.[0]?.id || "—") : "—";
+      // when embedded players, structure differs: players.data
+      let pname = "—";
+      try{
+        const p0 = r.players?.[0];
+        if(p0?.rel === "user"){
+          const u = p0.id && lb.players?.data ? lb.players.data.find(x=>x.id===p0.id) : null;
+          pname = u?.names?.international || "—";
+        }else if(p0?.rel === "guest"){
+          pname = p0.name || "—";
+        }
+      }catch(e){}
+      const link = r?.weblink;
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${row.place ?? (idx+1)}</td>
+        <td class="boshyRunner">${pname}</td>
+        <td class="boshyTime mono">${fmtTime(t)}</td>
+        <td class="boshyDate mono">${date}</td>
+        <td>${link ? `<a href="${link}" target="_blank" rel="noreferrer">open</a>` : "—"}</td>
+      `;
+      elRows.appendChild(tr);
+    });
+  }
+
+  function renderMe(pbInfo, label){
     if(!pbInfo){
-      elMeBox.innerHTML = `<div class="pill boshy-muted">Kein ${ME_NAME}-Run für diese Auswahl gefunden.</div>`;
+      elMeBox.innerHTML = `<div class="pill boshy-muted">Kein ${ME_NAME}-Run gefunden.</div>`;
       return;
     }
     const place = pbInfo.place ?? "—";
     const t = pbInfo.run?.times?.primary_t ?? null;
     const link = pbInfo.run?.weblink;
-    const prettyCat = diffLabel ? `${catName} • ${diffLabel}` : catName;
-
     elMeBox.innerHTML = `
       <div class="pill">
         <b>${ME_NAME}</b> — Rank <b>#${place}</b> — <b>${fmtTime(t)}</b>
-        <span class="boshy-muted">(${prettyCat})</span>
+        <span class="boshy-muted">(${label})</span>
         ${link ? ` — <a href="${link}" target="_blank" rel="noreferrer">Run</a>` : ``}
       </div>
     `;
   }
 
   async function update(){
+    if(!elStatus || !elRows || !elMeBox) return;
     try{
       elStatus.textContent = "lädt…";
-      const game = await getGame();
-      const categories = await getCategories(game.id);
-      const user = await getUserByName(ME_NAME);
-      const pbs = user ? await getPersonalBests(user.id) : [];
-
-      const mode = (window.__boshyMode || 'any_ez');
-      const which = mode.startsWith('p100') ? '100' : 'any';
-      const diff = mode.includes('ez') ? 'Ez' : (mode.includes('avg') ? 'Average' : (mode.includes('rage') ? 'Rage' : 'Average'));
+      const mode = (window.__boshyMode || "any_ez");
+      const which = mode.startsWith("p100") ? "100" : "any";
+      const diff = mode.includes("ez") ? "Ez" : (mode.includes("avg") ? "Average" : (mode.includes("rage") ? "Rage" : "Average"));
+      const label = which==="100" ? "100% • Hardon" : `Any% • ${diff}`;
       if(elPills){
-        const label = mode.startsWith('p100') ? '100% • Hardon' : (`Any% • ${diff}`);
         elPills.innerHTML = `<span class="pill"><i class="fa-solid fa-filter"></i> ${label}</span><span class="pill boshy-muted">Scroll = mehr Runs</span>`;
       }
 
+      const game = await getGame();
+      const categories = await getCategories(game.id);
+      const cat = pickCategory(categories, which);
+      if(!cat) throw new Error("Kategorie nicht gefunden");
 
-      const catId = pickCategoryId(categories, which);
-      if(!catId) throw new Error("Kategorie nicht gefunden");
-
-      let varId=null, valId=null, diffLabel=null;
+      let varId=null, valId=null;
       if(which !== "100"){
-        const v = pickDifficultyVar(categories);
+        const v = await getDifficultyVar(cat.id);
         if(v){
           varId = v.id;
           valId = pickVarValueId(v, diff);
-          diffLabel = diff;
         }
       }
 
-      const lb = await getLeaderboard(game.id, catId, varId, valId);
+      const lb = await getLeaderboard(game.id, cat.id, varId, valId);
       renderRows(lb);
 
-      const catName = (which==="100") ? "100%" : "Any% (No WW, DBO)";
-      const pbMatch = pbs.find(pb => {
+      const user = await getUserByName(ME_NAME);
+      const pbs = user ? await getPersonalBests(user.id) : [];
+      const pbMatch = pbs.find(pb=>{
         const r = pb.run;
-        const c = r?.category;
-        if(c !== catId) return false;
+        if(r?.category !== cat.id) return false;
         if(which==="100") return true;
-        const vv = r?.values || {};
         if(!varId || !valId) return true;
-        return vv[varId] === valId;
+        return (r?.values || {})[varId] === valId;
       });
+      renderMe(pbMatch, label);
 
-      renderMe(pbMatch, catName, diffLabel);
       elStatus.textContent = "ok";
     }catch(e){
-      elStatus.textContent = "Fehler beim Laden";
+      elStatus.textContent = "Fehler";
       elMeBox.innerHTML = `<div class="pill boshy-muted">API Fehler: ${String(e.message||e)}</div>`;
+      elRows.innerHTML = "";
     }
   }
 
-
+  window.addEventListener("boshy_mode_changed", ()=>update());
   update();
+})();
 </script>
 
 
