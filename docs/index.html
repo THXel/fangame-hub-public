@@ -437,5 +437,259 @@
       loadBoshy();
 
     </script>
-  </body>
+  
+<!-- =======================
+     speedrun.com Leaderboards (Boshy)
+======================= -->
+<section class="card boshy-lb" id="boshyLeaderboards">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <h3 style="margin:0;">speedrun.com Leaderboards</h3>
+    <div class="boshy-muted" id="boshyLbStatus">lädt…</div>
+  </div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+    <label class="pill" style="display:flex; gap:8px; align-items:center;">
+      Kategorie
+      <select id="boshyCatSel">
+        <option value="any" selected>Any% (No WW, DBO)</option>
+        <option value="100">100%</option>
+      </select>
+    </label>
+
+    <label class="pill" style="display:flex; gap:8px; align-items:center;">
+      Difficulty
+      <select id="boshyDiffSel">
+        <option value="Ez">Ez</option>
+        <option value="Average" selected>Average</option>
+        <option value="Rage">Rage</option>
+      </select>
+    </label>
+
+    <span class="pill boshy-muted">Top 10 + dein Rank</span>
+  </div>
+
+  <div style="margin-top:12px; overflow:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Runner</th>
+          <th>Zeit</th>
+          <th>Datum</th>
+        </tr>
+      </thead>
+      <tbody id="boshyLbRows"></tbody>
+    </table>
+  </div>
+
+  <div id="boshyMeBox" style="margin-top:10px;"></div>
+</section>
+
+
+<script>
+(async function(){
+  const SRC_GAME_ABBR = "iwbtboshy";
+  const ME_NAME = "THXel";
+  const API = "https://www.speedrun.com/api/v1";
+
+  const elStatus = document.getElementById("boshyLbStatus");
+  const elRows = document.getElementById("boshyLbRows");
+  const elMeBox = document.getElementById("boshyMeBox");
+  const selCat = document.getElementById("boshyCatSel");
+  const selDiff = document.getElementById("boshyDiffSel");
+
+  if(!elStatus || !elRows || !elMeBox || !selCat || !selDiff){
+    return;
+  }
+
+  const cacheGet = (k) => {
+    try{
+      const raw = localStorage.getItem(k);
+      if(!raw) return null;
+      const obj = JSON.parse(raw);
+      if(Date.now() > obj.exp) return null;
+      return obj.val;
+    }catch{ return null; }
+  };
+  const cacheSet = (k, val, ttlMs=10*60*1000) => {
+    try{
+      localStorage.setItem(k, JSON.stringify({exp: Date.now()+ttlMs, val}));
+    }catch{}
+  };
+
+  async function jget(url){
+    const ck = "src_cache_" + url;
+    const cached = cacheGet(ck);
+    if(cached) return cached;
+
+    const r = await fetch(url, { headers: { "Accept": "application/json" } });
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    const data = await r.json();
+    cacheSet(ck, data);
+    return data;
+  }
+
+  function fmtTime(sec){
+    if(sec == null) return "—";
+    sec = Math.max(0, sec);
+    const h = Math.floor(sec/3600);
+    const m = Math.floor((sec%3600)/60);
+    const s = (sec%60);
+    const ss = s.toFixed(2).padStart(5,"0");
+    return (h>0 ? String(h).padStart(2,"0")+":" : "") + String(m).padStart(2,"0")+":" + ss;
+  }
+
+  async function getGame(){
+    return (await jget(`${API}/games/${SRC_GAME_ABBR}`)).data;
+  }
+
+  async function getCategories(gameId){
+    return (await jget(`${API}/games/${gameId}/categories?embed=variables`)).data;
+  }
+
+  async function getUserByName(name){
+    return (await jget(`${API}/users?lookup=${encodeURIComponent(name)}`)).data?.[0] || null;
+  }
+
+  async function getPersonalBests(userId){
+    return (await jget(`${API}/users/${userId}/personal-bests`)).data || [];
+  }
+
+  async function getLeaderboard(gameId, catId, varId=null, valId=null){
+    let url = `${API}/leaderboards/${gameId}/category/${catId}?top=10&embed=players`;
+    if(varId && valId) url += `&var-${varId}=${valId}`;
+    return (await jget(url)).data;
+  }
+
+  function pickCategoryId(categories, which){
+    const target = (which==="100") ? "100%" : "Any% (No WW, DBO)";
+    const hit = categories.find(c => (c.name||"").trim() === target);
+    return hit ? hit.id : null;
+  }
+
+  function pickDifficultyVar(categories){
+    for(const c of categories){
+      const vars = c?.variables?.data || [];
+      const v = vars.find(x => (x.name||"").toLowerCase() === "difficulty");
+      if(v) return v;
+    }
+    return null;
+  }
+
+  function pickVarValueId(varObj, label){
+    const map = varObj?.values?.values || {};
+    for(const [id, obj] of Object.entries(map)){
+      if((obj.label||"").trim().toLowerCase() === label.toLowerCase()) return id;
+    }
+    return null;
+  }
+
+  function renderRows(lb){
+    const runs = lb?.runs || [];
+    elRows.innerHTML = "";
+
+    for(const row of runs){
+      const place = row.place;
+      const run = row.run;
+      const t = run?.times?.primary_t ?? null;
+      const date = run?.date || "—";
+
+      let playerName = "—";
+      const pl = run?.players?.[0];
+      if(pl?.rel === "user"){
+        const pd = (lb?.players?.data || []).find(x=>x.id===pl.id);
+        playerName = pd?.names?.international || pd?.name || ME_NAME;
+      } else if(pl?.rel === "guest") {
+        playerName = pl.name || "Guest";
+      }
+
+      const isMe = playerName.toLowerCase() === ME_NAME.toLowerCase();
+      const tr = document.createElement("tr");
+      if(isMe) tr.classList.add("me");
+
+      tr.innerHTML = `
+        <td>${place ?? ""}</td>
+        <td>${playerName}</td>
+        <td>${fmtTime(t)}</td>
+        <td class="boshy-muted">${date}</td>
+      `;
+      elRows.appendChild(tr);
+    }
+  }
+
+  function renderMe(pbInfo, catName, diffLabel){
+    if(!pbInfo){
+      elMeBox.innerHTML = `<div class="pill boshy-muted">Kein ${ME_NAME}-Run für diese Auswahl gefunden.</div>`;
+      return;
+    }
+    const place = pbInfo.place ?? "—";
+    const t = pbInfo.run?.times?.primary_t ?? null;
+    const link = pbInfo.run?.weblink;
+    const prettyCat = diffLabel ? `${catName} • ${diffLabel}` : catName;
+
+    elMeBox.innerHTML = `
+      <div class="pill">
+        <b>${ME_NAME}</b> — Rank <b>#${place}</b> — <b>${fmtTime(t)}</b>
+        <span class="boshy-muted">(${prettyCat})</span>
+        ${link ? ` — <a href="${link}" target="_blank" rel="noreferrer">Run</a>` : ``}
+      </div>
+    `;
+  }
+
+  async function update(){
+    try{
+      elStatus.textContent = "lädt…";
+      const game = await getGame();
+      const categories = await getCategories(game.id);
+      const user = await getUserByName(ME_NAME);
+      const pbs = user ? await getPersonalBests(user.id) : [];
+
+      const which = selCat.value;
+      const diff = selDiff.value;
+
+      selDiff.closest("label").style.display = (which==="100") ? "none" : "flex";
+
+      const catId = pickCategoryId(categories, which);
+      if(!catId) throw new Error("Kategorie nicht gefunden");
+
+      let varId=null, valId=null, diffLabel=null;
+      if(which !== "100"){
+        const v = pickDifficultyVar(categories);
+        if(v){
+          varId = v.id;
+          valId = pickVarValueId(v, diff);
+          diffLabel = diff;
+        }
+      }
+
+      const lb = await getLeaderboard(game.id, catId, varId, valId);
+      renderRows(lb);
+
+      const catName = (which==="100") ? "100%" : "Any% (No WW, DBO)";
+      const pbMatch = pbs.find(pb => {
+        const r = pb.run;
+        const c = r?.category;
+        if(c !== catId) return false;
+        if(which==="100") return true;
+        const vv = r?.values || {};
+        if(!varId || !valId) return true;
+        return vv[varId] === valId;
+      });
+
+      renderMe(pbMatch, catName, diffLabel);
+      elStatus.textContent = "ok";
+    }catch(e){
+      elStatus.textContent = "Fehler beim Laden";
+      elMeBox.innerHTML = `<div class="pill boshy-muted">API Fehler: ${String(e.message||e)}</div>`;
+    }
+  }
+
+  selCat.addEventListener("change", update);
+  selDiff.addEventListener("change", update);
+
+  update();
+})();
+</script>
+
+</body>
 </html>
