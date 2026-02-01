@@ -192,26 +192,7 @@
           <div class="boshy-muted" id="boshyLbStatus">lädt…</div>
         </div>
 
-        <div class="boshyLbControls">
-          <label class="pill">
-            Kategorie
-            <select id="boshyCatSel">
-              <option value="any" selected>Any% (No WW, DBO)</option>
-              <option value="100">100%</option>
-            </select>
-          </label>
-
-          <label class="pill" id="boshyDiffWrap">
-            Difficulty
-            <select id="boshyDiffSel">
-              <option value="Ez">Ez</option>
-              <option value="Average" selected>Average</option>
-              <option value="Rage">Rage</option>
-            </select>
-          </label>
-
-          <span class="pill boshy-muted">Top 10 sichtbar • Scroll = mehr</span>
-        </div>
+        <div class="boshyLbControls" id="boshyLbModePills"></div>
 
         <div class="boshyLbTableWrap">
           <table class="boshyLbTable">
@@ -491,7 +472,6 @@ if(boshySplits){
     </div>
   `;
 }
-      }
 
       async function loadBoshy(mode){
   const candidates = {
@@ -523,20 +503,8 @@ function setActiveBoshyMode(mode){
     btn.classList.toggle('active', on);
     btn.setAttribute('aria-selected', on ? 'true' : 'false');
   });
-  // Keep category selector in sync with mode
-  const selCat = document.getElementById('boshyCatSel');
-  const selDiff = document.getElementById('boshyDiffSel');
-  const diffWrap = document.getElementById('boshyDiffWrap');
-  if(selCat){
-    selCat.value = mode.startsWith('p100') ? '100' : 'any';
-  }
-  if(diffWrap){
-    diffWrap.style.display = mode.startsWith('p100') ? 'none' : 'flex';
-  }
-  if(selDiff && !mode.startsWith('p100')){
-    const map = {any_ez:'Ez', any_avg:'Average', any_rage:'Rage'};
-    selDiff.value = map[mode] || 'Average';
-  }
+  try{ window.__boshyMode = mode; }catch(e){}
+  try{ window.dispatchEvent(new CustomEvent('boshy_mode_changed', {detail:{mode}})); }catch(e){}
 }
 
 let boshyMode = 'any_ez';
@@ -582,11 +550,14 @@ loadBoshy(boshyMode);
       const user = await getUserByName(ME_NAME);
       const pbs = user ? await getPersonalBests(user.id) : [];
 
-      const which = selCat.value;
-      const diff = selDiff.value;
+      const mode = (window.__boshyMode || 'any_ez');
+      const which = mode.startsWith('p100') ? '100' : 'any';
+      const diff = mode.includes('ez') ? 'Ez' : (mode.includes('avg') ? 'Average' : (mode.includes('rage') ? 'Rage' : 'Average'));
+      if(elPills){
+        const label = mode.startsWith('p100') ? '100% • Hardon' : (`Any% • ${diff}`);
+        elPills.innerHTML = `<span class="pill"><i class="fa-solid fa-filter"></i> ${label}</span><span class="pill boshy-muted">Scroll = mehr Runs</span>`;
+      }
 
-      const diffWrap = document.getElementById('boshyDiffWrap');
-      if(diffWrap) diffWrap.style.display = (which==="100") ? "none" : "flex";
 
       const catId = pickCategoryId(categories, which);
       if(!catId) throw new Error("Kategorie nicht gefunden");
@@ -623,8 +594,6 @@ loadBoshy(boshyMode);
     }
   }
 
-  selCat.addEventListener("change", update);
-  selDiff.addEventListener("change", update);
 
   update();
 })();
