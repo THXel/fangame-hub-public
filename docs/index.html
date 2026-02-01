@@ -622,5 +622,69 @@ loadBoshy(boshyMode);
 })();
 </script>
 
+
+<script>
+/* === SAFE TAB ROUTER v1 === */
+(function() {
+  function normHash(h) {
+    if (!h) return "#lib";
+    h = String(h).trim();
+    if (!h.startsWith("#")) h = "#" + h;
+    const ok = ["#lib", "#stats", "#boshy"];
+    return ok.includes(h) ? h : "#lib";
+  }
+
+  function showTab(hash) {
+    const h = normHash(hash);
+    // Panels
+    const panels = {
+      "#lib": document.getElementById("tab-lib"),
+      "#stats": document.getElementById("tab-stats"),
+      "#boshy": document.getElementById("tab-boshy"),
+    };
+    Object.entries(panels).forEach(([k, el]) => {
+      if (!el) return;
+      el.style.display = (k === h) ? "" : "none";
+    });
+
+    // Buttons
+    document.querySelectorAll("button.tabBtn[data-tab]").forEach(btn => {
+      const t = btn.getAttribute("data-tab");
+      const bh = "#" + t;
+      const active = (bh === h);
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    // Ensure hash matches what we show
+    if (location.hash !== h) {
+      history.replaceState(null, "", h);
+    }
+  }
+
+  function wireButtons() {
+    document.querySelectorAll("button.tabBtn[data-tab]").forEach(btn => {
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        const t = btn.getAttribute("data-tab");
+        const h = normHash("#" + t);
+        if (location.hash !== h) {
+          location.hash = h;
+        } else {
+          showTab(h);
+        }
+      });
+    });
+  }
+
+  window.addEventListener("hashchange", () => showTab(location.hash));
+
+  document.addEventListener("DOMContentLoaded", () => {
+    wireButtons();
+    showTab(location.hash || "#lib");
+  });
+})();
+</script>
+
 </body>
 </html>
