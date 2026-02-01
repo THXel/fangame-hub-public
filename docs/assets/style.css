@@ -251,3 +251,33 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
 
 
 .hr{ height:1px; background: rgba(255,255,255,.10); margin: 1rem 0; }
+
+
+/* --- Boshy Speedrun --- */
+.boshyHeaderCard{ padding: 1rem; }
+#boshyHdr{ display:flex; align-items:center; justify-content:space-between; gap: 1rem; flex-wrap:wrap; }
+.boshyHdrLeft{ display:flex; align-items:center; gap: .9rem; min-width: 260px; }
+.boshyGameIcon{ width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); }
+.boshyTitle{ font-family: var(--pixel); font-size: 1.05rem; letter-spacing: .03em; }
+.boshySub{ font-size: .92rem; opacity:.78; margin-top:.1rem; }
+.boshySearchRow{ display:flex; gap: 1rem; align-items:flex-end; flex-wrap:wrap; margin-top: .85rem; }
+
+.boshyCards{ display:grid; grid-template-columns: repeat(4, minmax(180px, 1fr)); gap: .8rem; margin: .85rem 0 1rem 0; }
+@media (max-width: 980px){ .boshyCards{ grid-template-columns: repeat(2, minmax(180px, 1fr)); } }
+@media (max-width: 520px){ .boshyCards{ grid-template-columns: 1fr; } }
+.boshyStatCard{ padding: 1rem; }
+.boshySplitsCard{ padding: 1rem; }
+
+.splitTable{ display:flex; flex-direction:column; gap: .65rem; }
+.splitRow{ display:grid; grid-template-columns: 1fr 300px; gap: .85rem; padding: .85rem .85rem; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10); }
+@media (max-width: 980px){ .splitRow{ grid-template-columns: 1fr; } }
+.splitName{ display:flex; align-items:center; gap:.55rem; font-family: var(--pixel); letter-spacing:.02em; }
+.splitIcon{ width: 22px; height: 22px; border-radius: 6px; }
+.splitIconPh{ width: 22px; height: 22px; border-radius: 6px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); font-size:.6rem; opacity:.85; }
+.splitMeta{ display:flex; gap: .9rem; flex-wrap:wrap; margin-top:.2rem; }
+.barRow{ display:flex; align-items:center; gap: .65rem; margin-top:.55rem; }
+.barWrap{ flex:1; height: 10px; border-radius: 999px; overflow:hidden; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); }
+.barFill{ height: 100%; background: rgba(99,102,241,.85); }
+.barLabel{ width: 84px; text-align:right; font-family: var(--mono); }
+.splitSide{ display:flex; gap:.45rem; flex-wrap:wrap; justify-content:flex-end; align-content:flex-start; }
+.pill{ display:inline-flex; gap:.35rem; align-items:center; padding: .35rem .55rem; border-radius: 999px; background: rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.10); font-size: .88rem; white-space:nowrap; }
