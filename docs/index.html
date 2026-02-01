@@ -226,22 +226,45 @@
 
     <script>
       const btns = Array.from(document.querySelectorAll('.tabBtn'));
-      const lib = document.getElementById('tab-lib');
-      const stats = document.getElementById('tab-stats');
-      const boshy = document.getElementById('tab-boshy');
-      function setTab(name){
-        btns.forEach(b => b.classList.toggle('active', b.dataset.tab === name));
-        lib.style.display = (name === 'lib') ? '' : 'none';
-        stats.style.display = (name === 'stats') ? '' : 'none';
-        boshy.style.display = (name === 'boshy') ? '' : 'none';
-        try{ history.replaceState(null, '', '#'+name); }catch(e){}
-      }
-      btns.forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
-      const hash = (location.hash || '').replace('#','');
-      if(hash === 'stats') setTab('stats');
-      if(hash === 'boshy') setTab('boshy');
+const panels = {
+  lib: document.getElementById('tab-lib'),
+  stats: document.getElementById('tab-stats'),
+  boshy: document.getElementById('tab-boshy'),
+};
 
-      // --- Library: search + status filter + sort ---
+function normalizeHash(){
+  const raw = (location.hash || '').replace('#','').trim();
+  return (raw in panels) ? raw : 'lib';
+}
+
+function showTab(name){
+  name = (name in panels) ? name : 'lib';
+  btns.forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  Object.entries(panels).forEach(([k, el]) => {
+    if(!el) return;
+    el.style.display = (k === name) ? '' : 'none';
+  });
+}
+
+function setTab(name, push){
+  name = (name in panels) ? name : 'lib';
+  showTab(name);
+  try{
+    if(push){
+      if(location.hash !== '#'+name) location.hash = name;
+    } else {
+      history.replaceState(null, '', '#'+name);
+    }
+  }catch(e){}
+}
+
+btns.forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab, true)));
+
+// initial + hash changes
+setTab(normalizeHash(), false);
+window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
+
+// --- Library: search + status filter + sort ---
       const libQ = document.getElementById('libQ');
       const libStatus = document.getElementById('libStatus');
       const libSort = document.getElementById('libSort');
