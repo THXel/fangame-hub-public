@@ -385,7 +385,6 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         if(boshyEmpty) boshyEmpty.style.display = 'none';
         if(boshyRoot) boshyRoot.style.display = '';
 
-\
     function cleanDataUrl(u){
       if(!u) return '';
       u = String(u);
@@ -495,6 +494,8 @@ if(boshySplits){
     </div>
   `;
 }
+
+      }
 
       async function loadBoshy(mode){
   const candidates = {
@@ -619,7 +620,6 @@ loadBoshy(boshyMode);
 
 
   update();
-})();
 </script>
 
 
