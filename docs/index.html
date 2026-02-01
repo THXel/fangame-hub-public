@@ -157,6 +157,15 @@
 
 <h2><i class='fa-solid fa-stopwatch'></i> Boshy Speedrun</h2>
 
+<div class="boshySubtabs" role="tablist" aria-label="Boshy Kategorien">
+  <button class="boshySubtab active" data-boshy-mode="any_ez" role="tab" aria-selected="true">Any% • Ez</button>
+  <button class="boshySubtab" data-boshy-mode="any_avg" role="tab" aria-selected="false">Any% • Average</button>
+  <button class="boshySubtab" data-boshy-mode="any_rage" role="tab" aria-selected="false">Any% • Rage</button>
+  <button class="boshySubtab" data-boshy-mode="p100_hardon" role="tab" aria-selected="false">100% • Hardon</button>
+</div>
+
+
+
 <div class='card' id='boshyEmpty'>
   Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun.json</code> in diesem Ordner ab (wird automatisch geladen).
 </div>
@@ -372,14 +381,17 @@
         if(boshyEmpty) boshyEmpty.style.display = 'none';
         if(boshyRoot) boshyRoot.style.display = '';
 
-function cleanDataUrl(u){
-  if(!u) return '';
-  // strip weird hidden chars (BOM, soft hyphen, etc.)
-  u = String(u).replace(/[^\x20-\x7E]/g, '');
-  // accept only data:image/...;base64,...
-  if(!u.startsWith('data:image/')) return '';
-  return u;
-}
+\
+    function cleanDataUrl(u){
+      if(!u) return '';
+      u = String(u);
+      // strip common invisible chars that break data: URLs on Windows/JSON
+      u = u.replace(/[\uFEFF\u200B\u200C\u200D\u00AD]/g, '');
+      u = u.trim();
+      // allow data:image/(png|jpeg|gif|webp|svg+xml|x-icon)
+      if(!/^data:image\/(png|jpe?g|gif|webp|svg\+xml|x-icon);base64,/i.test(u)) return '';
+      return u;
+    }
 
 
         // Header
@@ -437,15 +449,11 @@ function cleanDataUrl(u){
   const streamTime = sp.stream && sp.stream.time_on_split ? fmtTime(sp.stream.time_on_split) : '—';
   const streamVisits = sp.stream && sp.stream.visits !== undefined ? fmtNum(sp.stream.visits) : '—';
   const streamDeaths = sp.stream && sp.stream.deaths !== undefined ? fmtNum(sp.stream.deaths) : '—';
-
-  const segSec = parseTsToSeconds(sp.pb_segment_time) || 0;
-  const w = maxSeg ? pct(segSec, maxSeg) : 0;
-
   return `
     <tr>
       <td class="splitNameCell">
         <div class="splitNameInline">${icon}<span>${name}</span></div>
-        <div class="splitMiniBar"><div class="splitMiniFill" style="width:${w}%;"></div></div>
+        
       </td>
       <td class="num">${pbSeg}</td>
       <td class="num">${bestSeg}</td>
@@ -485,153 +493,66 @@ if(boshySplits){
 }
       }
 
-      async function loadBoshy(){
-        try{
-          const r = await fetch('boshy_speedrun.json', {cache:'no-store'});
-          if(!r.ok) throw new Error('HTTP '+r.status);
-          const data = await r.json();
-          renderBoshy(data);
-        }catch(e){
-          if(boshyEmpty) boshyEmpty.style.display = '';
-          if(boshyRoot) boshyRoot.style.display = 'none';
-        }
-      }
-      loadBoshy();
-
-    </script>
-  
-<script>
-(async function(){
-  const SRC_GAME_ABBR = "iwbtboshy";
-  const ME_NAME = "THXel";
-  const API = "https://www.speedrun.com/api/v1";
-
-  const elStatus = document.getElementById("boshyLbStatus");
-  const elRows = document.getElementById("boshyLbRows");
-  const elMeBox = document.getElementById("boshyMeBox");
-  const selCat = document.getElementById("boshyCatSel");
-  const selDiff = document.getElementById("boshyDiffSel");
-
-  if(!elStatus || !elRows || !elMeBox || !selCat || !selDiff){
-    return;
-  }
-
-  const cacheGet = (k) => {
-    try{
-      const raw = localStorage.getItem(k);
-      if(!raw) return null;
-      const obj = JSON.parse(raw);
-      if(Date.now() > obj.exp) return null;
-      return obj.val;
-    }catch{ return null; }
+      async function loadBoshy(mode){
+  const candidates = {
+    any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun.json'],
+    any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun.json'],
+    any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun.json'],
+    p100_hardon: ['boshy_speedrun_100_hardon.json','boshy_speedrun_100.json','boshy_speedrun.json'],
   };
-  const cacheSet = (k, val, ttlMs=10*60*1000) => {
+  const list = candidates[mode] || ['boshy_speedrun.json'];
+  for(const path of list){
     try{
-      localStorage.setItem(k, JSON.stringify({exp: Date.now()+ttlMs, val}));
-    }catch{}
-  };
-
-  async function jget(url){
-    const ck = "src_cache_" + url;
-    const cached = cacheGet(ck);
-    if(cached) return cached;
-
-    const r = await fetch(url, { headers: { "Accept": "application/json" } });
-    if(!r.ok) throw new Error("HTTP "+r.status);
-    const data = await r.json();
-    cacheSet(ck, data);
-    return data;
+      const r = await fetch(path, {cache:'no-store'});
+      if(!r.ok) continue;
+      const data = await r.json();
+      data.__mode = mode;
+      data.__source = path;
+      renderBoshy(data);
+      return true;
+    }catch(e){}
   }
+  if(boshyEmpty) boshyEmpty.style.display = '';
+  if(boshyRoot) boshyRoot.style.display = 'none';
+  return false;
+}
 
-  function fmtTime(sec){
-    if(sec == null) return "—";
-    sec = Math.max(0, sec);
-    const h = Math.floor(sec/3600);
-    const m = Math.floor((sec%3600)/60);
-    const s = (sec%60);
-    const ss = s.toFixed(2).padStart(5,"0");
-    return (h>0 ? String(h).padStart(2,"0")+":" : "") + String(m).padStart(2,"0")+":" + ss;
+function setActiveBoshyMode(mode){
+  document.querySelectorAll('.boshySubtab').forEach(btn=>{
+    const on = btn.getAttribute('data-boshy-mode') === mode;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  // Keep category selector in sync with mode
+  const selCat = document.getElementById('boshyCatSel');
+  const selDiff = document.getElementById('boshyDiffSel');
+  const diffWrap = document.getElementById('boshyDiffWrap');
+  if(selCat){
+    selCat.value = mode.startsWith('p100') ? '100' : 'any';
   }
-
-  async function getGame(){
-    return (await jget(`${API}/games/${SRC_GAME_ABBR}`)).data;
+  if(diffWrap){
+    diffWrap.style.display = mode.startsWith('p100') ? 'none' : 'flex';
   }
-
-  async function getCategories(gameId){
-    return (await jget(`${API}/games/${gameId}/categories?embed=variables`)).data;
-  }
-
-  async function getUserByName(name){
-    return (await jget(`${API}/users?lookup=${encodeURIComponent(name)}`)).data?.[0] || null;
-  }
-
-  async function getPersonalBests(userId){
-    return (await jget(`${API}/users/${userId}/personal-bests`)).data || [];
-  }
-
-  async function getLeaderboard(gameId, catId, varId=null, valId=null){
-    let url = `${API}/leaderboards/${gameId}/category/${catId}?top=200&embed=players`;
-    if(varId && valId) url += `&var-${varId}=${valId}`;
-    return (await jget(url)).data;
-  }
-
-  function pickCategoryId(categories, which){
-    const target = (which==="100") ? "100%" : "Any% (No WW, DBO)";
-    const hit = categories.find(c => (c.name||"").trim() === target);
-    return hit ? hit.id : null;
-  }
-
-  function pickDifficultyVar(categories){
-    for(const c of categories){
-      const vars = c?.variables?.data || [];
-      const v = vars.find(x => (x.name||"").toLowerCase() === "difficulty");
-      if(v) return v;
-    }
-    return null;
-  }
-
-  function pickVarValueId(varObj, label){
-    const map = varObj?.values?.values || {};
-    for(const [id, obj] of Object.entries(map)){
-      if((obj.label||"").trim().toLowerCase() === label.toLowerCase()) return id;
-    }
-    return null;
-  }
-
-  function renderRows(lb){
-  const runs = lb?.runs || [];
-  elRows.innerHTML = "";
-
-  for(const row of runs){
-    const place = row.place;
-    const run = row.run;
-    const t = run?.times?.primary_t ?? null;
-    const date = run?.date || "—";
-    const link = run?.weblink || null;
-
-    let playerName = "—";
-    const pl = run?.players?.[0];
-    if(pl?.rel === "user"){
-      const pd = (lb?.players?.data || []).find(x=>x.id===pl.id);
-      playerName = pd?.names?.international || pd?.name || ME_NAME;
-    } else if(pl?.rel === "guest") {
-      playerName = pl.name || "Guest";
-    }
-
-    const isMe = playerName.toLowerCase() === ME_NAME.toLowerCase();
-    const tr = document.createElement("tr");
-    if(isMe) tr.classList.add("me");
-
-    tr.innerHTML = `
-      <td>${place ?? ""}</td>
-      <td>${playerName}</td>
-      <td>${fmtTime(t)}</td>
-      <td class="boshy-muted">${date}</td>
-      <td>${link ? `<a href="${link}" target="_blank" rel="noreferrer">open</a>` : "—"}</td>
-    `;
-    elRows.appendChild(tr);
+  if(selDiff && !mode.startsWith('p100')){
+    const map = {any_ez:'Ez', any_avg:'Average', any_rage:'Rage'};
+    selDiff.value = map[mode] || 'Average';
   }
 }
+
+let boshyMode = 'any_ez';
+document.querySelectorAll('.boshySubtab').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    boshyMode = btn.getAttribute('data-boshy-mode') || 'any_ez';
+    setActiveBoshyMode(boshyMode);
+    await loadBoshy(boshyMode);
+    try{ window.__boshyMode = boshyMode; }catch(e){}
+    try{ window.dispatchEvent(new CustomEvent('boshy_mode_changed', {detail:{mode:boshyMode}})); }catch(e){}
+  });
+});
+
+setActiveBoshyMode(boshyMode);
+loadBoshy(boshyMode);
+
 
 
   function renderMe(pbInfo, catName, diffLabel){

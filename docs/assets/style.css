@@ -372,8 +372,6 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
 .splitNameInline{display:flex;align-items:center;gap:8px;}
 .splitIcon{width:20px;height:20px;image-rendering:pixelated;}
 .splitIconPh{width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.08);}
-.splitMiniBar{margin-top:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;}
-.splitMiniFill{height:100%;background:rgba(120,200,255,.55);}
 
 
 /* === Boshy master layout v3 === */
@@ -410,3 +408,23 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
   box-shadow: 0 8px 20px rgba(0,0,0,.35);
 }
 .tabBtn[data-tab='boshy'].active{ box-shadow: 0 0 0 1px rgba(120,200,255,.35), 0 10px 30px rgba(0,0,0,.35); }
+
+
+/* === Boshy subtabs === */
+.boshySubtabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 12px 0;}
+.boshySubtab{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font-weight:700;font-size:13px;cursor:pointer;}
+.boshySubtab.active{border-color:rgba(120,200,255,.55);background:rgba(120,200,255,.14);box-shadow:0 0 0 1px rgba(120,200,255,.18);}
+.boshySubtab:focus{outline:none;box-shadow:0 0 0 2px rgba(120,200,255,.35);}
+
+/* Splits emphasis */
+.boshySplitsTable th{font-size:13.5px;font-weight:800;letter-spacing:.2px;position:sticky;top:0;background:rgba(10,18,32,.92);backdrop-filter: blur(6px);}
+.boshySplitsTable td{font-size:13px;}
+.splitNameInline span{font-size:13.5px;font-weight:800;}
+
+
+/* === Stronger Boshy tab button === */
+button.tabBtn[data-tab='boshy']{
+  border: 1px solid rgba(120,200,255,.75) !important;
+  background: linear-gradient(135deg, rgba(120,200,255,.22), rgba(120,200,255,.08)) !important;
+}
+button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
