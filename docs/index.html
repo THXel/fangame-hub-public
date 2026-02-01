@@ -156,72 +156,83 @@
       <div id='tab-boshy' style='display:none;'>
 
 <h2><i class='fa-solid fa-stopwatch'></i> Boshy Speedrun</h2>
+
 <div class='card' id='boshyEmpty'>
   Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun.json</code> in diesem Ordner ab (wird automatisch geladen).
 </div>
+
 <div id='boshyRoot' style='display:none;'>
+  <!-- Header -->
   <div class='card boshyHeaderCard'>
     <div id='boshyHdr'></div>
-  
-  <!-- speedrun.com Leaderboards -->
-  <div class="card boshy-lb" id="boshyLeaderboards" style="margin-top:10px;">
-    <div class="boshyLbTop">
-      <h3 style="margin:0;">speedrun.com Leaderboards</h3>
-      <div class="boshy-muted" id="boshyLbStatus">lädt…</div>
-    </div>
-
-    <div class="boshyLbControls">
-      <label class="pill">
-        Kategorie
-        <select id="boshyCatSel">
-          <option value="any" selected>Any% (No WW, DBO)</option>
-          <option value="100">100%</option>
-        </select>
-      </label>
-
-      <label class="pill" id="boshyDiffWrap">
-        Difficulty
-        <select id="boshyDiffSel">
-          <option value="Ez">Ez</option>
-          <option value="Average" selected>Average</option>
-          <option value="Rage">Rage</option>
-        </select>
-      </label>
-
-      <span class="pill boshy-muted">scroll = mehr als Top 10</span>
-    </div>
-
-    <div class="boshyLbTableWrap">
-      <table class="boshyLbTable">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Runner</th>
-            <th>Zeit</th>
-            <th>Datum</th>
-            <th>Run</th>
-          </tr>
-        </thead>
-        <tbody id="boshyLbRows"></tbody>
-      </table>
-    </div>
-
-    <div id="boshyMeBox" style="margin-top:10px;"></div>
   </div>
-</div>
-</div>
 
-  <div id='boshyCards' class='boshyCards'></div>
-
-  <div class='card boshySplitsCard'>
-    <div class='statsTitle' style='margin-bottom:.6rem;'><i class='fa-solid fa-layer-group'></i> Splits</div>
-    <div id='boshySplits' class='splitTable'></div>
-  </div>
-</div>
+  <!-- Top: left stats / right SRC -->
+  <div class='boshyTopGrid'>
+    <div class='boshyLeft'>
+      <div class='card boshySectionTitle'>
+        <h3><i class="fa-solid fa-chart-simple"></i> Deine Run-Statistiken</h3>
       </div>
-
-      <div class='hr'></div>
+      <div id='boshyCards' class='grid'></div>
     </div>
+
+    <div class='boshyRight'>
+      <div class="card boshy-lb" id="boshyLeaderboards">
+        <div class="boshyLbTop">
+          <h3 style="margin:0;"><i class="fa-solid fa-trophy"></i> speedrun.com</h3>
+          <div class="boshy-muted" id="boshyLbStatus">lädt…</div>
+        </div>
+
+        <div class="boshyLbControls">
+          <label class="pill">
+            Kategorie
+            <select id="boshyCatSel">
+              <option value="any" selected>Any% (No WW, DBO)</option>
+              <option value="100">100%</option>
+            </select>
+          </label>
+
+          <label class="pill" id="boshyDiffWrap">
+            Difficulty
+            <select id="boshyDiffSel">
+              <option value="Ez">Ez</option>
+              <option value="Average" selected>Average</option>
+              <option value="Rage">Rage</option>
+            </select>
+          </label>
+
+          <span class="pill boshy-muted">Top 10 sichtbar • Scroll = mehr</span>
+        </div>
+
+        <div class="boshyLbTableWrap">
+          <table class="boshyLbTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Runner</th>
+                <th>Zeit</th>
+                <th>Datum</th>
+                <th>Run</th>
+              </tr>
+            </thead>
+            <tbody id="boshyLbRows"></tbody>
+          </table>
+        </div>
+
+        <div id="boshyMeBox" style="margin-top:10px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splits -->
+  <div class='card boshySplitsCard'>
+    <h3><i class="fa-solid fa-list"></i> Splits</h3>
+    <div id='boshySplits'></div>
+  </div>
+</div>
+
+</div>
+
 
     <script>
       const btns = Array.from(document.querySelectorAll('.tabBtn'));
@@ -361,9 +372,20 @@
         if(boshyEmpty) boshyEmpty.style.display = 'none';
         if(boshyRoot) boshyRoot.style.display = '';
 
+function cleanDataUrl(u){
+  if(!u) return '';
+  // strip weird hidden chars (BOM, soft hyphen, etc.)
+  u = String(u).replace(/[^\x20-\x7E]/g, '');
+  // accept only data:image/...;base64,...
+  if(!u.startsWith('data:image/')) return '';
+  return u;
+}
+
+
         // Header
         if(boshyHdr){
-          const gameIcon = data.game_icon_data_url ? `<img class="boshyGameIcon" src="${String(data.game_icon_data_url).trim()}" alt="game"/>` : '';
+          const gi = cleanDataUrl(data.game_icon_data_url);
+          const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async"/>` : '';
           const title = safeText(data.game || 'I Wanna Be The Boshy');
           const cat = safeText(data.category || '');
           const tm = safeText(data.timing_method || 'RealTime');
@@ -402,7 +424,8 @@
         }
 
         function splitRow(sp){
-  const icon = sp.icon_data_url ? `<img class="splitIcon" src="${String(sp.icon_data_url).trim()}" alt="i"/>` : `<div class="splitIconPh"></div>`;
+  const si = cleanDataUrl(sp.icon_data_url);
+  const icon = si ? `<img class="splitIcon" src="${si}" alt="i" decoding="async"/>` : `<div class="splitIconPh"></div>`;
   const name = safeText(sp.name || '');
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
@@ -443,14 +466,14 @@ if(boshySplits){
         <thead>
           <tr>
             <th>Split</th>
-            <th>PB Segment</th>
-            <th>Best Segment</th>
-            <th>PB Split</th>
-            <th>Ø Segment</th>
+            <th><i class='fa-solid fa-stopwatch'></i> PB Segment</th>
+            <th><i class='fa-solid fa-star'></i> Best Segment</th>
+            <th><i class='fa-solid fa-flag-checkered'></i> PB Split</th>
+            <th><i class='fa-solid fa-chart-line'></i> Ø Segment</th>
             <th>n</th>
-            <th>Stream Time</th>
-            <th>Visits</th>
-            <th>Deaths</th>
+            <th><i class='fa-solid fa-clock'></i> Stream Time</th>
+            <th><i class='fa-solid fa-repeat'></i> Visits</th>
+            <th><i class='fa-solid fa-skull'></i> Deaths</th>
           </tr>
         </thead>
         <tbody>
