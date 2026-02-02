@@ -908,6 +908,50 @@ loadBoshy(boshyMode);
         }
       }
 
+
+
+/* BOSHY TAB OVERRIDE v4 - do not remove */
+(function(){
+  const boshy = document.getElementById('tab-boshy');
+  if (!boshy) return;
+
+  const btns = Array.from(document.querySelectorAll('.tabBtn'));
+  const lib = document.getElementById('tab-lib');
+  const stats = document.getElementById('tab-stats');
+
+  function show(name){
+    btns.forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+    if (lib) lib.style.display = (name === 'lib') ? 'block' : 'none';
+    if (stats) stats.style.display = (name === 'stats') ? 'block' : 'none';
+    boshy.style.display = (name === 'boshy') ? 'block' : 'none';
+
+    if (name === 'boshy') {
+      try{ if (typeof __loadBoshy === 'function') __loadBoshy(); }catch(e){}
+    }
+
+    try{ history.replaceState(null,'','#'+name); }catch(e){}
+  }
+
+  // Click routing (safe even if the generated script already binds clicks)
+  btns.forEach(b => {
+    b.addEventListener('click', () => {
+      const t = b.dataset.tab || 'lib';
+      show(t);
+    }, { passive: true });
+  });
+
+  // Hash routing
+  function route(){
+    const h = (location.hash || '#lib').replace('#','');
+    if (h === 'boshy') show('boshy');
+    else if (h === 'stats') show('stats');
+    else show('lib');
+  }
+
+  window.addEventListener('hashchange', route, { passive: true });
+  route();
+})();
+
 </script>
 
 </body>
