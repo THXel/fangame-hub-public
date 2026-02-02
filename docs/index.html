@@ -806,6 +806,108 @@ loadBoshy(boshyMode);
     showTab(location.hash || "#lib");
   });
 })();
+
+
+      let __boshyLoaded = false;
+      async function __loadBoshy(){
+        if (__boshyLoaded) return;
+        __boshyLoaded = true;
+        const wrap = document.getElementById('boshyWrap');
+        if (!wrap) return;
+        wrap.innerHTML = "<div class='small'>Loading…</div>";
+
+        const esc = (s) => String(s ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+        const fmtTime = (t) => {
+          if (!t) return "-";
+          const h = t.h ?? 0, m = t.m ?? 0, s = t.s ?? 0, ms = t.ms ?? 0;
+          const hh = h ? String(h).padStart(2,'0') + ':' : '';
+          const mm = String(m).padStart(2,'0') + ':';
+          const ss = String(s).padStart(2,'0');
+          const mss = ms ? '.' + String(ms).padStart(3,'0') : '';
+          return hh + mm + ss + mss;
+        };
+
+        try {
+          const res = await fetch('./boshy_speedrun.json?cb=' + Date.now(), { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+
+          const updated = data.updated_at_utc ? new Date(data.updated_at_utc).toLocaleString() : '-';
+          const pbTotal = data.pb_total ? fmtTime(data.pb_total.time) : '-';
+          const pbDeaths = data.pb_total ? (data.pb_total.deaths ?? '-') : '-';
+          const sob = data.sum_of_best ? fmtTime(data.sum_of_best.time) : '-';
+
+          const totals = data.totals || {};
+          const totalDeaths = totals.deaths ?? '-';
+          const totalAttempts = totals.attempts ?? '-';
+
+          const splits = Array.isArray(data.splits) ? data.splits : [];
+          const rows = splits.map((sp, i) => {
+            const name = esc(sp.name ?? ('Split ' + (i+1)));
+            const pb = sp.pb ? fmtTime(sp.pb.split_time) : '-';
+            const best = sp.best ? fmtTime(sp.best.segment_time) : '-';
+            const gold = sp.gold ? fmtTime(sp.gold.segment_time) : '-';
+            const deaths = sp.stream_stats ? (sp.stream_stats.deaths ?? '-') : '-';
+            const visits = sp.stream_stats ? (sp.stream_stats.visits ?? '-') : '-';
+            return `<tr>
+              <td class='boshyColName'>${name}</td>
+              <td>${pb}</td>
+              <td>${best}</td>
+              <td>${gold}</td>
+              <td>${deaths}</td>
+              <td>${visits}</td>
+            </tr>`;
+          }).join('');
+
+          wrap.innerHTML = `
+            <div class='boshySummary'>
+              <div class='boshyCard'><div class='boshyK'>PB</div><div class='boshyV'>${pbTotal}</div><div class='boshyS'>Deaths: ${pbDeaths}</div></div>
+              <div class='boshyCard'><div class='boshyK'>Sum of Best</div><div class='boshyV'>${sob}</div><div class='boshyS'>Updated: ${esc(updated)}</div></div>
+              <div class='boshyCard'><div class='boshyK'>Totals</div><div class='boshyV'>${esc(totalDeaths)} deaths</div><div class='boshyS'>Attempts: ${esc(totalAttempts)}</div></div>
+            </div>
+
+            <div class='boshyActions'>
+              <a class='btn' href='./boshy_speedrun.json' target='_blank' rel='noopener'>Open JSON</a>
+              <button class='btn' id='boshyReloadBtn' type='button'>Reload</button>
+            </div>
+
+            <div class='boshyTableWrap'>
+              <table class='boshyTable'>
+                <thead>
+                  <tr>
+                    <th>Split</th>
+                    <th>PB split</th>
+                    <th>Best seg</th>
+                    <th>Gold seg</th>
+                    <th>Deaths</th>
+                    <th>Visits</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${rows || "<tr><td colspan='6' class='small'>No split data.</td></tr>"}
+                </tbody>
+              </table>
+            </div>
+          `;
+
+          const reloadBtn = document.getElementById('boshyReloadBtn');
+          if (reloadBtn) {
+            reloadBtn.addEventListener('click', async () => {
+              __boshyLoaded = false;
+              await __loadBoshy();
+            });
+          }
+
+        } catch (err) {
+          wrap.innerHTML = `
+            <div class='small'>Could not load <code>boshy_speedrun.json</code> (${esc(err)}).</div>
+            <div class='boshyActions'>
+              <a class='btn' href='./boshy_speedrun.json' target='_blank' rel='noopener'>Try open JSON</a>
+            </div>
+          `;
+        }
+      }
+
 </script>
 
 </body>
