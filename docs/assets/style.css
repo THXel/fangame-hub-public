@@ -315,6 +315,10 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
 #tab-boshy .pill, [data-tabpanel="boshy"] .pill{
   padding: 3px 8px !important;
   font-size: 12px !important;
+
+  color: rgba(255,255,255,.92);
+  font-weight: 800;
+  letter-spacing: .02em;
 }
 
 #tab-boshy img.icon, [data-tabpanel="boshy"] img.icon{
@@ -434,14 +438,19 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 .boshySubtab.active, .boshySubtab.active *, .boshySubtab.active i{ color: #ffffff !important; }
 
 /* Splits: bump numeric readability (times/dates) */
-.boshySplitsTable td.mono, .boshySplitsTable .mono{ font-size: 14.5px; }
-.boshySplitsTable th{ font-size: 14.5px; }
+.boshySplitsTable td.mono, .boshySplitsTable .mono{ font-size: 15.5px; }
+.boshySplitsTable th{ font-size: 15.0px; }
 
 /* Make split numeric columns more readable */
-.boshySplitsTable td{ font-size: 13.8px; }
-.boshySplitsTable td.num{ font-size: 15.5px; letter-spacing: .25px; }
+.boshySplitsTable td{ font-size: 14.8px; }
+.boshySplitsTable td.num{ font-size: 16.5px; letter-spacing: .25px; }
 
 /* Stronger highlight for THXel in speedrun.com table */
 .boshy-lb tr.me{ box-shadow: inset 3px 0 0 rgba(60,180,255,.9); }
 .boshy-lb tr.me td{ background: rgba(60,180,255,.12); }
 .boshy-lb tr.me td:nth-child(2){ font-weight: 800; color: #fff; }
+
+#tab-boshy .splitsTable td:nth-child(2), #tab-boshy .splitsTable td:nth-child(3), #tab-boshy .splitsTable td:nth-child(4), [data-tabpanel="boshy"] .splitsTable td:nth-child(2), [data-tabpanel="boshy"] .splitsTable td:nth-child(3), [data-tabpanel="boshy"] .splitsTable td:nth-child(4){
+  font-size: 15px !important;
+  font-variant-numeric: tabular-nums;
+}

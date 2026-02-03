@@ -663,8 +663,8 @@ loadBoshy(boshyMode);
       }catch(e){}
       const link = r?.weblink;
       const tr = document.createElement("tr");
-      const isMe = (pname || "").toLowerCase() === ME_NAME.toLowerCase();
-      if(isMe) tr.classList.add("me");
+      const isMe = ME_NAME && ((pname || "").toLowerCase() === ME_NAME.toLowerCase() || (pname || "").toLowerCase().includes(ME_NAME.toLowerCase()));
+if(isMe) tr.classList.add("me");
       tr.innerHTML = `
         <td>${row.place ?? (idx+1)}</td>
         <td class="boshyRunner">${pname}</td>
