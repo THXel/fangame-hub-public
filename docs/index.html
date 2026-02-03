@@ -405,7 +405,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
     // Header
         if(boshyHdr){
           const gi = cleanDataUrl(data.game_icon_data_url);
-          const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async" onerror="this.style.display='none'"/>` : '';
+          const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement(\'div\'),{className:\'splitIconPh\'}));"/>` : '';
           const title = safeText(data.game || 'I Wanna Be The Boshy');
           const cat = safeText(data.category || '');
           const tm = safeText(data.timing_method || 'RealTime');
@@ -448,9 +448,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 	  const srcPath = (sp.icon_path && String(sp.icon_path).trim()) ? String(sp.icon_path).trim() : '';
 	  const srcData = cleanDataUrl(sp.icon_data_url);
 	  const src = srcPath || srcData;
-	  // NOTE: keep onerror HTML single-quoted WITHOUT inner double-quotes, otherwise the attribute breaks
-	  // and the browser shows stray text like "/>" in the Split column.
-	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=splitIconPh></div>'"/>` : `<div class="splitIconPh"></div>`;
+	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement(\'div\'),{className:\'splitIconPh\'}));"splitIconPh\"></div>'"/>` : `<div class="splitIconPh"></div>`;
   const name = safeText(sp.name || '');
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
