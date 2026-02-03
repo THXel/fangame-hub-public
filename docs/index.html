@@ -39,14 +39,14 @@ async function loadJSON(url){
 }
 
 function iconCell(icon){
-  if(icon) return `<img class="splitIconImg" src="${icon}" alt="">`;
-  return `<span class="splitIconFallback"></span>`;
+  if(!icon) return "";
+  return `<img class="splitIconImg" src="" alt="" loading="lazy" onerror="this.remove()">`;
 }
 
 function buildSplitsTable(splits){
   const rows = splits.map(s=>{
     const name = s.name || s.split || "";
-    const icon = s.icon_data_url || null;
+    const icon = s.icon_path || s.icon_data_url || null;
     const pbSeg = s.pb_segment || s.pbSegment || s.pb_seg || s.pb || s.pb_segment_time || "";
     const bestSeg = s.best_segment || s.bestSegment || "";
     const pbSplit = s.pb_split || s.pbSplit || "";

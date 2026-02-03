@@ -51,3 +51,10 @@ body{background:radial-gradient(1200px 600px at 20% 10%, rgba(95,179,255,.15), t
 .srTable tbody td{border-bottom:1px solid rgba(255,255,255,.06); padding:10px 10px; font-size:13px;}
 .srTable tbody tr.me{background:rgba(95,179,255,.12);}
 .srTable tbody tr.me td{font-weight:900;}
+
+/* v14 tweaks */
+.chip, .chipBtn { color: #fff; }
+.splitIconImg{ width:18px; height:18px; border-radius:4px; margin-right:10px; object-fit:contain; }
+/* slightly larger monospace values in splits table */
+#boshySplitsTable td, #boshySplitsTable th { font-size: 13.5px; }
+#boshySplitsTable td:not(.splitNameCell){ font-variant-numeric: tabular-nums; }

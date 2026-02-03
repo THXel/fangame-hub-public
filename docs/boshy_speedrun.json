@@ -38,7 +38,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/prehistorik.png"
     },
     {
       "index": 1,
@@ -58,7 +59,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/hello-kitty.png"
     },
     {
       "index": 2,
@@ -78,7 +80,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/kirbys-adventure.png"
     },
     {
       "index": 3,
@@ -98,7 +101,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/ryu.png"
     },
     {
       "index": 4,
@@ -118,7 +122,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/cheetahmen.png"
     },
     {
       "index": 5,
@@ -138,7 +143,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/mario.png"
     },
     {
       "index": 6,
@@ -158,7 +164,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/vvvvvv.png"
     },
     {
       "index": 7,
@@ -178,7 +185,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/biollante.png"
     },
     {
       "index": 8,
@@ -198,7 +206,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/wario-land.png"
     },
     {
       "index": 9,
@@ -218,7 +227,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/sonic.png"
     },
     {
       "index": 10,
@@ -238,7 +248,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/castlevania.png"
     },
     {
       "index": 11,
@@ -258,7 +269,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/skeleton-king.png"
     },
     {
       "index": 12,
@@ -278,7 +290,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/random-world.png"
     },
     {
       "index": 13,
@@ -298,7 +311,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/megaman.png"
     },
     {
       "index": 14,
@@ -318,7 +332,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/megaman-stage.png"
     },
     {
       "index": 15,
@@ -338,7 +353,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/shang-tsung.png"
     },
     {
       "index": 16,
@@ -358,7 +374,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/kid-icarus.png"
     },
     {
       "index": 17,
@@ -378,7 +395,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/ganon.png"
     },
     {
       "index": 18,
@@ -398,7 +416,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/ninja-gaiden.png"
     },
     {
       "index": 19,
@@ -418,7 +437,8 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/missingno.png"
     },
     {
       "index": 20,
@@ -438,11 +458,466 @@
         "time_on_split": null,
         "visits": 0,
         "deaths": 0
-      }
+      },
+      "icon_path": "assets/boshy_icons/mario-desert.png"
     },
     {
       "name": "Solgryn",
-      "icon_data_url": "data:image/png;base64,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"
+      "icon_data_url": "data:image/png;base64,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",
+      "icon_path": "assets/boshy_icons/solgryn.png"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Any% (No WW, DBO)",
+      "splits": [
+        {
+          "index": 0,
+          "name": "Prehistorik",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAPAIAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHuSURBVFiFtZZRbQQxDEQDYaEUQiEchEI4CIVwEAqhUAqhEMqglSNNNDc3jr2t+mGdbjfxvHUmTsbt9fod8fX5MeM4DhuX56eHODM24v3tNgNaoTvwkF+eSepAdgAQjoj/JUCWDAmuL5c7iGx8jIs5/Btaw5WlAkACzGWIHbACrCVgcdBqNfhLEAwPiF0F+BcxkIjFUd5IHL8A4CQMABPHM1c9fs7ViP/DDQaAqwLE2dXZLmJxiKL8eD7cBAVAYnV8BRCRASDXUNMpgC6FhkK4MfzVLD5N6Ca5renWOAOAP/TDdMvOPsDlUeGqCuoDvN+N17nDlTwDcCZTAN7CGQT3hodOyM6vANx2dHOy7joB2J2awPnBJepWj+evRlRNVgh38HAVqmpojhaAc3Dmhc5yMMTgCdowOuJVFfic4Ra/ALALtHGweCZceSHzFkM8AHTE4WDn6qx/bAH0ZsMnX1buLkA8dxALQEUycXe70edqtgiMV4gUgFtmdstxAHrU8hLiPYPZ47gyWQWQiWO8u8huAaoL5g7AiTtzpwBOeNcD+LqWiQPgrhN2xKsG5O5+rr/o3XCeBR0PnPFJ1ieceNuEZ4OXYSe+ALJe3mnDfxFfANijrlvt2nF3SXYx9MvdMfqbSnSrNVgwO73QUv8D4AeSa+daXsl6sgAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:02:05.6102887",
+          "pb_segment_time": "00:02:05.610",
+          "best_segment_time": "00:01:57.5133265",
+          "history": {
+            "count": 3,
+            "best": "00:01:57.513",
+            "worst": "00:02:05.610",
+            "avg": "00:02:00.433",
+            "median": "00:01:58.174"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/prehistorik.png"
+        },
+        {
+          "index": 1,
+          "name": "Hello Kitty",
+          "icon_data_url": "data:image/png;base64,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",
+          "pb_split_time": "00:02:29.4080384",
+          "pb_segment_time": "00:00:23.798",
+          "best_segment_time": "00:00:23.2964296",
+          "history": {
+            "count": 3,
+            "best": "00:00:23.296",
+            "worst": "00:00:29.873",
+            "avg": "00:00:25.656",
+            "median": "00:00:23.798"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/hello-kitty.png"
+        },
+        {
+          "index": 2,
+          "name": "Kirby's Adventure",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAJQEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAAJcEhZcwAADsQAAA7EAZUrDhsAAADXSURBVFiF5ZdBDoQgDEW79Giz8KAeau4y6kIHGrC/8AuZjMlfEEQe7W8jIseziHxmSGZufkNkg+2r9f3Kxlo980WAdGGkNEQGEL15CgEBlMJpzafv6HkXADv/+nCPABHGc6UgohpMgFr+mSDNJmT7oMuEDB/AHvDk14JpNiECYglqREgTQk/bVAWoBxhRcAEwq+F3+gD75FAEUA8M6QMRUeiqAmb+KWXYk/9Lw/8Hmk34n31AV4IVmaf50rdggChVAUZAXPuYVzNPfi3p9dW74QxNvSGfe+8gWeiPGUL8XgAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:07:25.4920591",
+          "pb_segment_time": "00:04:56.084",
+          "best_segment_time": "00:04:56.0840207",
+          "history": {
+            "count": 2,
+            "best": "00:04:56.084",
+            "worst": "00:05:24.147",
+            "avg": "00:05:10.116",
+            "median": "00:05:10.116"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/kirbys-adventure.png"
+        },
+        {
+          "index": 3,
+          "name": "Ryu",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAggEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAABcIBgAAAGoFTeEAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAE0SURBVEiJtZbBFcIgDIY7AiM5jkfH8Og4PTKCR0fwyAa1qfn7/kYqJVDey6PGNvlICGQYSuMWJ5Hr+F7k8nguAn3xe/dQBzGldb6/vgCYz4GZDcGJPGMGCP9mET0i5AfSUMPYakiF9buOW1YO52IYObcQogshTGl+J5kIbGBqB8LOxjjXcASAqAAs/nRoeG1ec5EQHQAYAk5/KuXo6iOtIplnGIYeABaaIY7vB82rDSkMAoD/EwBOk4WuS4OGP5dLpECMAELeFwDo8K07/xz+nDAEnIvYqOxVRBFmDyB30DAAV4zdkKXq2EB5IyCC/dMWCecegLTvBWcVAKRLNXjOAQD0OQ8cJyEqoduJWHsX5MLedic4b8O+t2JFP1BcrXs4O6K+nZGC/OsJ2dG5jWqpK250+AGYbv4Lxf3KuwAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:09:03.6474710",
+          "pb_segment_time": "00:01:38.155",
+          "best_segment_time": "00:01:35.0188427",
+          "history": {
+            "count": 2,
+            "best": "00:01:35.019",
+            "worst": "00:01:38.155",
+            "avg": "00:01:36.587",
+            "median": "00:01:36.587"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/ryu.png"
+        },
+        {
+          "index": 4,
+          "name": "Cheetahmen",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA2QAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACLSURBVDiNlZNRCsAwCEPzuftfpQfscGBx2VOY4E+NMbap1lo7MuKSnqxnERNG26IWnYgwL4I4yAmkhDCqEr2YOWHkkolgwqib6Dt3mA+BB6mqIWqqzUnQhabJvjNhXgT+/i6fMGcFMpA3E+b4oHu+OplqaOXp0hyjtGqVTZ+pw4h2psvsMOjEP/a+AStvjlgqOMoHAAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:10:42.6504170",
+          "pb_segment_time": "00:01:39.003",
+          "best_segment_time": "00:01:39.0029460",
+          "history": {
+            "count": 2,
+            "best": "00:01:39.003",
+            "worst": "00:02:05.762",
+            "avg": "00:01:52.383",
+            "median": "00:01:52.383"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/cheetahmen.png"
+        },
+        {
+          "index": 5,
+          "name": "Mario",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAxgAAAAKJUE5HDQoaCgAAAA1JSERSAAAADgAAAA4IBgAAAB9ILdEAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAB4SURBVCiRjZHRDYAwCEQ7hoM4jh+O5FDuhYkpeL3exTYhbeAevUBr4sS+BYbSfOLrCAUhnJoCMu6zDbfLvQ1Q8AdifgK5s6uVZSzyjxhyQGyL7dvJKpv4s14Hjp9Bt9Oy1IuTVcrLwbBINfMg2uvvNVCEXckqmPoHMCZkmHCYy3AAAAAASUVORK5CYIIL",
+          "pb_split_time": "00:11:57.0384568",
+          "pb_segment_time": "00:01:14.388",
+          "best_segment_time": "00:01:12.1734646",
+          "history": {
+            "count": 2,
+            "best": "00:01:12.173",
+            "worst": "00:01:14.388",
+            "avg": "00:01:13.281",
+            "median": "00:01:13.281"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/mario.png"
+        },
+        {
+          "index": 6,
+          "name": "VVVVVV",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAoQAAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIAgAAAPwY7aMAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABTSURBVEiJYzhX/4amiGHUApIsmBqyDo5CdLKACFmEePFRC8i3AKKIcjRwFpAXIJjioxaMZAuGVz4gL3AIFBWjFowAC4ZXPqBJUUFzC2iBRi0giABe+c2PnDRo0wAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:12:51.4005207",
+          "pb_segment_time": "00:00:54.362",
+          "best_segment_time": "00:00:52.4829793",
+          "history": {
+            "count": 2,
+            "best": "00:00:52.483",
+            "worst": "00:00:54.362",
+            "avg": "00:00:53.423",
+            "median": "00:00:53.423"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/vvvvvv.png"
+        },
+        {
+          "index": 7,
+          "name": "Biollante",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAoQAAAAKJUE5HDQoaCgAAAA1JSERSAAAADwAAAA4IBgAAAPCKRu8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAABTSURBVCiRY/j//z8DNpyXl/cfGWNTg1UjLgPQDcJQjK5p9+7dKDSGZnSTQQrRMTbbMWwhhJHV4/QbMQYQDCDaaibb2VQPMKKjiuJEQpXkSWrGAAApRT+JdqC1OgAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:13:10.6941042",
+          "pb_segment_time": "00:00:19.294",
+          "best_segment_time": "00:00:19.2935835",
+          "history": {
+            "count": 2,
+            "best": "00:00:19.294",
+            "worst": "00:00:19.451",
+            "avg": "00:00:19.372",
+            "median": "00:00:19.372"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/biollante.png"
+        },
+        {
+          "index": 8,
+          "name": "Wario Land",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAswAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABlSURBVDiNY2AAAg4Ghv/kYAZkzQkJCSRhuCEwzT9+/CAJwwyBG7BixQqSME4DCDkdrwHYvAISR3c6QQPQNSGLEWUALttJNgBX6JPlBZg4yS4gKxCxaSQqEClOB2SnRIoyE6XZGQCTkWyDwiED5gAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:15:37.8851584",
+          "pb_segment_time": "00:02:27.191",
+          "best_segment_time": "00:01:42.0480828",
+          "history": {
+            "count": 2,
+            "best": "00:01:42.048",
+            "worst": "00:02:27.191",
+            "avg": "00:02:04.620",
+            "median": "00:02:04.620"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/wario-land.png"
+        },
+        {
+          "index": 9,
+          "name": "Sonic",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAQgEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIQAAACMIBgAAABosY2QAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAD0SURBVFiF7ZXLDcIwEER99JESKIHSXAJHSqCUlJASKCEl5GY8gVFWxkT52GuQvNKTogCex2btGNOqVatWrf61rsb4+8n4x3lmvAW6wBAYx5nhfR+fX17I3xGsR7C+tdavluDCE7FIQkASC2Bdsk9iQyeySyyKlOwEvvAhsqITqVk4JEGRnHBdsihxtBjinJsoHiiDed33nQfFBZZCiwbLf6YWKgtBCMaOUAv9JqE+bCkRCHAGSBUhuddjqaodSkn9xGMD1QcZAuqPiB3ANcNV3hEMZXDxcA6dvKd6csqgrWSTkMd2ivgA4+7Iuk33dkH1BZejnh4VOhwXPgaWAAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:17:16.9957800",
+          "pb_segment_time": "00:01:39.111",
+          "best_segment_time": "00:00:50.3297658",
+          "history": {
+            "count": 2,
+            "best": "00:00:50.330",
+            "worst": "00:01:39.111",
+            "avg": "00:01:14.720",
+            "median": "00:01:14.720"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/sonic.png"
+        },
+        {
+          "index": 10,
+          "name": "Castlevania",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA2QAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEQAAABEIBgAAADttR/oAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACLSURBVDiNrVJBCsAgDMtxz/MxPmwP2ZMGGxMC0bZWmIegMVnoNDiA5y/AzXlfIWqtDcpNiBoz8EPlJgQFDV6AnnPf/U5kjmBCvkkYpOsYTs5pzcWayypwOVf1Q43eNGP4yN2Q7T1R40xPe7KidyFRDzI9nMQLmfbEew01ZXo3CcWxC5me9mRF39KTFxIC9BM5/JFRAAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:19:37.9772853",
+          "pb_segment_time": "00:02:20.982",
+          "best_segment_time": "00:02:20.9815053",
+          "history": {
+            "count": 2,
+            "best": "00:02:20.982",
+            "worst": "00:12:12.066",
+            "avg": "00:07:16.524",
+            "median": "00:07:16.524"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/castlevania.png"
+        },
+        {
+          "index": 11,
+          "name": "Skeleton King",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA2gEAAAKJUE5HDQoaCgAAAA1JSERSAAAAMAAAACAIBgAAAFTU+xwAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAGMSURBVFiF3ZexEcIwDEVTUlLSMgYrMBcjsAorsA4jBExso8j6koNjE5M7XYrEl/8kfcsZhorX/XgarUBrxvMQo6ZGeEURl90URJALDSq+x9b+BoAJ5iDwnSCeRisIq20siBnAbf+JFhCJUCGLZvA1TvzjMN1rAojiaQZpJhGU1DphnYOoVYVE/BLROdkPFXD3NQG4cBFAEK56QRIfYk1Dc1Mio0IjS+2iVYBW4vVsHeH+QzlDS91hULj3gvDxOkUJQDJojKGUbWzUcrQCAaCkCm8hpA+t/R2K5y0hGV0SX1qFCKBMV5j9JeJp60gQ3tBRFDpcUeGSObPFS4bUtllkYArhAGYf8ALErPNdwzjPmADWnECDDAL4knCAUvHFAFoV/gug1xbq3sRLr01uo18BdD3Iej5KBIhuD3MQpKfjtAQRRCWG3fIPjQbSzS+lCoH6XIOxBlmN7JsQOZnPqYK71xQvQUADK0cRuFPVzj6HgAPNOEfBVmolfgYAWierQmxtM/EUwgq0hsJq33gC222opjiCjfsAAAAASUVORK5CYIIL",
+          "pb_split_time": "00:20:53.7456621",
+          "pb_segment_time": "00:01:15.768",
+          "best_segment_time": "00:01:15.7683768",
+          "history": {
+            "count": 1,
+            "best": "00:01:15.768",
+            "worst": "00:01:15.768",
+            "avg": "00:01:15.768",
+            "median": "00:01:15.768"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/skeleton-king.png"
+        },
+        {
+          "index": 12,
+          "name": "Random World",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAxAAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAB2SURBVDiNpVNBDoAgDNvR/79hD+ABPs1EI3HJlLXFcCiXlo6twzazcwV2H8feSoSIcd3AC4SQcdTAnwqIkwYhmDKohLlPxpcGuTqbA32BgkxBXV5KIdqSKSgTOYM8QDTo1yrP5E4XCUWG4v2dAjT4wm3cQPSdL1XGtgR8h9dZAAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:26:37.1976602",
+          "pb_segment_time": "00:05:43.452",
+          "best_segment_time": "00:05:43.4519981",
+          "history": {
+            "count": 1,
+            "best": "00:05:43.452",
+            "worst": "00:05:43.452",
+            "avg": "00:05:43.452",
+            "median": "00:05:43.452"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/random-world.png"
+        },
+        {
+          "index": 13,
+          "name": "Megaman",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAqQAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAAA8IBgAAAO1zTy8AAAAJcEhZcwAADsQAAA7EAZUrDhsAAABbSURBVCiRY2AAgj9//vxnQAIgPjbMgA8gK+RgYMCK8RpESDO6QRiakSVx2YzTEGJsRjcEbgCxzsbmOrAhpBiANSyGgQGkBiTZ0UhSYiJZM7HJmahMhZ6xCOVGAL0wXGKc6O49AAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:27:51.1826051",
+          "pb_segment_time": "00:01:13.985",
+          "best_segment_time": "00:01:13.9849449",
+          "history": {
+            "count": 1,
+            "best": "00:01:13.985",
+            "worst": "00:01:13.985",
+            "avg": "00:01:13.985",
+            "median": "00:01:13.985"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/megaman.png"
+        },
+        {
+          "index": 14,
+          "name": "Megaman Stage",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAsgAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABkSURBVDiNY/hPAVgrwPCfgVzNe48dQxiwoAATgxQQwigGwJxEjEaYWrgBMNOINQCmFsUAcjDcAGQTScUMlGgGGwByCgMD439yabAXQAxyacoNoNgLFBsADkkgg1yacgMgBPkYALSua88Zd3fMAAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:32:10.0146072",
+          "pb_segment_time": "00:04:18.832",
+          "best_segment_time": "00:04:18.8320021",
+          "history": {
+            "count": 1,
+            "best": "00:04:18.832",
+            "worst": "00:04:18.832",
+            "avg": "00:04:18.832",
+            "median": "00:04:18.832"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/megaman-stage.png"
+        },
+        {
+          "index": 15,
+          "name": "Shang Tsung",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA5wIAAAKJUE5HDQoaCgAAAA1JSERSAAAAIgAAAB4IBgAAAEn/zBQAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAKZSURBVFiFrZcrdsMwEEUNs4TQwCzB1DDQMLTQsDBU0NBbKAwsLO0SAksLCwvTjKo3ehrL39jnzIljW5rrNx/JRTH3qIq7Wr3A5PlNjuB497K775u92uFymDR5TsY9BxQArOPSlfey7VvVVd7sdQCJeaC1EAoAh2+Vt/PnWe30ccqey3MWaD6MgUjeGgC3COHPb+ac7wdbBpOBgAIeIjjBmx5fjwonv6KGKvJ47vJzUZD6vfZhTXJnMG8sRNcHgLFC7W+b3ANUolAwARITH/kkrgiCEhKDrTrsEG8rCkElvISq9Jin+Wp0Prnnw5SA2JC4COHPXZonmFwmtoYwWQiESkyegyopjK0QV2oorEJw0Hw3OrE1uW+ri+8DROaNyVsVvQaFSfBf5GaIIQB2JE64ynDdJzAlvObKEAicozoAAmeSoFMwSdKGHoOq8qp1VQwPgyDR2LHvAa5MQAQCNgYi88A5hwsw8NUDgZwoXy7NNYp4RV2+2rTzIk8SkOCMy5AVwaRTOYJGpj0njNM5uoUg1riXIPFyJmqhlCUM6DGc+OhNi0DseoO3sz3E5g+/NReD/B8HcVH+HETSOQ0wElCAWBEuUx7P4f4HoYbG8kNKBsBAXVFtWzfbA3XohkHkul8Ac4sdVw/vRzAJpO8p9xjHpcoQMA0JbwuS9WYCBtmORMPCBVXszgyAuY49vjcZWH11JSVTFSg0rIoNBZJzGsKogsGAwSSAso7YoSoUfhP12himfkhGNke8VfQTXusEJttrXFSFX6AHMWvvmtu9z4BBHsl9KPH8bj6zk8fkFkb7DyCuIRxdbAMKsPr7htQRy8GomT3tdh9ZBAMgxD6BMQBY2nWnvtlnJx3cU9gYYPvv3oHD7ujWf1LG4w+ClYo06lAl8QAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:33:00.8602751",
+          "pb_segment_time": "00:00:50.846",
+          "best_segment_time": "00:00:50.8456679",
+          "history": {
+            "count": 1,
+            "best": "00:00:50.846",
+            "worst": "00:00:50.846",
+            "avg": "00:00:50.846",
+            "median": "00:00:50.846"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/shang-tsung.png"
+        },
+        {
+          "index": 16,
+          "name": "Kid Icarus",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA0QAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACDSURBVDiNlVKxDcAwCPOYoRf0/6lrxx6XNgMIWVCTSCiECAPGmN95jnvybX58n+Py+PIHMMFJ2dsSObYM/NE1B7B2skpZ5ZjsADtV0w5ioAtSclARVnKwVhFn2jWoPSudQLWodFLqoEtqChBnVDoBBxhE6aRcIwNUI7VI/NME1J6VTl5dvF45TrPKEQAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:36:55.1668729",
+          "pb_segment_time": "00:03:54.307",
+          "best_segment_time": "00:03:54.3065978",
+          "history": {
+            "count": 1,
+            "best": "00:03:54.307",
+            "worst": "00:03:54.307",
+            "avg": "00:03:54.307",
+            "median": "00:03:54.307"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/kid-icarus.png"
+        },
+        {
+          "index": 17,
+          "name": "Ganon",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA+wAAAAKJUE5HDQoaCgAAAA1JSERSAAAAHAAAACAIBgAAAAG1GEIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACtSURBVEiJ3dVBCoAwDATAHPsUn+rzfI43hUJFUpZNUJOgkIOtZsoSqAh5mshxL++++wkDR4O9Lb0YyL6rD+7b2ktHONb/A17vYL0uOEWlG1pLwfAAYSAaawiiSAE4RZ0HqrGnw2IcHt03H0RRTQcBjVGfwiAaJjZk9UDjmKOy/l8AJJGaQRB9PEivIwKbozTff2EgaWTdrwO64adQGqhheAAAuKE0kB3gdeAr8AQw1GRsCjNA/gAAAABJRU5ErkJgggs=",
+          "pb_split_time": "00:37:34.1743022",
+          "pb_segment_time": "00:00:39.007",
+          "best_segment_time": "00:00:39.0074293",
+          "history": {
+            "count": 1,
+            "best": "00:00:39.007",
+            "worst": "00:00:39.007",
+            "avg": "00:00:39.007",
+            "median": "00:00:39.007"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/ganon.png"
+        },
+        {
+          "index": 18,
+          "name": "Ninja Gaiden",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAKgEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAJcEhZcwAADsQAAA7EAZUrDhsAAADcSURBVDiNnZMLDsMgDENpe89+ztr2Ws1mpBe5UTdNQ7KAfIxJoB3HEed5hmbHvu8xjmNH9Tnauq6xbVuCpGVZOrRWzCc0EoRhGML3v6DFe0gKQ9fxGanXdYXHMrdqYE2C24gROf5U8CTPfdM0pV13vymo1aZ4T2TEJwHF8wBBp7gPUvnoVm+js5Mkub7nVJEhn6skAcEQaF8fk+yCxzecMnAySap0rZEXsROoJZLmkud5vhUPIleZNfD2UEBeZE2obUwF9R1wlfq5WCuHff9MatG3D1OhNj5+pn/wAofKOkPz8MyhAAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:49:47.1326716",
+          "pb_segment_time": "00:12:12.958",
+          "best_segment_time": "00:12:12.9583694",
+          "history": {
+            "count": 1,
+            "best": "00:12:12.958",
+            "worst": "00:12:12.958",
+            "avg": "00:12:12.958",
+            "median": "00:12:12.958"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/ninja-gaiden.png"
+        },
+        {
+          "index": 19,
+          "name": "Missingno",
+          "icon_data_url": "data:image/png;base64,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",
+          "pb_split_time": "00:50:47.2395298",
+          "pb_segment_time": "00:01:00.107",
+          "best_segment_time": "00:01:00.1068582",
+          "history": {
+            "count": 1,
+            "best": "00:01:00.107",
+            "worst": "00:01:00.107",
+            "avg": "00:01:00.107",
+            "median": "00:01:00.107"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/missingno.png"
+        },
+        {
+          "index": 20,
+          "name": "Mario Desert",
+          "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA3AAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACOSURBVDiNY0jwYPhPCWYAET9+/IDgDxEIGgt+cEIBjncsEEA1AFkCWSE+MYQBUNNhCkE0CE8oYICzYXyYPIiNYQBMA7JCdENh8lgNwOcCGBuvC9BtQtaArBGrAei2EQoLor2AjY9hADbnoduIbjuGAdj8j8sgrAag246LxmoANhtw0Vi9gC5BLKaeAZRgAMDUOidCIQ+0AAAAAElFTkSuQmCCCw==",
+          "pb_split_time": "00:54:32.5402016",
+          "pb_segment_time": "00:03:45.301",
+          "best_segment_time": "00:03:45.3006718",
+          "history": {
+            "count": 1,
+            "best": "00:03:45.301",
+            "worst": "00:03:45.301",
+            "avg": "00:03:45.301",
+            "median": "00:03:45.301"
+          },
+          "stream": {
+            "time_on_split": null,
+            "visits": 0,
+            "deaths": 0
+          },
+          "icon_path": "assets/boshy_icons/mario-desert.png"
+        },
+        {
+          "name": "Solgryn",
+          "icon_data_url": "data:image/png;base64,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",
+          "icon_path": "assets/boshy_icons/solgryn.png"
+        }
+      ]
     }
   ]
 }
