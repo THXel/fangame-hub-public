@@ -454,3 +454,12 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
   font-size: 15px !important;
   font-variant-numeric: tabular-nums;
 }
+
+
+/* ensure category pills stay readable */
+.boshyModePill, .boshyModePill * { color: #fff !important; }
+
+/* --- v11 tweaks --- */
+.boshyModePill, .boshyModePill * { color: #fff !important; }
+.boshyLbTable tr.me td { font-weight: 800; }
+.boshyLbTable tr.me { background: rgba(255,255,255,.06); }

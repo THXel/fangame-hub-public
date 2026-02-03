@@ -157,7 +157,7 @@
 
 <h2><i class='fa-solid fa-stopwatch'></i> Boshy Speedrun</h2>
 
-<div class="boshySubtabs" role="tablist" aria-label="Boshy Kategorien">
+<div class="boshySubtabs" role="tablist" aria-label="Boshy Categories">
   <button class="boshySubtab active" data-boshy-mode="any_ez" role="tab" aria-selected="true">Any% • Ez</button>
   <button class="boshySubtab" data-boshy-mode="any_avg" role="tab" aria-selected="false">Any% • Average</button>
   <button class="boshySubtab" data-boshy-mode="any_rage" role="tab" aria-selected="false">Any% • Rage</button>
@@ -180,7 +180,7 @@
   <div class='boshyTopGrid'>
     <div class='boshyLeft'>
       <div class='card boshySectionTitle'>
-        <h3><i class="fa-solid fa-chart-simple"></i> Deine Run-Statistiken</h3>
+        <h3><i class="fa-solid fa-chart-simple"></i> Your Run Stats</h3>
       </div>
       <div id='boshyCards' class='grid'></div>
     </div>
@@ -189,7 +189,7 @@
       <div class="card boshy-lb" id="boshyLeaderboards">
         <div class="boshyLbTop">
           <h3 style="margin:0;"><i class="fa-solid fa-trophy"></i> speedrun.com</h3>
-          <div class="boshy-muted" id="boshyLbStatus">lädt…</div>
+          <div class="boshy-muted" id="boshyLbStatus">loading…</div>
         </div>
 
         <div class="boshyLbControls" id="boshyLbModePills"></div>
@@ -424,7 +424,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
             cardHTML('fa-solid fa-trophy', 'PB Total', fmtTime(data.pb_total), 'from .lss (RealTime)') +
             cardHTML('fa-solid fa-bolt', 'Sum of Best (Best Segments)', fmtTime(data.sum_of_best), 'sum of best segments') +
             cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'last stream recap') +
-            cardHTML('fa-solid fa-chart-line', 'Delta (vs Vergleich)', safeText(last.delta || '—'), 'vs comparison') +
+            cardHTML('fa-solid fa-chart-line', 'Delta (vs Comparison)', safeText(last.delta || '—'), 'vs comparison') +
             cardHTML('fa-solid fa-rotate-left', 'Resets (Stream)', fmtNum(t.resets ?? 0), '') +
             cardHTML('fa-solid fa-check', 'Finishes (Stream)', fmtNum(t.finishes ?? 0), '') +
             cardHTML('fa-solid fa-list-ol', 'Anzahl Splits', fmtNum(data.splits.length), '') +
@@ -551,6 +551,25 @@ loadBoshy(boshyMode);
 /* === speedrun.com module (boshy) === */
 (function(){
   const elStatus = document.getElementById("boshyLbStatus");
+
+
+function clampLeaderboardHeight(targetRows = 27){
+  const wrap = document.querySelector('.boshyLbTableWrap');
+  const tbody = document.getElementById('boshyLbRows');
+  if (!wrap || !tbody) return;
+
+  const rows = tbody.querySelectorAll('tr');
+  if (!rows || rows.length === 0) return;
+
+  const firstRowH = rows[0].getBoundingClientRect().height || 24;
+  const thead = document.querySelector('.boshyLbTable thead');
+  const headH = thead ? (thead.getBoundingClientRect().height || 0) : 0;
+
+  // +/- a small padding for borders
+  const targetH = Math.round(headH + (firstRowH * targetRows) + 4);
+  wrap.style.maxHeight = `${targetH}px`;
+  wrap.style.height = `${targetH}px`;
+}
   const elRows   = document.getElementById("boshyLbRows");
   const elMeBox  = document.getElementById("boshyMeBox");
   const elPills  = document.getElementById("boshyLbModePills");
@@ -582,7 +601,7 @@ loadBoshy(boshyMode);
     if(!data || !data.length){
       data = await j(`${API}/games?name=${encodeURIComponent("I Wanna Be The Boshy")}&max=1`);
     }
-    if(!data || !data.length) throw new Error("Game nicht gefunden");
+    if(!data || !data.length) throw new Error("Game not found");
     return data[0];
   }
 
@@ -678,7 +697,7 @@ if(isMe) tr.classList.add("me");
 
   function renderMe(pbInfo, label){
     if(!pbInfo){
-      elMeBox.innerHTML = `<div class="pill boshy-muted">Kein ${ME_NAME}-Run gefunden.</div>`;
+      elMeBox.innerHTML = `<div class="pill boshy-muted">No ${ME_NAME} run found.</div>`;
       return;
     }
     const place = pbInfo.place ?? "—";
@@ -696,19 +715,19 @@ if(isMe) tr.classList.add("me");
   async function update(){
     if(!elStatus || !elRows || !elMeBox) return;
     try{
-      elStatus.textContent = "lädt…";
+      elStatus.textContent = "loading…";
       const mode = (window.__boshyMode || "any_ez");
       const which = mode.startsWith("p100") ? "100" : "any";
       const diff = mode.includes("ez") ? "Ez" : (mode.includes("avg") ? "Average" : (mode.includes("rage") ? "Rage" : "Average"));
       const label = which==="100" ? "100% • Hardon" : `Any% • ${diff}`;
       if(elPills){
-        elPills.innerHTML = `<span class="pill"><i class="fa-solid fa-filter"></i> ${label}</span><span class="pill boshy-muted">Scroll = mehr Runs</span>`;
+        elPills.innerHTML = `<span class="pill"><i class="fa-solid fa-filter"></i> ${label}</span><span class="pill boshy-muted">Scroll for more runs</span>`;
       }
 
       const game = await getGame();
       const categories = await getCategories(game.id);
       const cat = pickCategory(categories, which);
-      if(!cat) throw new Error("Kategorie nicht gefunden");
+      if(!cat) throw new Error("Category not found");
 
       let varId=null, valId=null;
       if(which !== "100"){
@@ -734,9 +753,10 @@ if(isMe) tr.classList.add("me");
       renderMe(pbMatch, label);
 
       elStatus.textContent = "ok";
+    requestAnimationFrame(() => clampLeaderboardHeight(27));
     }catch(e){
-      elStatus.textContent = "Fehler";
-      elMeBox.innerHTML = `<div class="pill boshy-muted">API Fehler: ${String(e.message||e)}</div>`;
+      elStatus.textContent = "error";
+      elMeBox.innerHTML = `<div class="pill boshy-muted">API error: ${String(e.message||e)}</div>`;
       elRows.innerHTML = "";
     }
   }
