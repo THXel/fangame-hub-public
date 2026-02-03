@@ -39,7 +39,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/prehistorik.png"
+      "icon_path": "assets/Split_icons/prehistorik.png"
     },
     {
       "index": 1,
@@ -60,7 +60,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/hello-kitty.png"
+      "icon_path": "assets/Split_icons/hello_kitty.png"
     },
     {
       "index": 2,
@@ -81,7 +81,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/kirbys-adventure.png"
+      "icon_path": "assets/Split_icons/kirbys_adventure.png"
     },
     {
       "index": 3,
@@ -102,7 +102,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/ryu.png"
+      "icon_path": "assets/Split_icons/ryu.png"
     },
     {
       "index": 4,
@@ -123,7 +123,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/cheetahmen.png"
+      "icon_path": "assets/Split_icons/cheetahmen.png"
     },
     {
       "index": 5,
@@ -144,7 +144,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/mario.png"
+      "icon_path": "assets/Split_icons/mario.png"
     },
     {
       "index": 6,
@@ -165,7 +165,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/vvvvvv.png"
+      "icon_path": "assets/Split_icons/vvvvvv.png"
     },
     {
       "index": 7,
@@ -186,7 +186,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/biollante.png"
+      "icon_path": "assets/Split_icons/biollante.png"
     },
     {
       "index": 8,
@@ -207,7 +207,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/wario-land.png"
+      "icon_path": "assets/Split_icons/wario_land.png"
     },
     {
       "index": 9,
@@ -228,7 +228,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/sonic.png"
+      "icon_path": "assets/Split_icons/sonic.png"
     },
     {
       "index": 10,
@@ -249,7 +249,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/castlevania.png"
+      "icon_path": "assets/Split_icons/castlevania.png"
     },
     {
       "index": 11,
@@ -270,7 +270,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/skeleton-king.png"
+      "icon_path": "assets/Split_icons/skeleton_king.png"
     },
     {
       "index": 12,
@@ -291,7 +291,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/random-world.png"
+      "icon_path": "assets/Split_icons/random_world.png"
     },
     {
       "index": 13,
@@ -312,7 +312,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/megaman.png"
+      "icon_path": "assets/Split_icons/megaman.png"
     },
     {
       "index": 14,
@@ -333,7 +333,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/megaman-stage.png"
+      "icon_path": "assets/Split_icons/megaman_stage.png"
     },
     {
       "index": 15,
@@ -354,7 +354,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/shang-tsung.png"
+      "icon_path": "assets/Split_icons/shang_tsung.png"
     },
     {
       "index": 16,
@@ -375,7 +375,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/kid-icarus.png"
+      "icon_path": "assets/Split_icons/kid_icarus.png"
     },
     {
       "index": 17,
@@ -396,7 +396,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/ganon.png"
+      "icon_path": "assets/Split_icons/ganon.png"
     },
     {
       "index": 18,
@@ -417,7 +417,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/ninja-gaiden.png"
+      "icon_path": "assets/Split_icons/ninja_gaiden.png"
     },
     {
       "index": 19,
@@ -438,7 +438,7 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/missingno.png"
+      "icon_path": "assets/Split_icons/missingno.png"
     },
     {
       "index": 20,
@@ -459,12 +459,12 @@
         "visits": 0,
         "deaths": 0
       },
-      "icon_path": "assets/boshy_icons/mario-desert.png"
+      "icon_path": "assets/Split_icons/mario_desert.png"
     },
     {
       "name": "Solgryn",
       "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAnAYAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAZOSURBVFiF7ZdrUJT3FYf9kF2Wu9wlIDH1llQbqhGiWBSmXqKRWscaDVYxMca0KU6a2IZ20pqm6Ydq79NG26nNpDOx6UynNrZGuQUWQe4WV+5hYYFViMvCXmCXXWCfnvfdhZmkX1gnnX5o35lndnZnd89zfuf897JgwScu3YIF/Cf5ZL1/u5Qneb1epqammJmZwSd4u7rwtLQwMzHByAuFjDx7HFddHR8dPYYl/xB3C09g+8NbWF97nUm3G7fgcrmYkOcrjI+P43Q6701g2m5jsuQqE797k6nOduyvvMzdF47hePs8Yye+htdiwXokn7E3TmF7/VUmJyc/PYHp6Wl8Hg+TFcW4/nqBKctd7JcvMvJ8Ps7f/pyRw7sZvXCekUN52M/+FMvxA1gv/gmXFPz0BHw+pqWryYFeXJ0GJkrfw/bWr5i42ch45VXGzp3BWVWCXV+C7d3f46h4H7cUtRu7cJj7711AKa6gjMF94xqOsxLxz04y2drE2KmnsX7zy1he2o3tj5LE948wUnQAR/nfGPnBs9gNjYyeeRF7+UW1eNACHol9LgWvB9elc3j62hlvbcB5oxL76WewvFHA6KknJZluxl4VkR8/g3uon7FvbWXklZ0qzrqr9y6goAoIbv0Fmf05bG9/F8f5l7D/8gjOP/9IujzIxJ0+WcginJffxGW5je30PsabSmQp83A2XJkrHpSAsskKsylMWIZw1r+H9dIvsLdeY1T/LrbW69hulGFtrsBaI9HXX2HM3Ie14h1GB4zYjK04PjQwHijucDjmL+CyWnGPjjJps+ORFw613uKOwUDblffpra6mq7SEHr2eTrntKC6m9fI/6CgppqOslO7KD2i48A6Gv1/CYjRiHx5WsQ0NzV/AtH4TA9lbGNp/CEvhy7Jw38ZS8BzDW57gtjxuzsplcEMOpqwcerM207M+m+7MjXRkZNGWsR7DmnW0fH4d/xSa0tfS8Mgaaj+XPn+B7tj7MSamMZCeifnY1zEVfY/2o8/TJ0Wb9n+Vzu15tGVm07hrD80HC7ix7ylaNubQsHUH1x7fRV3uFmozNnB9bQbVoRFUhYRRodUFI5BMT3wqphWPYHpiD7dOfgdD3l46MjdR/5WnaHo8j4aNuTRKAk2bt1CXnUu9JKHf+SXKDx6iZOt2inO+SNnKh6kKj7pHgbj76UtbzuCjWZilc/OqR+ldmU6LdF2zZx81ctvyhVxq9+5Hn3+YqsIXKXv6KJU7dlEbm0RdeDTXQyOp1oWjD1agKyaZD5UxJD1A/0PpDMooBpauwiRj6ZVkjEkp9CxJpisxmfa4RbQlJ9KyPI3mhYk0R8TSGL6Q+rCojwtoghDojFmk7kFPfIqksIL+ZasxpSyjT4r3JqRi3paI9SdRjJyOYrgomrtnIjCfiORWSqwIxHxM4JoqEMoHwQv4x2BMWExfymcwLUtlMGsRw/nxuGrC8Lm0+KY1fjwavENa7vwwgo4NUbQ8GEV9lCIQ4RfQBinQIQKzY+iJS1Ej/+h4LO76UHxOLfgEdEJYgFBBhLwaPCYtw7/R0bw0ghpFIGRWICQIgYVJcymou7A4GedfwkG6hRD5howUkoTFwgNCihAbkNHiMWto2xZOjU4RCKMyWIF2EZhNoVsWbXBHAl5ziL9LX3Sg6CphnZAprBFWCItUCd+Mhju/1tGQGq4eQUWgPBiBNtlmNQXZ8P7ceMZLpLMZjf/NfalCurBZCu0Udgnb5P56YaUQp6Y0ZdXQWxRCbXKoCOiCE2iNTpxLoX9rHF6jNtB9TKDTjVJ0t3BYOCocCEisVQWVnVCW8/ZZLdVxoepnQJACCWoKikTP6gT5LTAbf5zwWSFXCu4XviGcDEjkyeOPCUuEcDUx02sh6EP9AmX3aecvcEsElBQUid5sSWBgNoFY4aFA/HuF54RCocA/Dl+GkOYflSQweEZLVYT/CAYlYIiK90vEJGLKi8F9czYBZfsf9Bea2R6QeNI/DkXKtzqwiDr5Ce8XqE70n4CgBG7OCggdafEMFUUyY/effZ8vIbAHSrebhBwhK7CYyumIUj8nxsq1ND8Wqo5AESgNRqAlMm5OQqFjaTwTtTo1BXXBVIklgXE8LCwPnI5o9QRMOzV0FujQ68LmFrD0Ps38Bf6rf83+f/3PXf8C6hOv0G8Uy6kAAAAASUVORK5CYIIL",
-      "icon_path": "assets/boshy_icons/solgryn.png"
+      "icon_path": "assets/Split_icons/solgryn.png"
     }
   ],
   "categories": [
