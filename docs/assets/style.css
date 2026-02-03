@@ -428,18 +428,18 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 .boshyRight #boshyLeaderboards .boshyLbTableWrap{ overflow:auto; }
 
 
-/* boshy split time bump */
-.boshySplitsTable td.mono, .boshySplitsTable .mono{ font-size: 13.8px; }
-.boshySplitsTable th{ font-size: 14px; }
+/* --- Boshy UI tweaks v9 --- */
+/* Some browsers apply default button text color; force white for pills */
+.boshySubtab, .boshySubtab *, .boshySubtab i{ color: rgba(255,255,255,.92) !important; }
+.boshySubtab.active, .boshySubtab.active *, .boshySubtab.active i{ color: #ffffff !important; }
 
-/* --- Boshy UI tweaks v8 --- */
-/* Category pills were black on some browsers due to default button styles */
-.boshySubtab{ color: rgba(255,255,255,.92) !important; }
-.boshySubtab.active{ color: #ffffff !important; }
+/* Splits: bump numeric readability (times/dates) */
+.boshySplitsTable td.mono, .boshySplitsTable .mono{ font-size: 14.5px; }
+.boshySplitsTable th{ font-size: 14.5px; }
 
 /* Make split numeric columns more readable */
-.boshySplitsTable td{ font-size: 13.5px; }
-.boshySplitsTable td.num{ font-size: 15px; letter-spacing: .2px; }
+.boshySplitsTable td{ font-size: 13.8px; }
+.boshySplitsTable td.num{ font-size: 15.5px; letter-spacing: .25px; }
 
 /* Stronger highlight for THXel in speedrun.com table */
 .boshy-lb tr.me{ box-shadow: inset 3px 0 0 rgba(60,180,255,.9); }
