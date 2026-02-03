@@ -457,7 +457,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
             cardHTML('fa-solid fa-chart-line', 'Delta (vs Comparison)', safeText(last.delta || '—'), 'vs comparison') +
             cardHTML('fa-solid fa-rotate-left', 'Resets (Stream)', fmtNum(t.resets ?? 0), '') +
             cardHTML('fa-solid fa-check', 'Finishes (Stream)', fmtNum(t.finishes ?? 0), '') +
-            cardHTML('fa-solid fa-list-ol', 'Anzahl Splits', fmtNum(data.splits.length), '') +
+            cardHTML('fa-solid fa-list-ol', 'Splits (gesamt)', fmtNum(data.lifetime_splits ?? 0), '') +
             cardHTML('fa-solid fa-skull', 'Deaths (Stream)', fmtNum(t.deaths ?? 0), 'overlay counter');
         }
 
@@ -473,7 +473,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 	  const srcPath = (sp.icon_path && String(sp.icon_path).trim()) ? String(sp.icon_path).trim() : '';
 	  const srcData = cleanDataUrl(sp.icon_data_url);
 	  const src = srcPath || srcData;
-	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement(\'div\'),{className:\'splitIconPh\'}));"splitIconPh\"></div>'"/>` : `<div class="splitIconPh"></div>`;
+	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'splitIconPh'}));">` : `<div class="splitIconPh"></div>`;
   const name = safeText(sp.name || '');
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
