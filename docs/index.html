@@ -388,14 +388,18 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
     function cleanDataUrl(u){
       if(!u) return '';
       u = String(u);
-      // Strip invisible chars + ALL whitespace (some LSS base64 is line-broken)
+      // Strip invisible chars + ALL whitespace (some LiveSplit base64 is line-broken)
       u = u.replace(/[\uFEFF\u200B\u200C\u200D\u00AD]/g,'').replace(/\s+/g,'');
-      // If we got raw base64 without data: prefix, assume PNG
+
+      // If we got raw base64 without data: prefix and *guess* the mime.
+      // Many Boshy split icons are ICO data (base64 often starts with "AAEAAA").
       if(/^[A-Za-z0-9+/]+=*$/.test(u) && u.length > 32){
-        u = "data:image/png;base64," + u;
+        const looksIco = u.startsWith('AAEAAA');
+        u = (looksIco ? 'data:image/x-icon;base64,' : 'data:image/png;base64,') + u;
       }
-      // Accept common data: images
-      if(!/^data:image\/(png|jpeg|gif|webp|svg\+xml);base64,/i.test(u)) return '';
+
+      // Accept common image data URLs (including ICO).
+      if(!/^data:image\/(png|jpe?g|gif|webp|svg\+xml|x-icon|vnd\.microsoft\.icon);base64,/i.test(u)) return '';
       return u;
     }
     // Header
@@ -439,9 +443,12 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
           if(sec && sec>maxSeg) maxSeg = sec;
         }
 
-        function splitRow(sp){
-  const si = cleanDataUrl(sp.icon_data_url);
-  const icon = si ? `<img class="splitIcon" src="${si}" alt="i" decoding="async" onerror="this.style.display='none'; this.classList.add('hidden')"/>` : `<div class="splitIconPh"></div>`;
+	        function splitRow(sp){
+	  // Prefer a real PNG path if available; otherwise fall back to embedded data.
+	  const srcPath = (sp.icon_path && String(sp.icon_path).trim()) ? String(sp.icon_path).trim() : '';
+	  const srcData = cleanDataUrl(sp.icon_data_url);
+	  const src = srcPath || srcData;
+	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=\"splitIconPh\"></div>'"/>` : `<div class="splitIconPh"></div>`;
   const name = safeText(sp.name || '');
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);

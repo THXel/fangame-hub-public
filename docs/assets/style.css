@@ -472,4 +472,26 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 .splitIcon{ width:18px; height:18px; display:inline-block; vertical-align:middle; image-rendering:pixelated; }
 .splitIconPh{ width:18px; height:18px; display:inline-block; }
 .splitNameCell{ display:flex; align-items:center; gap:10px; }
+
+/* --- Boshy: final overrides (keep these at the end) --- */
+.boshyCats .boshyCatBtn{ color:#fff !important; }
+.boshyCats .boshyCatBtn.active{ color:#fff !important; }
+
+.splitIcon{
+  width:18px !important;
+  height:18px !important;
+  border-radius:6px;
+  object-fit:cover;
+  flex:0 0 auto;
+  display:block;
+}
+
+/* Make split times a bit larger/readable */
+.boshySplitsTable th{ font-size:14.5px !important; }
+.boshySplitsTable td{ font-size:14.5px !important; }
+.boshySplitsTable td.mono, .boshySplitsTable .mono{ font-size:15.5px !important; }
+
+/* Highlight THXel in the speedrun.com table */
+.srRow.me{ outline:1px solid rgba(120,220,255,.45); background: rgba(120,220,255,.08) !important; }
+.srRow.me td{ font-weight:800; }
 .lbTableWrap{ overflow-y:auto; max-height: 640px; }
