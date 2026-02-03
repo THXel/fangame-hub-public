@@ -167,7 +167,7 @@
 
 
 <div class='card' id='boshyEmpty'>
-  Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun.json</code> in diesem Ordner ab (wird automatisch geladen).
+  Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun_any.json</code> in diesem Ordner ab (wird automatisch geladen).
 </div>
 
 <div id='boshyRoot' style='display:none;'>
@@ -225,7 +225,32 @@
 
 
     <script>
-      const btns = Array.from(document.querySelectorAll('.tabBtn'));
+      
+
+// Boshy category -> json file mapping (public docs/)
+const BOSHY_CATEGORY_FILES = {
+  "any": "boshy_speedrun_any.json",
+  "ez": "boshy_speedrun_any_ez.json",
+  "avg": "boshy_speedrun_any_avg.json",
+  "rage": "boshy_speedrun_any_rage.json",
+  "100": "boshy_speedrun_100.json"
+};
+
+function getBoshyCatKey(){
+  const h = (location.hash || "").toLowerCase();
+  // Allow #boshy?cat=ez  OR  #boshy_ez style
+  if (h.includes("cat=")) {
+    const m = h.match(/cat=([a-z0-9]+)/);
+    if (m) return m[1];
+  }
+  if (h.includes("boshy_ez")) return "ez";
+  if (h.includes("boshy_avg")) return "avg";
+  if (h.includes("boshy_rage")) return "rage";
+  if (h.includes("boshy_100")) return "100";
+  return "any";
+}
+
+const btns = Array.from(document.querySelectorAll('.tabBtn'));
 const panels = {
   lib: document.getElementById('tab-lib'),
   stats: document.getElementById('tab-stats'),
@@ -332,7 +357,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
       try{ applyLibraryFilters(); }catch(e){}
 
 
-      // --- Boshy Speedrun tab (loads boshy_speedrun.json) ---
+      // --- Boshy Speedrun tab (loads boshy_speedrun_any.json) ---
       const boshyEmpty = document.getElementById('boshyEmpty');
       const boshyRoot  = document.getElementById('boshyRoot');
       const boshyHdr   = document.getElementById('boshyHdr');
@@ -507,12 +532,12 @@ if(boshySplits){
 
       async function loadBoshy(mode){
   const candidates = {
-    any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun.json'],
-    any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun.json'],
-    any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun.json'],
-    p100_hardon: ['boshy_speedrun_100_hardon.json','boshy_speedrun_100.json','boshy_speedrun.json'],
+    any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun_any.json'],
+    any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun_any.json'],
+    any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun_any.json'],
+    p100_hardon: ['boshy_speedrun_100_hardon.json','boshy_speedrun_100.json','boshy_speedrun_any.json'],
   };
-  const list = candidates[mode] || ['boshy_speedrun.json'];
+  const list = candidates[mode] || ['boshy_speedrun_any.json'];
   for(const path of list){
     try{
       const r = await fetch(path, {cache:'no-store'});

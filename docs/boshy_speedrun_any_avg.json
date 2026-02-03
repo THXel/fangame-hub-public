@@ -1,6 +1,6 @@
 {
   "schema": "boshy_speedrun/v1",
-  "updated_at_utc": "2026-02-03T20:21:40+00:00",
+  "updated_at_utc": "2026-02-03T21:37:57Z",
   "game": "I Wanna Be The Boshy",
   "category": "Any% • Average",
   "timing_method": "RealTime",
@@ -441,26 +441,6 @@
       "index": 22,
       "name": "Solgryn",
       "icon_path": "assets/Split_icons/solgryn.png",
-      "icon_data_url": "",
-      "pb_split_time": null,
-      "pb_segment_time": null,
-      "best_segment_time": null,
-      "history": {
-        "count": 0,
-        "avg": null,
-        "best": null,
-        "worst": null
-      },
-      "stream": {
-        "time_on_split": null,
-        "visits": 0,
-        "deaths": 0
-      }
-    },
-    {
-      "index": 23,
-      "name": "Cheetahman (END)",
-      "icon_path": "assets/Split_icons/cheetahman_end.png",
       "icon_data_url": "",
       "pb_split_time": null,
       "pb_segment_time": null,
