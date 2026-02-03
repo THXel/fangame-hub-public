@@ -431,17 +431,3 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 /* boshy split time bump */
 .boshySplitsTable td.mono, .boshySplitsTable .mono{ font-size: 13.8px; }
 .boshySplitsTable th{ font-size: 14px; }
-
-/* --- Boshy UI tweaks v8 --- */
-/* Category pills were black on some browsers due to default button styles */
-.boshySubtab{ color: rgba(255,255,255,.92) !important; }
-.boshySubtab.active{ color: #ffffff !important; }
-
-/* Make split numeric columns more readable */
-.boshySplitsTable td{ font-size: 13.5px; }
-.boshySplitsTable td.num{ font-size: 15px; letter-spacing: .2px; }
-
-/* Stronger highlight for THXel in speedrun.com table */
-.boshy-lb tr.me{ box-shadow: inset 3px 0 0 rgba(60,180,255,.9); }
-.boshy-lb tr.me td{ background: rgba(60,180,255,.12); }
-.boshy-lb tr.me td:nth-child(2){ font-weight: 800; color: #fff; }
