@@ -463,3 +463,13 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 .boshyModePill, .boshyModePill * { color: #fff !important; }
 .boshyLbTable tr.me td { font-weight: 800; }
 .boshyLbTable tr.me { background: rgba(255,255,255,.06); }
+
+
+/* v12 tweaks */
+.segPill{ color:#fff !important; }
+.splitsTable td{ font-size:14px; }
+.splitsTable td:first-child{ font-size:15px; }
+.splitIcon{ width:18px; height:18px; display:inline-block; vertical-align:middle; image-rendering:pixelated; }
+.splitIconPh{ width:18px; height:18px; display:inline-block; }
+.splitNameCell{ display:flex; align-items:center; gap:10px; }
+.lbTableWrap{ overflow-y:auto; max-height: 640px; }

@@ -180,7 +180,7 @@
   <div class='boshyTopGrid'>
     <div class='boshyLeft'>
       <div class='card boshySectionTitle'>
-        <h3><i class="fa-solid fa-chart-simple"></i> Your Run Stats</h3>
+        <h3><i class="fa-solid fa-chart-simple"></i> THXel's Run Stats</h3>
       </div>
       <div id='boshyCards' class='grid'></div>
     </div>
@@ -200,8 +200,8 @@
               <tr>
                 <th>#</th>
                 <th>Runner</th>
-                <th>Zeit</th>
-                <th>Datum</th>
+                <th>Time</th>
+                <th>Date</th>
                 <th>Run</th>
               </tr>
             </thead>
@@ -388,16 +388,17 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
     function cleanDataUrl(u){
       if(!u) return '';
       u = String(u);
-      // strip common invisible chars that break data: URLs on Windows/JSON
-      u = u.replace(/[\uFEFF\u200B\u200C\u200D\u00AD]/g, '');
-      u = u.trim();
-      // allow data:image/(png|jpeg|gif|webp|svg+xml|x-icon)
-      if(!/^data:image\/(png|jpe?g|gif|webp|svg\+xml|x-icon);base64,/i.test(u)) return '';
+      // Strip invisible chars + ALL whitespace (some LSS base64 is line-broken)
+      u = u.replace(/[\uFEFF\u200B\u200C\u200D\u00AD]/g,'').replace(/\s+/g,'');
+      // If we got raw base64 without data: prefix, assume PNG
+      if(/^[A-Za-z0-9+/]+=*$/.test(u) && u.length > 32){
+        u = "data:image/png;base64," + u;
+      }
+      // Accept common data: images
+      if(!/^data:image\/(png|jpeg|gif|webp|svg\+xml);base64,/i.test(u)) return '';
       return u;
     }
-
-
-        // Header
+    // Header
         if(boshyHdr){
           const gi = cleanDataUrl(data.game_icon_data_url);
           const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async" onerror="this.style.display='none'"/>` : '';
@@ -553,7 +554,7 @@ loadBoshy(boshyMode);
   const elStatus = document.getElementById("boshyLbStatus");
 
 
-function clampLeaderboardHeight(targetRows = 27){
+function clampLeaderboardHeight(targetRows = 25){
   const wrap = document.querySelector('.boshyLbTableWrap');
   const tbody = document.getElementById('boshyLbRows');
   if (!wrap || !tbody) return;
@@ -753,7 +754,7 @@ if(isMe) tr.classList.add("me");
       renderMe(pbMatch, label);
 
       elStatus.textContent = "ok";
-    requestAnimationFrame(() => clampLeaderboardHeight(27));
+    requestAnimationFrame(() => clampLeaderboardHeight(25));
     }catch(e){
       elStatus.textContent = "error";
       elMeBox.innerHTML = `<div class="pill boshy-muted">API error: ${String(e.message||e)}</div>`;
