@@ -1,4 +1,4 @@
-/* --- FORCE Splits readability (v6) --- */
+/* --- FORCE Splits readability (v7) --- */
 .boshySplitsTable{
   table-layout: fixed !important;
   font-size: 20px !important;
@@ -14,13 +14,13 @@
 .splitNameCell{
   width: 170px !important;
   max-width: 170px !important;
-  font-size: 20px !important;          /* bigger names */
-  font-weight: 600 !important;
 }
 
+/* Split names: scale with viewport, but never too small/large */
 .splitNameInline span{
-  font-size: 20px !important;          /* bigger names */
-  font-weight: 600 !important;
+  font-size: clamp(18px, 1.15vw, 22px) !important;
+  font-weight: 650 !important;
+  line-height: 1.15 !important;
 }
 
 .splitIcon,
@@ -37,13 +37,18 @@
 }
 
 .boshySplitsTable td.num{
-  font-size: 24px !important;          /* BIG numbers */
-  font-weight: 650 !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
   letter-spacing: 0.1px !important;
 }
 
-/* tighten header a touch so rows get more space */
 .boshySplitsTable thead th{
   font-size: 14px !important;
   opacity: 0.95 !important;
+}
+
+@media (max-width: 900px){
+  .splitNameInline span{
+    font-size: clamp(16px, 2.2vw, 20px) !important;
+  }
 }
