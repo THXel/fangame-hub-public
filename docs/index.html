@@ -167,7 +167,7 @@
 
 
 <div class='card' id='boshyEmpty'>
-  Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun.json</code> in diesem Ordner ab (wird automatisch geladen).
+  Keine Boshy-Speedrun-Daten geladen. Prüfe, ob die Kategorie-JSONs (z.B. <code>boshy_speedrun_any_ez.json</code>) im gleichen Ordner liegen.
 </div>
 
 <div id='boshyRoot' style='display:none;'>
@@ -658,25 +658,63 @@ try{
 }catch(e){}}
 
       async function loadBoshy(mode){
+  // Build a safe base directory (works on GitHub Pages and when embedded elsewhere)
+  const href = (document.querySelector('base') && document.querySelector('base').href) ? document.querySelector('base').href : window.location.href;
+  const baseDir = href.split('#')[0].split('?')[0].replace(/[^/]*$/, '');
+
   const candidates = {
-    any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun.json'],
-    any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun.json'],
-    any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun.json'],
-    p100_hardon: ['boshy_speedrun_100.json','boshy_speedrun.json'],
+    any_ez:     ['boshy_speedrun_any_ez.json',   'boshy_speedrun.json'],
+    any_avg:    ['boshy_speedrun_any_avg.json',  'boshy_speedrun.json'],
+    any_rage:   ['boshy_speedrun_any_rage.json', 'boshy_speedrun.json'],
+    p100_hardon:['boshy_speedrun_100_hardon.json','boshy_speedrun_100.json','boshy_speedrun.json'],
   };
-  const list = candidates[mode] || ['boshy_speedrun.json'];
+
+  const list = candidates[mode] || ['boshy_speedrun_any_ez.json','boshy_speedrun.json'];
+
+  // optimistic UI
+  if(boshyEmpty){
+    boshyEmpty.style.display = '';
+    boshyEmpty.innerHTML = `Lade Boshy-Daten… <span class="tiny">(mode: ${safeText(mode)})</span>`;
+  }
+  if(boshyRoot) boshyRoot.style.display = 'none';
+
+  let lastErr = '';
+  const tried = [];
+
   for(const path of list){
+    const url = baseDir + path;
+    tried.push(path);
     try{
-      const r = await fetch(path, {cache:'no-store'});
-      if(!r.ok) continue;
+      const r = await fetch(url, {cache:'no-store'});
+      if(!r.ok){ lastErr = `HTTP ${r.status} for ${path}`; continue; }
       const data = await r.json();
       data.__mode = mode;
       data.__source = path;
-      renderBoshy(data);
+      try{
+        renderBoshy(data);
+      }catch(e){
+        lastErr = `Render error: ${e && e.message ? e.message : e}`;
+        continue;
+      }
       return true;
-    }catch(e){}
+    }catch(e){
+      lastErr = (e && e.message) ? e.message : String(e);
+    }
   }
-  if(boshyEmpty) boshyEmpty.style.display = '';
+
+  // failure
+  if(boshyEmpty){
+    boshyEmpty.style.display = '';
+    boshyEmpty.innerHTML = `
+      <div><b>Noch keine Boshy-Speedrun-Daten gefunden.</b></div>
+      <div class="tiny" style="margin-top:6px;">
+        Versucht: <code>${tried.join('</code>, <code>')}</code><br/>
+        ${lastErr ? `Fehler: <code>${safeText(lastErr)}</code><br/>` : ``}
+        Erwartet werden die JSONs im gleichen Ordner wie diese Seite (GitHub Pages):<br/>
+        <code>boshy_speedrun_any_ez.json</code>, <code>boshy_speedrun_any_avg.json</code>, <code>boshy_speedrun_any_rage.json</code>, <code>boshy_speedrun_100_hardon.json</code>
+      </div>
+    `;
+  }
   if(boshyRoot) boshyRoot.style.display = 'none';
   return false;
 }
