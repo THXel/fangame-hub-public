@@ -563,38 +563,39 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 }
 
 /* Splits table (the one in your screenshot) */
+/* --- FORCE Splits readability --- */
 .boshySplitsTable{
-  width:100%;
-  table-layout:fixed;
-  border-collapse:collapse;
-}
-
-.boshySplitsTable td,
-.boshySplitsTable th{
-  white-space:nowrap;
-  padding:6px 6px;
-}
-
-.boshySplitsTable td.num{
-  font-size:15px;              /* größer */
-  font-variant-numeric: tabular-nums;
-}
-.boshySplitsTable th.num{
-  width: 92px;                 /* feste Breite für Zahlen */
-}
-
-/* Make numeric columns extra readable */
-.boshySplitsTable td.mono,
-.boshySplitsTable .mono,
-.boshySplitsTable td.num{
+  table-layout: fixed !important;
   font-size: 16px !important;
-  font-variant-numeric: tabular-nums !important;
+  line-height: 1.35 !important;
 }
 
-/* Split name + icon */
+.boshySplitsTable th,
+.boshySplitsTable td{
+  padding: 10px 8px !important;  /* mehr Höhe */
+  white-space: nowrap !important;
+}
+
+.splitNameCell{
+  width: 185px !important;
+  max-width: 185px !important;
+}
+
+.splitNameInline{
+  gap: 8px !important;
+  min-width: 0 !important;
+}
 .splitNameInline span{
-  font-size: 15px !important;
-  font-weight: 800 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.boshySplitsTable th.num,
+.boshySplitsTable td.num{
+  width: 110px !important;       /* Zahlen-Spalten breiter => wirkt größer */
+  text-align: right !important;
+  font-variant-numeric: tabular-nums !important;
 }
 
 .splitIcon,
