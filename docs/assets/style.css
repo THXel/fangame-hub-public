@@ -432,7 +432,7 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
 .boshySectionTitle{ padding: 10px 12px !important; }
 .boshySectionTitle h3{ margin:0; font-size: 14.5px !important; font-weight: 700; }
 .boshyHeaderCard{ padding: 12px !important; }
-.boshyTitle{ font-size: 16px !important; }
+.boshyTitle{ font-size: 18px !important; }
 .boshySub{ font-size: 12.5px !important; opacity: .85; }
 .boshyGameIcon{ width: 26px; height: 26px; border-radius: 8px; image-rendering: pixelated; display:block; }
 .boshySplitsCard{ margin-top: 12px; }
@@ -566,13 +566,13 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 /* --- FORCE Splits readability --- */
 .boshySplitsTable{
   table-layout: fixed !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
   line-height: 1.35 !important;
 }
 
 .boshySplitsTable th,
 .boshySplitsTable td{
-  padding: 10px 8px !important;  /* mehr Höhe */
+  padding: 11px 9px !important;  /* mehr Höhe */
   white-space: nowrap !important;
 }
 
@@ -609,9 +609,3 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 .boshyNoRunsCard{border:1px solid rgba(255,255,255,.12);}
 .boshyNoRunsTitle{font-weight:800; font-size:16px; margin-bottom:6px; display:flex; gap:8px; align-items:center;}
 .boshyNoRunsText{opacity:.9; line-height:1.35;}
-
-/* --- FORCE Splits readability (override) --- */
-.boshySplitsTable{ font-size:18px !important; line-height:1.35 !important; }
-.boshySplitsTable th, .boshySplitsTable td{ padding:10px 8px !important; }
-.splitNameCell{ width:185px !important; max-width:185px !important; }
-.boshySplitsTable th.num, .boshySplitsTable td.num{ width:110px !important; }

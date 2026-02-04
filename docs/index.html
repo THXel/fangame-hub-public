@@ -4,7 +4,7 @@
     <meta charset='utf-8'/>
     <meta name='viewport' content='width=device-width, initial-scale=1'/>
     <title>THXel Fangame Hub (Public)</title>
-    <link rel='stylesheet' href='assets/style.css?v=2'/>
+    <link rel='stylesheet' href='assets/style.css'/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'/>
   </head>
   <body>
@@ -505,14 +505,30 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
           if(sec && sec>maxSeg) maxSeg = sec;
         }
 
+	        function normalizeIconPath(rawName, srcPath){
+	          const p = (srcPath && String(srcPath).trim()) ? String(srcPath).trim() : '';
+	          if(p){
+	            // e.g. solgryn_end.png -> solgryn.png
+	            return p.replace(/_end(\.[a-z0-9]+)$/i, '$1');
+	          }
+	          if(!rawName) return '';
+	          const base = String(rawName)
+	            .replace(/\s*\(END\)\s*$/, '')
+	            .toLowerCase()
+	            .replace(/[^a-z0-9]+/g, '_')
+	            .replace(/^_+|_+$/g, '');
+	          return base ? `assets/Split_icons/${base}.png` : '';
+	        }
+
 	        function splitRow(sp){
+	  const rawName = safeText(sp.name || '');
+	  const displayName = rawName.replace(/\s*\(END\)\s*$/, '');
 	  // Prefer a real PNG path if available; otherwise fall back to embedded data.
 	  const srcPath = (sp.icon_path && String(sp.icon_path).trim()) ? String(sp.icon_path).trim() : '';
 	  const srcData = cleanDataUrl(sp.icon_data_url);
-	  const src = srcPath || srcData;
+	  const src = normalizeIconPath(rawName, srcPath) || srcData;
 	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'splitIconPh'}));">` : `<div class="splitIconPh"></div>`;
-  const nameRaw = safeText(sp.name || '');
-  const name = nameRaw.replace(/\s*\(END\)\s*$/,'');
+  const name = displayName;
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
   const pbCum = fmtTime(sp.pb_split_time);
