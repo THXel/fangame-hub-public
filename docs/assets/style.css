@@ -388,8 +388,8 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
 }
 
 .splitNameCell{
-  width: 210px;                 /* smaller name column */
-  max-width: 210px;
+  width: 190px;                 /* smaller name column */
+  max-width: 190px;
 }
 
 .splitNameInline{
@@ -564,21 +564,23 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 
 /* Splits table (the one in your screenshot) */
 .boshySplitsTable{
-  font-size: 15px !important;
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
 }
 
+.boshySplitsTable td,
 .boshySplitsTable th{
-  font-size: 15px !important;
-  padding: 10px 12px !important;
+  white-space:nowrap;
+  padding:6px 6px;
 }
 
-.boshySplitsTable td{
-  font-size: 15px !important;
-  padding: 10px 12px !important;
+.boshySplitsTable td.num{
+  font-size:15px;              /* größer */
+  font-variant-numeric: tabular-nums;
 }
-
-.boshySplitsTable tr{
-  height: 46px !important;
+.boshySplitsTable th.num{
+  width: 92px;                 /* feste Breite für Zahlen */
 }
 
 /* Make numeric columns extra readable */
