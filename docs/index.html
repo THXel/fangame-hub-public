@@ -168,7 +168,6 @@
 
 <div class='card' id='boshyEmpty'>
   Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun_any.json</code> in diesem Ordner ab (wird automatisch geladen).
-  <pre id='boshyLoadDebug' style='margin:10px 0 0;opacity:.85;font-size:12px;white-space:pre-wrap'></pre>
 </div>
 
 <div id='boshyRoot' style='display:none;'>
@@ -281,7 +280,7 @@ function setTab(name, push){
     } else {
       history.replaceState(null, '', '#'+name);
     }
-  }catch(e){ attempts.push(`${path} → ERR`); }
+  }catch(e){}
 }
 
 btns.forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab, true)));
@@ -340,7 +339,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         }
 
         // Sort (also sorts hidden ones; fine)
-        try{ sortCards(cards); }catch(e){ attempts.push(`${path} → ERR`); }
+        try{ sortCards(cards); }catch(e){}
         if(libList){
           for(const c of cards){ libList.appendChild(c); }
         }
@@ -355,7 +354,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 
 
       // Initial
-      try{ applyLibraryFilters(); }catch(e){ attempts.push(`${path} → ERR`); }
+      try{ applyLibraryFilters(); }catch(e){}
 
 
       // --- Boshy Speedrun tab (loads boshy_speedrun_any.json) ---
@@ -404,10 +403,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 
       function renderBoshy(data){
         if(!data || !data.splits || !Array.isArray(data.splits) || data.splits.length===0){
-          if(boshyEmpty){ boshyEmpty.style.display='';
-    const dbg = document.getElementById('boshyLoadDebug');
-    if(dbg) dbg.textContent = attempts.join('\n');
-  }
+          if(boshyEmpty) boshyEmpty.style.display = '';
           if(boshyRoot) boshyRoot.style.display = 'none';
           return;
         }
@@ -534,41 +530,26 @@ if(boshySplits){
 
       }
 
-      function boshyUrl(rel){
-  const s = String(rel||"");
-  if(/^https?:\/\//i.test(s)) return s;
-  if(s.startsWith("/")) return window.location.origin + s;
-  const pn = window.location.pathname || "/";
-  const dir = pn.endsWith("/") ? pn : pn.slice(0, pn.lastIndexOf("/")+1);
-  return window.location.origin + dir + s;
-}
-
-async function loadBoshy(mode){
+      async function loadBoshy(mode){
   const candidates = {
     any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun_any.json'],
     any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun_any.json'],
     any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun_any.json'],
-    p100_hardon: ['boshy_speedrun_100_hardon.json','boshy_speedrun_100.json','boshy_speedrun_any.json'],
+    p100_hardon: ['boshy_speedrun_100.json','boshy_speedrun_100.json','boshy_speedrun_any.json'],
   };
   const list = candidates[mode] || ['boshy_speedrun_any.json'];
-  const attempts = [];
   for(const path of list){
     try{
-      const url = boshyUrl(path);
-      const r = await fetch(url, {cache:'no-store'});
-      attempts.push(`${path} → ${r.status}`);
+      const r = await fetch(path, {cache:'no-store'});
       if(!r.ok) continue;
       const data = await r.json();
       data.__mode = mode;
       data.__source = path;
       renderBoshy(data);
       return true;
-    }catch(e){ attempts.push(`${path} → ERR`); }
+    }catch(e){}
   }
-  if(boshyEmpty){ boshyEmpty.style.display='';
-    const dbg = document.getElementById('boshyLoadDebug');
-    if(dbg) dbg.textContent = attempts.join('\n');
-  }
+  if(boshyEmpty) boshyEmpty.style.display = '';
   if(boshyRoot) boshyRoot.style.display = 'none';
   return false;
 }
@@ -579,8 +560,8 @@ function setActiveBoshyMode(mode){
     btn.classList.toggle('active', on);
     btn.setAttribute('aria-selected', on ? 'true' : 'false');
   });
-  try{ window.__boshyMode = mode; }catch(e){ attempts.push(`${path} → ERR`); }
-  try{ window.dispatchEvent(new CustomEvent('boshy_mode_changed', {detail:{mode}})); }catch(e){ attempts.push(`${path} → ERR`); }
+  try{ window.__boshyMode = mode; }catch(e){}
+  try{ window.dispatchEvent(new CustomEvent('boshy_mode_changed', {detail:{mode}})); }catch(e){}
 }
 
 let boshyMode = 'any_ez';
@@ -589,8 +570,8 @@ document.querySelectorAll('.boshySubtab').forEach(btn=>{
     boshyMode = btn.getAttribute('data-boshy-mode') || 'any_ez';
     setActiveBoshyMode(boshyMode);
     await loadBoshy(boshyMode);
-    try{ window.__boshyMode = boshyMode; }catch(e){ attempts.push(`${path} → ERR`); }
-    try{ window.dispatchEvent(new CustomEvent('boshy_mode_changed', {detail:{mode:boshyMode}})); }catch(e){ attempts.push(`${path} → ERR`); }
+    try{ window.__boshyMode = boshyMode; }catch(e){}
+    try{ window.dispatchEvent(new CustomEvent('boshy_mode_changed', {detail:{mode:boshyMode}})); }catch(e){}
   });
 });
 
@@ -731,7 +712,7 @@ function clampLeaderboardHeight(targetRows = 25){
         }else if(p0?.rel === "guest"){
           pname = p0.name || "—";
         }
-      }catch(e){ attempts.push(`${path} → ERR`); }
+      }catch(e){}
       const link = r?.weblink;
       const tr = document.createElement("tr");
       const isMe = ME_NAME && ((pname || "").toLowerCase() === ME_NAME.toLowerCase() || (pname || "").toLowerCase().includes(ME_NAME.toLowerCase()));
