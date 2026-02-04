@@ -4,7 +4,7 @@
     <meta charset='utf-8'/>
     <meta name='viewport' content='width=device-width, initial-scale=1'/>
     <title>THXel Fangame Hub (Public)</title>
-    <link rel='stylesheet' href='assets/style.css'/>
+    <link rel='stylesheet' href='assets/style.css?v=2'/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'/>
   </head>
   <body>
@@ -511,7 +511,8 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 	  const srcData = cleanDataUrl(sp.icon_data_url);
 	  const src = srcPath || srcData;
 	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'splitIconPh'}));">` : `<div class="splitIconPh"></div>`;
-  const name = safeText(sp.name || '');
+  const nameRaw = safeText(sp.name || '');
+  const name = nameRaw.replace(/\s*\(END\)\s*$/,'');
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
   const pbCum = fmtTime(sp.pb_split_time);
