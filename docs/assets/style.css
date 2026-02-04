@@ -370,12 +370,59 @@ details.spoiler[open] > summary.spoilerSummary:after{ content:'▾'; }
 
 /* Splits table */
 .boshySplitsWrap{overflow:auto;}
-.boshySplitsTable{width:100%;border-collapse:collapse;font-size:12.5px;}
-.boshySplitsTable th,.boshySplitsTable td{padding:7px 8px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:middle;}
-.splitNameCell{min-width:260px;}
-.splitNameInline{display:flex;align-items:center;gap:8px;}
-.splitIcon{width:20px;height:20px;image-rendering:pixelated;}
-.splitIconPh{width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.08);}
+/* Splits: tighter columns + bigger readable numbers */
+.boshySplitsTable{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  font-size:14px;               /* bigger */
+  font-variant-numeric: tabular-nums;
+}
+
+.boshySplitsTable th,
+.boshySplitsTable td{
+  padding:6px 6px;              /* tighter */
+  border-bottom:1px solid rgba(255,255,255,.08);
+  vertical-align:middle;
+  white-space:nowrap;
+}
+
+.splitNameCell{
+  width: 210px;                 /* smaller name column */
+  max-width: 210px;
+}
+
+.splitNameInline{
+  display:flex;
+  align-items:center;
+  gap:6px;                      /* tighter */
+  min-width:0;                  /* allow ellipsis */
+}
+
+.splitNameInline span{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.splitIcon,
+.splitIconPh{
+  width:18px;                   /* slightly smaller icon */
+  height:18px;
+  image-rendering:pixelated;
+}
+.splitIconPh{
+  border-radius:6px;
+  background:rgba(255,255,255,.08);
+}
+
+/* numeric columns: give them a consistent width */
+.boshySplitsTable th.num,
+.boshySplitsTable td.num{
+  width: 92px;
+  text-align:right;
+}
 
 
 /* === Boshy master layout v3 === */
