@@ -1,0 +1,42 @@
+/* --- FORCE Splits readability (v5) --- */
+.boshySplitsTable{
+  table-layout: fixed !important;
+  font-size: 20px !important;
+  line-height: 1.45 !important;
+}
+
+.boshySplitsTable th,
+.boshySplitsTable td{
+  padding: 12px 10px !important;
+  white-space: nowrap !important;
+}
+
+.splitNameCell{
+  width: 170px !important;
+  max-width: 170px !important;
+}
+
+.splitIcon,
+.splitIconPh{
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.boshySplitsTable th.num,
+.boshySplitsTable td.num{
+  width: 120px !important;
+  text-align: right !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.boshySplitsTable td.num{
+  font-size: 24px !important;        /* BIG numbers */
+  font-weight: 650 !important;
+  letter-spacing: 0.1px !important;
+}
+
+/* tighten header a touch so rows get more space */
+.boshySplitsTable thead th{
+  font-size: 14px !important;
+  opacity: 0.95 !important;
+}
