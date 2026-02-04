@@ -530,58 +530,29 @@ if(boshySplits){
 
       }
 
-      async async function loadBoshy(mode){
-  // Build a stable base path for GitHub Pages (works whether URL is .../ or .../index.html)
-  let base = window.location.pathname || '/';
-  base = base.replace(/index\.html$/i, '');
-  if(!base.endsWith('/')) base = base + '/';
-
+      async function loadBoshy(mode){
   const candidates = {
-    any_ez:     ['boshy_speedrun_any_ez.json','boshy_speedrun_any.json'],
-    any_avg:    ['boshy_speedrun_any_avg.json','boshy_speedrun_any.json'],
-    any_rage:   ['boshy_speedrun_any_rage.json','boshy_speedrun_any.json'],
-    p100_hardon:['boshy_speedrun_100_hardon.json','boshy_speedrun_100.json','boshy_speedrun_any.json'],
+    any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun_any.json'],
+    any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun_any.json'],
+    any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun_any.json'],
+    p100_hardon: ['boshy_speedrun_100.json','boshy_speedrun_100.json','boshy_speedrun_any.json'],
   };
-
   const list = candidates[mode] || ['boshy_speedrun_any.json'];
-  const tried = [];
-
-  for(const file of list){
-    const url = base + file;
+  for(const path of list){
     try{
-      const r = await fetch(url, {cache:'no-store'});
-      tried.push(`${file} → ${r.status}`);
+      const r = await fetch(path, {cache:'no-store'});
       if(!r.ok) continue;
-
       const data = await r.json();
       data.__mode = mode;
-      data.__source = file;
+      data.__source = path;
       renderBoshy(data);
       return true;
-    }catch(e){
-      tried.push(`${file} → error`);
-    }
+    }catch(e){}
   }
-
-  // Show a helpful debug message in the empty state
-  const msg = `Keine Boshy-Speedrun-Daten geladen.
-` +
-              `Erwartet im selben Ordner wie index.html:
-- ${list.join('
-- ')}
-
-` +
-              `Tried:
-- ${tried.join('
-- ')}`;
-  const dbg = document.getElementById('boshyEmptyDebug');
-  if(dbg) dbg.textContent = msg;
-
   if(boshyEmpty) boshyEmpty.style.display = '';
   if(boshyRoot) boshyRoot.style.display = 'none';
   return false;
 }
-
 
 function setActiveBoshyMode(mode){
   document.querySelectorAll('.boshySubtab').forEach(btn=>{
