@@ -502,3 +502,54 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
 .splitsTable td, .splitsTable th, table.splitsTable td, table.splitsTable th { padding-top: 10px; padding-bottom: 10px; }
 .splitIcon { width: 24px; height: 24px; margin-right: 10px; border-radius: 6px; }
 .splitIconPh { width: 24px; height: 24px; margin-right: 10px; border-radius: 6px; }
+
+
+/* =========================================================
+   BOSH Y: readability override (added)
+   Bigger text + taller rows for the Splits table.
+   Keep this at the VERY END of the file.
+   ========================================================= */
+
+#tab-boshy, [data-tabpanel="boshy"]{
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+}
+
+/* Splits table (the one in your screenshot) */
+.boshySplitsTable{
+  font-size: 15px !important;
+}
+
+.boshySplitsTable th{
+  font-size: 15px !important;
+  padding: 10px 12px !important;
+}
+
+.boshySplitsTable td{
+  font-size: 15px !important;
+  padding: 10px 12px !important;
+}
+
+.boshySplitsTable tr{
+  height: 46px !important;
+}
+
+/* Make numeric columns extra readable */
+.boshySplitsTable td.mono,
+.boshySplitsTable .mono,
+.boshySplitsTable td.num{
+  font-size: 16px !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* Split name + icon */
+.splitNameInline span{
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+.splitIcon,
+.splitIconPh{
+  width: 24px !important;
+  height: 24px !important;
+}
