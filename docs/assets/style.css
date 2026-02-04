@@ -553,3 +553,6 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
   width: 24px !important;
   height: 24px !important;
 }
+
+
+.boshyEmptyDebug{white-space:pre-wrap;opacity:.85;font-size:13px;line-height:1.35;margin-top:10px;}
