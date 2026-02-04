@@ -167,7 +167,7 @@
 
 
 <div class='card' id='boshyEmpty'>
-  Keine Boshy-Speedrun-Daten geladen. Prüfe, ob die Kategorie-JSONs (z.B. <code>boshy_speedrun_any_ez.json</code>) im gleichen Ordner liegen.
+  Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun_any.json</code> in diesem Ordner ab (wird automatisch geladen).
 </div>
 
 <div id='boshyRoot' style='display:none;'>
@@ -225,7 +225,32 @@
 
 
     <script>
-      const btns = Array.from(document.querySelectorAll('.tabBtn'));
+      
+
+// Boshy category -> json file mapping (public docs/)
+const BOSHY_CATEGORY_FILES = {
+  "any": "boshy_speedrun_any.json",
+  "ez": "boshy_speedrun_any_ez.json",
+  "avg": "boshy_speedrun_any_avg.json",
+  "rage": "boshy_speedrun_any_rage.json",
+  "100": "boshy_speedrun_100.json"
+};
+
+function getBoshyCatKey(){
+  const h = (location.hash || "").toLowerCase();
+  // Allow #boshy?cat=ez  OR  #boshy_ez style
+  if (h.includes("cat=")) {
+    const m = h.match(/cat=([a-z0-9]+)/);
+    if (m) return m[1];
+  }
+  if (h.includes("boshy_ez")) return "ez";
+  if (h.includes("boshy_avg")) return "avg";
+  if (h.includes("boshy_rage")) return "rage";
+  if (h.includes("boshy_100")) return "100";
+  return "any";
+}
+
+const btns = Array.from(document.querySelectorAll('.tabBtn'));
 const panels = {
   lib: document.getElementById('tab-lib'),
   stats: document.getElementById('tab-stats'),
@@ -332,7 +357,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
       try{ applyLibraryFilters(); }catch(e){}
 
 
-      // --- Boshy Speedrun tab (loads boshy_speedrun.json) ---
+      // --- Boshy Speedrun tab (loads boshy_speedrun_any.json) ---
       const boshyEmpty = document.getElementById('boshyEmpty');
       const boshyRoot  = document.getElementById('boshyRoot');
       const boshyHdr   = document.getElementById('boshyHdr');
@@ -376,61 +401,6 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         `;
       }
 
-
-// cardHTML but allows HTML in value (we still escape the title/tiny)
-function cardHTMLx(icon, title, valueHTML, tiny){
-  return `
-    <div class="card boshyStatCard">
-      <div class="statTitle">${icon ? `<i class="${icon}"></i> `:''}${safeText(title)}</div>
-      <div class="statValue">${valueHTML}</div>
-      ${tiny ? `<div class="tiny">${safeText(tiny)}</div>`:''}
-    </div>
-  `;
-}
-
-function _parseAnyTimeToSec(v){
-  if(v===null || v===undefined) return null;
-  const s = String(v).trim();
-  if(!s || s==='-' || s==='—') return null;
-  return parseTsToSeconds(s);
-}
-
-function _fmtDeltaSeconds(sec){
-  if(sec===null || sec===undefined || Number.isNaN(sec)) return '';
-  const sign = sec < 0 ? '-' : '+';
-  let x = Math.abs(sec);
-  const h = Math.floor(x / 3600); x -= h*3600;
-  const m = Math.floor(x / 60); x -= m*60;
-  const s = Math.floor(x); x -= s;
-  const ms = Math.round(x*1000);
-  const mm = String(m).padStart(2,'0');
-  const ss = String(s).padStart(2,'0');
-  const mss = String(ms).padStart(3,'0');
-  return `${sign}${h}:${mm}:${ss}.${mss}`;
-}
-
-function deltaTimeChip(prevV, curV, betterIfSmaller){
-  const a = _parseAnyTimeToSec(prevV);
-  const b = _parseAnyTimeToSec(curV);
-  if(a===null || b===null) return '';
-  const diff = b - a; // positive => got slower/bigger
-  if(diff===0) return '';
-  const isBetter = betterIfSmaller ? (diff < 0) : (diff > 0);
-  const cls = isBetter ? 'delta good' : 'delta bad';
-  return `<span class="${cls}">${_fmtDeltaSeconds(diff)}</span>`;
-}
-
-function deltaNumChip(prevV, curV, betterIfSmaller){
-  const a = (prevV===null || prevV===undefined || prevV==='—' || prevV==='-') ? null : Number(prevV);
-  const b = (curV===null || curV===undefined || curV==='—' || curV==='-') ? null : Number(curV);
-  if(a===null || b===null || Number.isNaN(a) || Number.isNaN(b)) return '';
-  const diff = b - a;
-  if(diff===0) return '';
-  const isBetter = betterIfSmaller ? (diff < 0) : (diff > 0);
-  const cls = isBetter ? 'delta good' : 'delta bad';
-  const sign = diff < 0 ? '' : '+';
-  return `<span class="${cls}">${sign}${diff}</span>`;
-}
       function renderBoshy(data){
         if(!data || !data.splits || !Array.isArray(data.splits) || data.splits.length===0){
           if(boshyEmpty) boshyEmpty.style.display = '';
@@ -460,7 +430,7 @@ function deltaNumChip(prevV, curV, betterIfSmaller){
     // Header
         if(boshyHdr){
           const gi = cleanDataUrl(data.game_icon_data_url);
-          const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async" onerror="this.style.display='none'"/>` : '';
+          const gameIcon = gi ? `<img class="boshyGameIcon" src="${gi}" alt="game" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement(\'div\'),{className:\'splitIconPh\'}));"/>` : '';
           const title = safeText(data.game || 'I Wanna Be The Boshy');
           const cat = safeText(data.category || '');
           const tm = safeText(data.timing_method || 'RealTime');
@@ -477,42 +447,19 @@ function deltaNumChip(prevV, curV, betterIfSmaller){
         }
 
         // Cards
-        
-if(boshyCards){
-  const t = data.totals || {};
-  const last = data.last_run || {};
-
-  // previous snapshot (per category/mode)
-  const modeKey = data.__mode ? String(data.__mode) : 'default';
-  let prev = null;
-  try{
-    const raw = localStorage.getItem('boshy_prev_' + modeKey);
-    if(raw) prev = JSON.parse(raw);
-  }catch(e){ prev = null; }
-
-  const pt = prev || {};
-  const ptot = pt.totals || {};
-  const plast = pt.last_run || {};
-
-  const pbTotalHTML = `${safeText(fmtTime(data.pb_total))}${deltaTimeChip(pt.pb_total, data.pb_total, true)}`;
-  const sobHTML = `${safeText(fmtTime(data.sum_of_best))}${deltaTimeChip(pt.sum_of_best, data.sum_of_best, true)}`;
-  const lastFinalHTML = `${safeText(fmtTime(last.final_time))}${deltaTimeChip(plast.final_time, last.final_time, true)}`;
-  const deltaVsHTML = `${safeText(last.delta || '—')}`; // keep as-is
-  const resetsHTML = `${safeText(fmtNum(t.resets ?? 0))}${deltaNumChip(ptot.resets ?? 0, t.resets ?? 0, true)}`;
-  const finishesHTML = `${safeText(fmtNum(t.finishes ?? 0))}${deltaNumChip(ptot.finishes ?? 0, t.finishes ?? 0, false)}`;
-  const splitsNHTML = `${safeText(fmtNum(data.splits.length))}${deltaNumChip((pt.splits && pt.splits.length) ? pt.splits.length : 0, data.splits.length, false)}`;
-  const deathsHTML = `${safeText(fmtNum(t.deaths ?? 0))}${deltaNumChip(ptot.deaths ?? 0, t.deaths ?? 0, true)}`;
-
-  boshyCards.innerHTML =
-    cardHTMLx('fa-solid fa-trophy', 'PB Total', pbTotalHTML, 'from .lss (RealTime)') +
-    cardHTMLx('fa-solid fa-bolt', 'Sum of Best (Best Segments)', sobHTML, 'sum of best segments') +
-    cardHTMLx('fa-solid fa-flag-checkered', 'Last Final', lastFinalHTML, 'last stream recap') +
-    cardHTMLx('fa-solid fa-chart-line', 'Delta (vs Comparison)', deltaVsHTML, 'vs comparison') +
-    cardHTMLx('fa-solid fa-rotate-left', 'Resets (Stream)', resetsHTML, '') +
-    cardHTMLx('fa-solid fa-check', 'Finishes (Stream)', finishesHTML, '') +
-    cardHTMLx('fa-solid fa-list-ol', 'Anzahl Splits', splitsNHTML, '') +
-    cardHTMLx('fa-solid fa-skull', 'Deaths (Stream)', deathsHTML, 'overlay counter');
-}
+        if(boshyCards){
+          const t = data.totals || {};
+          const last = data.last_run || {};
+          boshyCards.innerHTML =
+            cardHTML('fa-solid fa-trophy', 'PB Total', fmtTime(data.pb_total), 'from .lss (RealTime)') +
+            cardHTML('fa-solid fa-bolt', 'Sum of Best (Best Segments)', fmtTime(data.sum_of_best), 'sum of best segments') +
+            cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'last stream recap') +
+            cardHTML('fa-solid fa-chart-line', 'Delta (vs Comparison)', safeText(last.delta || '—'), 'vs comparison') +
+            cardHTML('fa-solid fa-rotate-left', 'Resets (Stream)', fmtNum(t.resets ?? 0), '') +
+            cardHTML('fa-solid fa-check', 'Finishes (Stream)', fmtNum(t.finishes ?? 0), '') +
+            cardHTML('fa-solid fa-list-ol', 'Splits (gesamt)', fmtNum(data.lifetime_splits ?? 0), '') +
+            cardHTML('fa-solid fa-skull', 'Deaths (Stream)', fmtNum(t.deaths ?? 0), 'overlay counter');
+        }
 
         const splits = data.splits.slice();
         let maxSeg = 0;
@@ -521,94 +468,42 @@ if(boshyCards){
           if(sec && sec>maxSeg) maxSeg = sec;
         }
 
-	        
-        // previous snapshot (per category/mode) for split-level deltas
-        const modeKey = data.__mode ? String(data.__mode) : 'default';
-        let prev = null;
-        try{
-          const raw = localStorage.getItem('boshy_prev_' + modeKey);
-          if(raw) prev = JSON.parse(raw);
-        }catch(e){ prev = null; }
+	        function splitRow(sp){
+	  // Prefer a real PNG path if available; otherwise fall back to embedded data.
+	  const srcPath = (sp.icon_path && String(sp.icon_path).trim()) ? String(sp.icon_path).trim() : '';
+	  const srcData = cleanDataUrl(sp.icon_data_url);
+	  const src = srcPath || srcData;
+	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'splitIconPh'}));">` : `<div class="splitIconPh"></div>`;
+  const name = safeText(sp.name || '');
+  const pbSeg = fmtTime(sp.pb_segment_time);
+  const bestSeg = fmtTime(sp.best_segment_time);
+  const pbCum = fmtTime(sp.pb_split_time);
 
-        const prevByName = {};
-        if(prev && Array.isArray(prev.splits)){
-          for(const p of prev.splits){
-            if(p && p.name) prevByName[String(p.name)] = p;
-          }
-        }
+  const histN = (sp.history && sp.history.count) ? sp.history.count : 0;
+  const histAvg = sp.history && sp.history.avg ? fmtTime(sp.history.avg) : '—';
 
-        function splitRow(sp, idx){
-          // Prefer a real PNG path if available; otherwise fall back to embedded data.
-          const srcPath = (sp.icon_path && String(sp.icon_path).trim()) ? String(sp.icon_path).trim() : '';
-          const srcData = cleanDataUrl(sp.icon_data_url);
-          const src = srcPath || srcData;
-          const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=\"splitIconPh\"></div>'"/>` : `<div class="splitIconPh"></div>`;
-          const name = safeText(sp.name || '');
-          const prevSp = prevByName[String(sp.name || '')] || null;
+  const streamTime = sp.stream && sp.stream.time_on_split ? fmtTime(sp.stream.time_on_split) : '—';
+  const streamVisits = sp.stream && sp.stream.visits !== undefined ? fmtNum(sp.stream.visits) : '—';
+  const streamDeaths = sp.stream && sp.stream.deaths !== undefined ? fmtNum(sp.stream.deaths) : '—';
+  return `
+    <tr>
+      <td class="splitNameCell">
+        <div class="splitNameInline">${icon}<span>${name}</span></div>
+        
+      </td>
+      <td class="num">${pbSeg}</td>
+      <td class="num">${bestSeg}</td>
+      <td class="num">${pbCum}</td>
+      <td class="num">${histAvg}</td>
+      <td class="num">${histN}</td>
+      <td class="num">${streamTime}</td>
+      <td class="num">${streamVisits}</td>
+      <td class="num">${streamDeaths}</td>
+    </tr>
+  `;
+}
 
-          // times
-          const pbSegV = sp.pb_segment_time;
-          const bestSegV = sp.best_segment_time;
-
-          // pb split: fix missing last split (Solgryn in Any% exports) by using pb_total
-          let pbSplitV = sp.pb_split_time;
-          if((pbSplitV===undefined || pbSplitV===null || String(pbSplitV).trim()==='-' || String(pbSplitV).trim()==='—') && idx === (splits.length-1) && data.pb_total){
-            pbSplitV = data.pb_total;
-          }
-
-          const pbSeg = fmtTime(pbSegV);
-          const bestSeg = fmtTime(bestSegV);
-          const pbCum = fmtTime(pbSplitV);
-
-          // deltas
-          const dPbSeg = deltaTimeChip(prevSp ? prevSp.pb_segment_time : null, pbSegV, true);
-          const dBestSeg = deltaTimeChip(prevSp ? prevSp.best_segment_time : null, bestSegV, true);
-          const dPbCum = deltaTimeChip(prevSp ? prevSp.pb_split_time : null, pbSplitV, true);
-
-          const histNVal = (sp.history && sp.history.count) ? sp.history.count : 0;
-          const histAvgVal = (sp.history && sp.history.avg) ? sp.history.avg : null;
-          const histAvg = sp.history && sp.history.avg ? fmtTime(sp.history.avg) : '—';
-
-          const pHistN = prevSp && prevSp.history && prevSp.history.count ? prevSp.history.count : 0;
-          const pHistAvg = prevSp && prevSp.history && prevSp.history.avg ? prevSp.history.avg : null;
-
-          const dHistAvg = deltaTimeChip(pHistAvg, histAvgVal, true);
-          const dHistN = deltaNumChip(pHistN, histNVal, false);
-
-          const streamTimeVal = sp.stream && sp.stream.time_on_split ? sp.stream.time_on_split : null;
-          const streamVisitsVal = sp.stream && sp.stream.visits !== undefined ? sp.stream.visits : null;
-          const streamDeathsVal = sp.stream && sp.stream.deaths !== undefined ? sp.stream.deaths : null;
-
-          const streamTime = streamTimeVal ? fmtTime(streamTimeVal) : '—';
-          const streamVisits = streamVisitsVal !== null ? fmtNum(streamVisitsVal) : '—';
-          const streamDeaths = streamDeathsVal !== null ? fmtNum(streamDeathsVal) : '—';
-
-          const pStreamTime = prevSp && prevSp.stream && prevSp.stream.time_on_split ? prevSp.stream.time_on_split : null;
-          const pStreamVisits = prevSp && prevSp.stream && prevSp.stream.visits !== undefined ? prevSp.stream.visits : null;
-          const pStreamDeaths = prevSp && prevSp.stream && prevSp.stream.deaths !== undefined ? prevSp.stream.deaths : null;
-
-          const dStreamTime = deltaTimeChip(pStreamTime, streamTimeVal, false);
-          const dStreamVisits = deltaNumChip(pStreamVisits, streamVisitsVal, false);
-          const dStreamDeaths = deltaNumChip(pStreamDeaths, streamDeathsVal, true);
-
-          return `
-            <tr>
-              <td class="splitNameCell">
-                <div class="splitNameInline">${icon}<span>${name}</span></div>
-              </td>
-              <td class="num">${pbSeg}${dPbSeg}</td>
-              <td class="num">${bestSeg}${dBestSeg}</td>
-              <td class="num">${pbCum}${dPbCum}</td>
-              <td class="num">${histAvg}${dHistAvg}</td>
-              <td class="num">${histNVal}${dHistN}</td>
-              <td class="num">${streamTime}${dStreamTime}</td>
-              <td class="num">${streamVisits}${dStreamVisits}</td>
-              <td class="num">${streamDeaths}${dStreamDeaths}</td>
-            </tr>
-          `;
-        }
-
-if(boshySplits){if(boshySplits){
+if(boshySplits){
   boshySplits.innerHTML = `
     <div class="boshySplitsWrap">
       <table class="boshySplitsTable">
@@ -626,95 +521,35 @@ if(boshySplits){if(boshySplits){
           </tr>
         </thead>
         <tbody>
-          ${splits.map((s,i)=>splitRow(s,i)).join('')}
+          ${splits.map(splitRow).join('')}
         </tbody>
       </table>
     </div>
   `;
 }
 
-      
+      }
 
-// store snapshot for delta display on next visit (per category)
-try{
-  const modeKey = data.__mode ? String(data.__mode) : 'default';
-  // keep only what we need (avoid huge localStorage)
-  const snapshot = {
-    updated_at_utc: data.updated_at_utc || null,
-    pb_total: data.pb_total || null,
-    sum_of_best: data.sum_of_best || null,
-    totals: data.totals || {},
-    last_run: data.last_run || {},
-    splits: Array.isArray(data.splits) ? data.splits.map(s => ({
-      name: s.name,
-      pb_segment_time: s.pb_segment_time,
-      best_segment_time: s.best_segment_time,
-      pb_split_time: s.pb_split_time,
-      history: s.history ? {count: s.history.count, avg: s.history.avg} : null,
-      stream: s.stream ? {time_on_split: s.stream.time_on_split, visits: s.stream.visits, deaths: s.stream.deaths} : null,
-    })) : []
-  };
-  localStorage.setItem('boshy_prev_' + modeKey, JSON.stringify(snapshot));
-}catch(e){}}
-
-      async function loadBoshy(mode){
-  // Build a safe base directory (works on GitHub Pages and when embedded elsewhere)
-  const href = (document.querySelector('base') && document.querySelector('base').href) ? document.querySelector('base').href : window.location.href;
-  const baseDir = href.split('#')[0].split('?')[0].replace(/[^/]*$/, '');
-
+      async async function loadBoshy(mode){
   const candidates = {
-    any_ez:     ['boshy_speedrun_any_ez.json',   'boshy_speedrun.json'],
-    any_avg:    ['boshy_speedrun_any_avg.json',  'boshy_speedrun.json'],
-    any_rage:   ['boshy_speedrun_any_rage.json', 'boshy_speedrun.json'],
-    p100_hardon:['boshy_speedrun_100_hardon.json','boshy_speedrun_100.json','boshy_speedrun.json'],
+    any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun_any.json'],
+    any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun_any.json'],
+    any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun_any.json'],
+    p100_hardon: ['boshy_speedrun_100.json','boshy_speedrun_100.json','boshy_speedrun_any.json'],
   };
-
-  const list = candidates[mode] || ['boshy_speedrun_any_ez.json','boshy_speedrun.json'];
-
-  // optimistic UI
-  if(boshyEmpty){
-    boshyEmpty.style.display = '';
-    boshyEmpty.innerHTML = `Lade Boshy-Daten… <span class="tiny">(mode: ${safeText(mode)})</span>`;
-  }
-  if(boshyRoot) boshyRoot.style.display = 'none';
-
-  let lastErr = '';
-  const tried = [];
-
+  const list = candidates[mode] || ['boshy_speedrun_any.json'];
   for(const path of list){
-    const url = baseDir + path;
-    tried.push(path);
     try{
-      const r = await fetch(url, {cache:'no-store'});
-      if(!r.ok){ lastErr = `HTTP ${r.status} for ${path}`; continue; }
+      const r = await fetch(path, {cache:'no-store'});
+      if(!r.ok) continue;
       const data = await r.json();
       data.__mode = mode;
       data.__source = path;
-      try{
-        renderBoshy(data);
-      }catch(e){
-        lastErr = `Render error: ${e && e.message ? e.message : e}`;
-        continue;
-      }
+      renderBoshy(data);
       return true;
-    }catch(e){
-      lastErr = (e && e.message) ? e.message : String(e);
-    }
+    }catch(e){}
   }
-
-  // failure
-  if(boshyEmpty){
-    boshyEmpty.style.display = '';
-    boshyEmpty.innerHTML = `
-      <div><b>Noch keine Boshy-Speedrun-Daten gefunden.</b></div>
-      <div class="tiny" style="margin-top:6px;">
-        Versucht: <code>${tried.join('</code>, <code>')}</code><br/>
-        ${lastErr ? `Fehler: <code>${safeText(lastErr)}</code><br/>` : ``}
-        Erwartet werden die JSONs im gleichen Ordner wie diese Seite (GitHub Pages):<br/>
-        <code>boshy_speedrun_any_ez.json</code>, <code>boshy_speedrun_any_avg.json</code>, <code>boshy_speedrun_any_rage.json</code>, <code>boshy_speedrun_100_hardon.json</code>
-      </div>
-    `;
-  }
+  if(boshyEmpty) boshyEmpty.style.display = '';
   if(boshyRoot) boshyRoot.style.display = 'none';
   return false;
 }
