@@ -1,6 +1,6 @@
 {
   "schema": "fangamehub.speedrun.v1",
-  "updated_at_utc": "2026-02-04T16:25:23Z",
+  "updated_at_utc": "2026-02-03T22:10:59Z",
   "game": "I Wanna Be The Boshy",
   "category": "Any%",
   "timing_method": "Real Time",
@@ -357,10 +357,10 @@
     },
     {
       "index": 22,
-      "name": "Solgryn",
+      "name": "Solgryn (END)",
       "icon_data_url": "",
-      "icon_path": "assets/Split_icons/solgryn.png",
-      "pb_split_time": "-",
+      "icon_path": "assets/Split_icons/solgryn_end.png",
+      "pb_split_time": "00:57:01.6363345",
       "pb_segment_time": "-",
       "best_segment_time": "-",
       "history": [],
