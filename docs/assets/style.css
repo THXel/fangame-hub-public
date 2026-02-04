@@ -554,31 +554,8 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
   height: 24px !important;
 }
 
-/* =========================================================
-   BOSH Y: delta chips (what changed since last update)
-   ========================================================= */
-.deltaChip{
-  display:inline-block;
-  margin-left:8px;
-  padding:2px 8px;
-  border-radius:999px;
-  font-size:12.5px;
-  line-height:1.3;
-  font-weight:800;
-  letter-spacing:.2px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.06);
-  vertical-align:middle;
-  font-variant-numeric: tabular-nums;
-}
-.deltaGood{
-  border-color: rgba(60, 220, 140, .35);
-  background: rgba(60, 220, 140, .14);
-}
-.deltaBad{
-  border-color: rgba(255, 90, 90, .35);
-  background: rgba(255, 90, 90, .14);
-}
 
-/* Extra bump for split numeric readability */
-.boshySplitsTable td.num{ font-size: 18px !important; }
+/* Boshy: no-runs notice */
+.boshyNoRunsCard{border:1px solid rgba(255,255,255,.12);}
+.boshyNoRunsTitle{font-weight:800; font-size:16px; margin-bottom:6px; display:flex; gap:8px; align-items:center;}
+.boshyNoRunsText{opacity:.9; line-height:1.35;}

@@ -176,7 +176,15 @@
     <div id='boshyHdr'></div>
   </div>
 
-  <!-- Top: left stats / right SRC -->
+  
+
+  <!-- No-runs notice -->
+  <div class='card boshyNoRunsCard' id='boshyNoRuns' style='display:none;'>
+    <div class='boshyNoRunsTitle'><i class="fa-solid fa-circle-info"></i> Noch keine Runs</div>
+    <div class='boshyNoRunsText' id='boshyNoRunsText'></div>
+  </div>
+
+<!-- Top: left stats / right SRC -->
   <div class='boshyTopGrid'>
     <div class='boshyLeft'>
       <div class='card boshySectionTitle'>
@@ -361,7 +369,9 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
       const boshyEmpty = document.getElementById('boshyEmpty');
       const boshyRoot  = document.getElementById('boshyRoot');
       const boshyHdr   = document.getElementById('boshyHdr');
-      const boshyCards = document.getElementById('boshyCards');
+            const boshyNoRuns = document.getElementById('boshyNoRuns');
+      const boshyNoRunsText = document.getElementById('boshyNoRunsText');
+const boshyCards = document.getElementById('boshyCards');
       const boshySplits= document.getElementById('boshySplits');
             function fmtTime(s){
         if(!s) return '—';
@@ -391,98 +401,6 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         return h*3600 + m*60 + sec;
       }
 
-      // ---- "what changed since last update" (localStorage diff) ----
-      function lsKeyForMode(mode){
-        return `hub_boshy_prev_${String(mode||'any_ez')}`;
-      }
-      function loadPrev(mode){
-        try{
-          const raw = localStorage.getItem(lsKeyForMode(mode));
-          return raw ? JSON.parse(raw) : null;
-        }catch(e){ return null; }
-      }
-      function savePrev(mode, data){
-        try{ localStorage.setItem(lsKeyForMode(mode), JSON.stringify(data)); }catch(e){}
-      }
-      function fmtDeltaSeconds(dsec){
-        if(dsec === null || dsec === undefined) return '';
-        let s = Number(dsec);
-        if(!isFinite(s) || s===0) return '';
-        const sign = s < 0 ? '-' : '+';
-        s = Math.abs(s);
-        const h = Math.floor(s/3600);
-        const m = Math.floor((s%3600)/60);
-        const sec = (s%60);
-        const secStr = sec.toFixed(3).padStart(6,'0');
-        if(h>0) return `${sign}${h}:${String(m).padStart(2,'0')}:${secStr}`;
-        return `${sign}${m}:${secStr}`;
-      }
-      function deltaChipHTML(dsec){
-        const txt = fmtDeltaSeconds(dsec);
-        if(!txt) return '';
-        const good = dsec < 0; // lower time = better
-        const cls = good ? 'deltaGood' : 'deltaBad';
-        return `<span class="deltaChip ${cls}">${txt}</span>`;
-      }
-      function deltaChipNumHTML(dnum){
-        if(dnum === null || dnum === undefined) return '';
-        const n = Number(dnum);
-        if(!isFinite(n) || n===0) return '';
-        const sign = n < 0 ? '-' : '+';
-        const cls = n < 0 ? 'deltaGood' : 'deltaBad';
-        return `<span class="deltaChip ${cls}">${sign}${Math.abs(n)}</span>`;
-      }
-
-      function diffTimeSeconds(a,b){
-        const x = parseTsToSeconds(a);
-        const y = parseTsToSeconds(b);
-        if(x===null || y===null) return null;
-        return x - y;
-      }
-
-      function makeDiff(prev, cur){
-        const out = { totals:{}, splits:{} };
-        if(!prev || !cur) return out;
-
-        const pt = prev.totals || {};
-        const ct = cur.totals || {};
-        for(const k of ['deaths','resets','finishes']){
-          const a = Number(pt[k] ?? 0), b = Number(ct[k] ?? 0);
-          if(isFinite(a) && isFinite(b)) out.totals[k] = b - a;
-        }
-
-        out.pb_total = diffTimeSeconds(cur.pb_total, prev.pb_total);
-        out.sum_of_best = diffTimeSeconds(cur.sum_of_best, prev.sum_of_best);
-
-        const pm = {};
-        try{ (prev.splits||[]).forEach(sp=>{ if(sp && sp.name) pm[String(sp.name)] = sp; }); }catch(e){}
-        for(const sp of (cur.splits||[])){
-          if(!sp || !sp.name) continue;
-          const name = String(sp.name);
-          const psp = pm[name] || null;
-          if(!psp) continue;
-
-          const d = {};
-          d.pb_segment_time = diffTimeSeconds(sp.pb_segment_time, psp.pb_segment_time);
-          d.best_segment_time = diffTimeSeconds(sp.best_segment_time, psp.best_segment_time);
-          d.pb_split_time = diffTimeSeconds(sp.pb_split_time, psp.pb_split_time);
-
-          const ps = (psp.stream||{});
-          const cs = (sp.stream||{});
-          d.stream_time = diffTimeSeconds((cs.time_on_split||cs.time_segment||cs.timeSegment),(ps.time_on_split||ps.time_segment||ps.timeSegment));
-
-          const pd = Number((ps.deaths ?? ps.deaths_segment ?? ps.deathsSegment) ?? 0), cd = Number((cs.deaths ?? cs.deaths_segment ?? cs.deathsSegment) ?? 0);
-          if(isFinite(pd) && isFinite(cd)) d.stream_deaths = cd - pd;
-
-          const pv = Number((ps.visits ?? ps.visits_segment ?? ps.visitsSegment) ?? 0), cv = Number((cs.visits ?? cs.visits_segment ?? cs.visitsSegment) ?? 0);
-          if(isFinite(pv) && isFinite(cv)) d.stream_visits = cv - pv;
-
-          out.splits[name] = d;
-        }
-        return out;
-      }
-
-
       function cardHTML(icon, title, value, tiny){
         return `
           <div class="card boshyStatCard">
@@ -502,12 +420,29 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         if(boshyEmpty) boshyEmpty.style.display = 'none';
         if(boshyRoot) boshyRoot.style.display = '';
 
-        const __mode = data.__mode || 'any_ez';
-        const __prev = loadPrev(__mode);
-        const __diff = makeDiff(__prev, data);
-        savePrev(__mode, data);
 
+        // Show a friendly notice when the category exists but no runs were recorded yet
+        const modeLabel = (m=>{
+          switch((m||'').toLowerCase()){
+            case 'any_ez': return 'Any% • EZ';
+            case 'any_avg': return 'Any% • Average';
+            case 'any_rage': return 'Any% • Rage';
+            case 'p100_hardon': return '100% • Hardon';
+            default: return 'Any%';
+          }
+        })(data.__mode || data.mode || '');
 
+        const lastTime = (data.last_run && (data.last_run.final_time || data.last_run.time)) ? String(data.last_run.final_time || data.last_run.time) : '';
+        const pbTotal = (data.pb_total != null) ? String(data.pb_total) : '';
+        const hasRuns = (pbTotal && pbTotal !== '-' && pbTotal !== '0' && pbTotal !== '0:00:00') || (lastTime && lastTime !== '-');
+
+        if (boshyNoRuns){
+          boshyNoRuns.style.display = hasRuns ? 'none' : '';
+          if (!hasRuns && boshyNoRunsText){
+            const extra = (String(data.finished||'').toLowerCase() === 'true' || data.finished===true) ? '' : ' (noch nicht beendet)';
+            boshyNoRunsText.innerHTML = `Kategorie <b>${safeText(modeLabel)}</b>: Noch keine Runs vorhanden${extra}.`;
+          }
+        }
     function cleanDataUrl(u){
       if(!u) return '';
       u = String(u);
@@ -549,14 +484,14 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
           const t = data.totals || {};
           const last = data.last_run || {};
           boshyCards.innerHTML =
-            cardHTML('fa-solid fa-trophy', 'PB Total', `${fmtTime(data.pb_total)} ${deltaChipHTML(__diff.pb_total)}`, 'from .lss (RealTime)') +
-            cardHTML('fa-solid fa-bolt', 'Sum of Best (Best Segments)', `${fmtTime(data.sum_of_best)} ${deltaChipHTML(__diff.sum_of_best)}`, 'sum of best segments') +
-            cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time || last.time), 'last stream recap') +
-            cardHTML('fa-solid fa-chart-line', 'Delta (vs Comparison)', safeText(last.delta || last.delta_vs_comparison || '—'), 'vs comparison') +
-            cardHTML('fa-solid fa-rotate-left', 'Resets (Stream)', `${fmtNum(t.resets ?? 0)} ${deltaChipNumHTML(__diff.totals.resets)}`, '') +
-            cardHTML('fa-solid fa-check', 'Finishes (Stream)', `${fmtNum(t.finishes ?? 0)} ${deltaChipNumHTML(__diff.totals.finishes)}`, '') +
+            cardHTML('fa-solid fa-trophy', 'PB Total', fmtTime(data.pb_total), 'from .lss (RealTime)') +
+            cardHTML('fa-solid fa-bolt', 'Sum of Best (Best Segments)', fmtTime(data.sum_of_best), 'sum of best segments') +
+            cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'last stream recap') +
+            cardHTML('fa-solid fa-chart-line', 'Delta (vs Comparison)', safeText(last.delta || '—'), 'vs comparison') +
+            cardHTML('fa-solid fa-rotate-left', 'Resets (Stream)', fmtNum(t.resets ?? 0), '') +
+            cardHTML('fa-solid fa-check', 'Finishes (Stream)', fmtNum(t.finishes ?? 0), '') +
             cardHTML('fa-solid fa-list-ol', 'Splits (gesamt)', fmtNum(data.lifetime_splits ?? 0), '') +
-            cardHTML('fa-solid fa-skull', 'Deaths (Stream)', `${fmtNum(t.deaths ?? 0)} ${deltaChipNumHTML(__diff.totals.deaths)}`, 'overlay counter');
+            cardHTML('fa-solid fa-skull', 'Deaths (Stream)', fmtNum(t.deaths ?? 0), 'overlay counter');
         }
 
         const splits = data.splits.slice();
@@ -572,9 +507,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 	  const srcData = cleanDataUrl(sp.icon_data_url);
 	  const src = srcPath || srcData;
 	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'splitIconPh'}));">` : `<div class="splitIconPh"></div>`;
-  const keyName = String(sp.name || '');
-  const name = safeText(keyName);
-  const d = (__diff && __diff.splits && __diff.splits[keyName]) ? __diff.splits[keyName] : {};
+  const name = safeText(sp.name || '');
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
   const pbCum = fmtTime(sp.pb_split_time);
@@ -582,26 +515,23 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
   const histN = (sp.history && sp.history.count) ? sp.history.count : 0;
   const histAvg = sp.history && sp.history.avg ? fmtTime(sp.history.avg) : '—';
 
-  const streamTimeRaw = sp.stream ? (sp.stream.time_on_split || sp.stream.time_segment || sp.stream.timeSegment) : '';
-  const streamTime = streamTimeRaw ? fmtTime(streamTimeRaw) : '—';
-  const streamVisitsVal = sp.stream ? (sp.stream.visits ?? sp.stream.visits_segment ?? sp.stream.visitsSegment) : undefined;
-  const streamVisits = (streamVisitsVal !== undefined) ? fmtNum(streamVisitsVal) : '—';
-  const streamDeathsVal = sp.stream ? (sp.stream.deaths ?? sp.stream.deaths_segment ?? sp.stream.deathsSegment) : undefined;
-  const streamDeaths = (streamDeathsVal !== undefined) ? fmtNum(streamDeathsVal) : '—';
+  const streamTime = sp.stream && sp.stream.time_on_split ? fmtTime(sp.stream.time_on_split) : '—';
+  const streamVisits = sp.stream && sp.stream.visits !== undefined ? fmtNum(sp.stream.visits) : '—';
+  const streamDeaths = sp.stream && sp.stream.deaths !== undefined ? fmtNum(sp.stream.deaths) : '—';
   return `
     <tr>
       <td class="splitNameCell">
         <div class="splitNameInline">${icon}<span>${name}</span></div>
         
       </td>
-      <td class="num">${pbSeg} ${deltaChipHTML(d.pb_segment_time)}</td>
-      <td class="num">${bestSeg} ${deltaChipHTML(d.best_segment_time)}</td>
-      <td class="num">${pbCum} ${deltaChipHTML(d.pb_split_time)}</td>
+      <td class="num">${pbSeg}</td>
+      <td class="num">${bestSeg}</td>
+      <td class="num">${pbCum}</td>
       <td class="num">${histAvg}</td>
       <td class="num">${histN}</td>
-      <td class="num">${streamTime} ${deltaChipHTML(d.stream_time)}</td>
-      <td class="num">${streamVisits} ${deltaChipNumHTML(d.stream_visits)}</td>
-      <td class="num">${streamDeaths} ${deltaChipNumHTML(d.stream_deaths)}</td>
+      <td class="num">${streamTime}</td>
+      <td class="num">${streamVisits}</td>
+      <td class="num">${streamDeaths}</td>
     </tr>
   `;
 }
