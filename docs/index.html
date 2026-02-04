@@ -366,19 +366,23 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 
 
       // --- Boshy Speedrun tab (loads boshy_speedrun_any.json) ---
-      const boshyEmpty = document.getElementById('boshyEmpty');
-      const boshyRoot  = document.getElementById('boshyRoot');
-      const boshyHdr   = document.getElementById('boshyHdr');
-            const boshyNoRuns = document.getElementById('boshyNoRuns');
+      const boshyEmpty      = document.getElementById('boshyEmpty');
+      const boshyRoot       = document.getElementById('boshyRoot');
+      const boshyHdr        = document.getElementById('boshyHdr');
+      const boshyNoRuns     = document.getElementById('boshyNoRuns');
       const boshyNoRunsText = document.getElementById('boshyNoRunsText');
-const boshyCards = document.getElementById('boshyCards');
-      const boshySplits= document.getElementById('boshySplits');
-            function fmtTime(s){
-        if(!s) return '—';
-        return String(s).replace(/(\.\d{3})\d+$/, '$1');
+
+      const boshyCards      = document.getElementById('boshyCards');
+      const boshySplits     = document.getElementById('boshySplits');
+
+      function fmtTime(s){
+        if(!s || s === '-' || s === '—') return '—';
+        // Milliseconds komplett entfernen (.000 / .610 etc.)
+        return String(s).replace(/\.\d+$/, '');
       }
+
       function fmtNum(n){
-        if(n === null || n === undefined) return '—';
+        if(n === null || n === undefined || n === '-' || n === '—') return '—';
         const v = Number(n);
         if(Number.isNaN(v)) return '—';
         return String(v);
