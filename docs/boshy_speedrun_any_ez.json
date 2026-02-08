@@ -1,377 +1,378 @@
 {
   "schema": "fangamehub.speedrun.v1",
-  "updated_at_utc": "2026-02-03T22:10:59Z",
-  "game": "I Wanna Be The Boshy",
-  "category": "Any% • Ez-Mode",
-  "timing_method": "Real Time",
-  "game_icon_data_url": "",
+  "updated_at_utc": "2026-02-06T18:24:46+00:00",
   "lifetime_splits": 0,
-  "pb_total": "00:57:01.6363345",
-  "sum_of_best": "-",
-  "totals": {
-    "visits": 0,
-    "deaths": 0,
-    "stream_time": "-"
-  },
+  "game": "I Wanna Be The Boshy",
+  "category": "Any%",
+  "timing_method": "RealTime",
+  "difficulty_code": null,
+  "difficulty_name": "",
+  "mode_key": "any_ez",
+  "game_icon_data_url": "",
+  "pb_total": "00:52:48.075",
+  "sum_of_best": "00:35:57.704",
   "last_run": {
-    "finished": false,
-    "ended_at_utc": "",
-    "time": "-"
+    "final_time": "00:52:48.0749235",
+    "delta": "-"
+  },
+  "totals": {
+    "resets": 0,
+    "finishes": 1,
+    "deaths": 0
   },
   "splits": [
     {
-      "index": 1,
       "name": "Prehistorik",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/prehistorik.png",
-      "pb_split_time": "00:02:05.6102887",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAggIAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAAEZ0FNQQAAsY8L/GEFAAACOUlEQVRYR62XUVEDQRBET0KkIAEJkYCESEBCJCABKUhAAg6g3la9q2Yym9sUfDS3O9PT3bfJHbBdXy/f4OvzY+B0OrU4Pz/doOOBjgve364DeuG7WczmI6Jglau+N83+MEAnBBS4vJzH/ogPj5m84rUHYGO6owAKOJshKlcwUwNwHQHSHLLi1GoQesIA8NjL6WC/8jaF0py1wlwNkCLOOWsIA9fQWYMP2G8d2QCGSI7mrGuA5CaftaZADep7gByoARSmn/yjAGAWQK3xHqgD1BQ3BNfkCTnMdAGApkJz6ls3pKjw7hiecTMAPGrJq+YAzvgIGAaKdUCcq8MAMfvOKzzj55r+eAqOzIGnUAXtq+Hdy2ddZwQzN29CoFGt1QAeq5x6I87UuV8B+JFIAci5t1aFKqfCEKzrbHsCCch1n0AkT0HUm+lCgKUAHjVmOSy6U5gFqCH2AAxQ8KNwf2QO7p2CpmpSZ+/s/hSkYDXPXgcCzE4hjROGuAmwYo5ZzhhgZlRr1pkdARRIQevWam81APUuxB6gmmjQ1UUGyLrCCfmslwIoWq+JLgB7QC8hh14Gs/fr1/EMmgiGuwBprEHy5QK17wbIgYSCyakB7KU5teyDaQCFEzOeoq6znuYgzUEbgIFExwH0NHZtT/PkZ9+Zpe/AChR0nebsO3PW/xYgoZlGM3MwAkjK5xTk4CoeMQcjAMdVXxQgn9eKKlTRmXXY/zERhMn9vRB/BbrjL6I0FzXEyt08isvL+fsHkmvnWvLsGGEAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:01:44.199",
+      "best_segment_time": "00:01:43.070",
+      "pb_split_time": "00:01:44.199",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 2,
       "name": "Hello Kitty",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/hello_kitty.png",
-      "pb_split_time": "00:02:29.4080384",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,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",
+      "pb_segment_time": "00:00:50.602",
+      "best_segment_time": "00:00:22.844",
+      "pb_split_time": "00:02:34.801",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 3,
       "name": "Kirby's Adventure",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/kirbys_adventure.png",
-      "pb_split_time": "00:07:25.4920591",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAgwEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAAEZ0FNQQAAsY8L/GEFAAABOklEQVRYR8WXQXIDMQgEdczTfPBD86j8xS4OU2khhJCczbqqa4GB0Vzd7PfV2usObn1cdAHa9y/Pn0fXez7Ruzf943Z4JT5EFyA6uIJyAKX1daZzx+ucLwPoOOJEp7eRBvDHItOM1S39ywF876nq8lY/BOCClkg0IxWd3kMAv6TFGSc6fZcBeEgyzVjdSk8D8EB1hPTZnvcS1pcCiGi2g3zpPwSIlnSsOuqrc/sK64cA0dJf4r3LAVhH7Oj0HgJI5BKJZqSi03sIwCXVOo440emfBoiORaYZq1vppQD6ztjR5atZKQCP2XsqOrHZVgDPiU5vIw3gj0WmGRVdO2kAGrGO2NHpPQSQyCUSzUhFp/cQwC9pMZppznqmc866FOAqpgH+I4TeGQIwhIeHJ/j77k02d3DrP+TWWnsDIFnoj9PWrQYAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:02:22.783",
+      "best_segment_time": "00:02:05.552",
+      "pb_split_time": "00:04:57.584",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 4,
       "name": "Ryu",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/ryu.png",
-      "pb_split_time": "00:09:03.6474710",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA5gEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAABcIBgAAAGoFTeEAAAAEZ0FNQQAAsY8L/GEFAAABnUlEQVRIS7WRsXHDMBAEVYJKcjkOXYZDl6NQJTh0CQ7VgYyVsZgjCIoiNfqZG5CPx+2BPKzWx/mK3k+/N719fd9kv069oCrgfLm09fPnP4Dra8IUIyE8uxok31P0/ULs37S5yiFMNGtGVdlfBO+uclg4xjyPQtA7Ho/XS5lBGWQSZmv52dMM0UeCDMCzIUZhWhDD360yILwXRkgjegZAwoUKbvBHyht6i7wRq8b2DdCHzhAPwxnkgDClIc8JRwRgT+XZPsz6bygbgnoTpIkhmCeAPc9uB9fKzz9ShhCODNTPGsIgq2GWAmiWphmAd/vO9B4qPWah9n4BxDt7ozMCh1DUqrwwNDJIuKA+hHt6JHwZmlU2GORQH0JT4crbszKj0mNTEDY93JuwYpAhMoAQViUUDYGzKkO9iZoYFdEDjOg7Z7iEc7F287Vi0BCsShNBGOenT7hyln2DeIGKG1TZZFhTb9EOVhngHnQC3lQRYgTP/gjcoMzvrnIYEwyFsgLp30eaBUG7qh7G1BVzwyVIPQdcqmoKLIEN9hTwcPgDmG7+C/55pKUAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:02:23.454",
+      "best_segment_time": "00:01:42.117",
+      "pb_split_time": "00:07:21.039",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 5,
       "name": "Cheetahmen",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/cheetahmen.png",
-      "pb_split_time": "00:10:42.6504170",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA2AAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAj0lEQVQ4T32TUQ6AMAhD+fT+V+GAM8V0qd3gJVVDC2LiIjMXBJ6IktbAlImqCmpSTjsABb5BQ4pnagCDblJTJnDpTFWXqQEuZ8ocA5zbVkoN6NCVO/YGDpt1Awfeb4A2UfS7zP4E3N305lumHA+7psznCjQmNFOHCXAlGHwmU2afRhpq3uSZ40eibk2uzFwvK2+OWCYVc04AAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:02:16.626",
+      "best_segment_time": "00:01:34.895",
+      "pb_split_time": "00:09:37.665",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 6,
       "name": "Mario",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/mario.png",
-      "pb_split_time": "00:11:57.0384568",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAzAAAAAKJUE5HDQoaCgAAAA1JSERSAAAADgAAAA4IBgAAAB9ILdEAAAAEZ0FNQQAAsY8L/GEFAAAAg0lEQVQ4T42Q0Q2AMAhEGcNBHMcPR3Io98LQHs1BqXrJxXLci02lku6bshHX0utohQy5udNkg/s+JXxXmXmAtvgCOZ9AXr7tcGERXnIh56hHOZDLnqE2y0uVl2B4/gzSDvWucSUsfV7lwOLD5FKezcAKkK+HM3eA1X/M5g6wrr9gb4s8MCZkmEGpdroAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:01:19.653",
+      "best_segment_time": "00:01:06.576",
+      "pb_split_time": "00:10:57.318",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 7,
       "name": "VVVVVV",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/vvvvvv.png",
-      "pb_split_time": "00:12:51.4005207",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4wAAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIAgAAAPwY7aMAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALDAE/QCLIAAAAhUlEQVRIS+2PwQnAIBAEU1DKsYo0YRVpI6WkEouIsLCsBlQQ7yEH8xp1B483pqV4oEsRuMNDwnll1IARr5seIOp1swjg0jy6aRvgfwkeVDLT9rrpgQp43dwsgON5dNM28P+sGjDiddMDRL1ubhbApXl00zbA/xI8qGSm7XXTNrACD3SI6QNe+c2PmbGXfwAAAABJRU5ErkJgggs=",
+      "pb_segment_time": "00:00:46.898",
+      "best_segment_time": "00:00:46.898",
+      "pb_split_time": "00:11:44.216",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 8,
       "name": "Biollante",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/biollante.png",
-      "pb_split_time": "00:13:10.6941042",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAzAAAAAKJUE5HDQoaCgAAAA1JSERSAAAADwAAAA4IBgAAAPCKRu8AAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALDAE/QCLIAAAAbklEQVQ4T62QUQqAMAzFduJecIerVMh8aysi+hEKazKZw91bzMyVvA/KgZIvAPZFZsKcc5sB/oqUEDPZOWM96KKM+u2Xgy4EnPXeN5ew+x6rDF0EOP//sKcoiK68mQmEegH+FmeQM+xLAHfBhY8DKUU/iQgZQswAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:00:38.921",
+      "best_segment_time": "00:00:19.172",
+      "pb_split_time": "00:12:23.138",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 9,
       "name": "Wario Land",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/wario_land.png",
-      "pb_split_time": "00:15:37.8851584",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAuwAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAcklEQVQ4T52TQQ7AIAgE99hn8jye6K0NhzVIkEBNJgq6oxdh4wHePxxhERmxJQyvtUZQsgWqOuIqsHVFKbA5PtX6vvZnr4IY8r2WIIY8I0FGS5DdzH5LEEO+bgtikHUp4EaFP5cKuhwCSiYwd/zIKQDwAZORbINx2acHAAAAAElFTkSuQmCCCw==",
+      "pb_segment_time": "00:02:14.108",
+      "best_segment_time": "00:01:45.548",
+      "pb_split_time": "00:14:37.245",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 10,
       "name": "Sonic",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/sonic.png",
-      "pb_split_time": "00:17:16.9957800",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAATAEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIQAAACMIBgAAABosY2QAAAAEZ0FNQQAAsY8L/GEFAAABA0lEQVRYR+2W0Q3CIBRF+eTTERzB0TqCn47gKB2hIziCI/CHvZVrX7ASizxaE25yElv13QPURNPS0tLS8rc5G+OvB+Nvxxl3GelH7iPOzeAa9/H+6Yn8HsE8gvnWWh/qliMlOHgiFlkQkMQCmEvyJFbsBCkmkRTR3Al84E3ki53gZ2OyJShSEs4loU4nLOm6bkK9kJFFw9B7oC6QKlUtliurViqDIhTjF1GtNA4lsHr1s04FxRDgM0A2EUIpiaU2EUI+Se3i2MDmDzIEqh8RdwCvWa4uIEsRPguq5ShESbicgmvcr7JqWbSWMOL3YBhW/fozE8GjIJAmxUTkynIIY/YeYx4eFTocrEmihAAAAABJRU5ErkJgggs=",
+      "pb_segment_time": "00:00:53.325",
+      "best_segment_time": "00:00:29.787",
+      "pb_split_time": "00:15:30.571",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 11,
       "name": "Castlevania",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/castlevania.png",
-      "pb_split_time": "00:19:37.9772853",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA6gAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEQAAABEIBgAAADttR/oAAAAEZ0FNQQAAsY8L/GEFAAAAoUlEQVQ4T6WSyw2FMAwEfaS8V0wKoxBKehJgpLE2OCF8DiPb2c1iRdhktn4lQub/0qWUcqBzClHjCC7qnELstx/uMCt6Th8hmqyGK1KIb0KQVnpg9gAHT7UJ/SGISWeq+iME9Itaz7qSQt4QIfwDihqv9HhYX7PFHb0K8UdDpL+jdzdphfT0eBMOQhDTSK82QXT0wkiPTQCBeqalp5Dn2LoBEgL0E8HRUIgAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:02:34.908",
+      "best_segment_time": "00:01:46.769",
+      "pb_split_time": "00:18:05.478",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 12,
       "name": "Skeleton King",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/skeleton_king.png",
-      "pb_split_time": "00:20:53.7456621",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAwgIAAAKJUE5HDQoaCgAAAA1JSERSAAAAMAAAACAIBgAAAFTU+xwAAAAEZ0FNQQAAsY8L/GEFAAACeUlEQVRYR92SwVXkMBBE57hHjlw3jE2BuAiBVEhh09kQZlWaKlEqycKG8Rzo9/4zUrfkX2MuZ9bf33+un8HRVtq/vlwabD22msTrrxsmBCQ6o83FWV79mOpECoPchG5G8k7Z5/XnlkS2cOmk9SX9/vTBI0IMohIRFF2SZyD/7/n2LH2+6v41lfdfUKTgSh7oHEJgfUaIQd6FQUq5tJNzEtcXwLPM8bXfrxSfBnAhira5GTN5YfdQ4evl4kDrlPP9ri+ZFbMQ/FGocbxmEi63ohPXF1qBOYlf325wnzrHqklIpDxTcot2JiUTzAisM8B3vkIV0eUh34IZXU9CLiUZCnX4nOQF56m1v6oMLk85Q/tO7Ul0jzzwOeABsC4zTUrUjUl1Iibqa+0ltQehLfmtADkPPESZ+fifxgEK0LlVNyOwniBpp/ZwxoVcHvjdiWaWAdAsG1jTu1YnICibSDipfZyTxJEAfkb8zAAYpgTdW3UzAusJknZqD2dcxuWB351oxuUVQIKibkyqkzFZX2svqT2JKECGcGGR82AW4EhVIVxush7A953ak6wLrQL4HHB5rMsMtfZXldELQtZDiK6HM0dC+JzLA85Ta391oniJSX7GEGILBdBshlDo0qfWsRqECi66ws900ltgLgNwnzpfr04qvoT2cr/rK8gKyCqAuFcAVEo1Of2CfFnDQunvAc3O5O0eKtynMkgXIENQYErOeQj9Xeb42vvWEEICSUquAgCd0xc4KwBqGsJx2S3yjOTxLH2+6rzyEDMGYaP1XV5gXXp8zbmVonvlhwBO2ef159cgQkkh2RltLs7y6sfVTC7haCvttxBL8cvlP9ttqKZptm28AAAAAElFTkSuQmCCCw==",
+      "pb_segment_time": "00:01:41.199",
+      "best_segment_time": "00:01:40.219",
+      "pb_split_time": "00:19:46.677",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 13,
       "name": "Random World",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/random_world.png",
-      "pb_split_time": "00:26:37.1976602",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAywAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAgklEQVQ4T6WQUQqAMAxD++n9z+ABPIBHEyYZBNKRtYIfD7ole87FETH+MAXPfVlYqrIpOA0sVlkpAFXWClhwGUgCV2Shy61Av45ZM9LeoIPnykfcgTPpBq4Edhl/qxRoac3ApzegBKydJMCCG1pS1jwJdJOzQyVW0LEVrKCgs64zMV5VxrYEZl2xGQAAAABJRU5ErkJgggs=",
+      "pb_segment_time": "00:03:51.524",
+      "best_segment_time": "00:02:11.354",
+      "pb_split_time": "00:23:38.201",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 14,
       "name": "Megaman",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/megaman.png",
-      "pb_split_time": "00:27:51.1826051",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAsAAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAAA8IBgAAAO1zTy8AAAAEZ0FNQQAAsY8L/GEFAAAAZ0lEQVQ4T92QwQrAMAhDPe7/v1fosJjibNpNelvgwUbMO1Qsqtr6h8f+GV7zxMNLhLIVvY0jkyQOmYTJHxI2ymTJEHwZg3zbJRVB5i+C6kOCMbYcCywVyTRGrNiJ0Pv5OjjMeB0icgO9MFxibEtC5AAAAABJRU5ErkJgggs=",
+      "pb_segment_time": "00:01:23.733",
+      "best_segment_time": "00:00:27.241",
+      "pb_split_time": "00:25:01.934",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 15,
       "name": "Megaman Stage",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/megaman_stage.png",
-      "pb_split_time": "00:32:10.0146072",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAtwAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAbklEQVQ4T2P4TwFYK8Dwn2wD9h47hjBgQQEmBikghFEMAAGQADaF6BimFm4ASBAmgK4YG4apRTGAHAw3ANlEUjEDNkFSMAPIKQwMjGAnkUODvQBikEtTbgCxTsVFU24AOCSBDHJpyg2AEORixv8AtK5rzw/L4gIAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:05:37.094",
+      "best_segment_time": "00:03:08.885",
+      "pb_split_time": "00:30:39.027",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 16,
       "name": "Shang Tsung",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/shang_tsung.png",
-      "pb_split_time": "00:33:00.8602751",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHAMAAAKJUE5HDQoaCgAAAA1JSERSAAAAIgAAAB4IBgAAAEn/zBQAAAAEZ0FNQQAAsY8L/GEFAAAC00lEQVRYR7WXrXYbMRBGDfMIoYF5BFPDQMPQQsNC00LDvkJgYGFpH6GwtLCw0NWd6E5n5fVf3Oqc71haaea7O6M4yeLisVrsU+srxPl/Mrrx3Ye7/f3mPvWwfTgrzhF3G1AHGI2Xn5b75e5Qq8+r0PhcIBRAV40CkQA98eqlGTY9f3tOPX19mp1zbgS6HGaAMJEQYfL9L0TMXTuv+13XwcxAWIGA6Ca+6ePHx4Tjk2pkRdq57a9tgqy/rKOtwsTdOXpvRgj6PgCoWqHd791kDwVQj6sCCOERlTmAaQ8SolxIgzWeM/RtqZBV8iWySi3P5scm87EXbZqAjC3pIATFvIDV5CQeZZtGCESrEOesyhSmQAhCIMnGCmmw+bnJxKPYF8Y7UvcFIW+A0KLaEmUS15S7QtSkc8IIkwTp1eA5n74kOcl/EkRzVEE044I6nxOmgkdrGhDzWPc59wi/qEoF8aJVY4JsjSBAqBFAAUIezcO4xSdcy6vXAYjljHkz5rA/mu+pCDHmHCVI3pMJSDeD0urUiph0zniURprFpzlaS64CGeU+8uLNiWqxjxltwIx4208ev5uuAomALkGYY1YlhKpvTX7F+jRIe4gqTIXwmTCukRcQoFoRoclf48NrAlK+0DjEpiYBVwAMxAAxd0849xICw6ZjIDyPX4AVRGMOcZi1Eojnlp65yY2rP6oVQmVLOkRUo3XlDYRxBibW/S8wkiHNEqRIQOMR5yOm7bMOiPhWrWO8Kz1hBPObtCir0CFyTQyxTeSp5xL8JISj3pUCYxKhRqNqiJzzOaleh0iQSUvGUVqEKsz6tQN1mAqhhEH1BQ4gjlajjg4zAp2DYR3ta/tWwhcR4HIIB2UbqmPyEUYlRNvnHGsAhQiAk+04NUp10BxMinVXrcLt/2Q5SNKBePMDmAGAKiQA5jcDzAzeMttQVAEE/y8AdWDmvbH8CfCusVj8AYKVijSqTR+uAAAAAElFTkSuQmCCCw==",
+      "pb_segment_time": "00:01:38.098",
+      "best_segment_time": "00:00:44.574",
+      "pb_split_time": "00:32:17.125",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 17,
       "name": "Kid Icarus",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/kid_icarus.png",
-      "pb_split_time": "00:36:55.1668729",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA7QAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAApElEQVQ4T52SsQ7EIAxDM3a4L7j/n7p2vI/j+pCMTNpUqJGsxK4xKhDtrN/noE1dMyX+3fahM28RLSTIdMe1MGugB7zBCGA37aDuJueuC+MMVuCBlwAJMlSQZwRUhhWtB3AVIm8wnQECnWImnJLmXXP/BS10aAdmyr85L9+BBzzhNkCLAaWgHAifAtzADCj3ZJTXmAPE3QuWDjHrzkPGCs/vZG9/XbxeOe4RbNgAAAAASUVORK5CYIIL",
+      "pb_segment_time": "00:03:48.659",
+      "best_segment_time": "00:02:39.456",
+      "pb_split_time": "00:36:05.784",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 18,
       "name": "Ganon",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/ganon.png",
-      "pb_split_time": "00:37:34.1743022",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAALQEAAAKJUE5HDQoaCgAAAA1JSERSAAAAHAAAACAIBgAAAAG1GEIAAAAEZ0FNQQAAsY8L/GEFAAAA5ElEQVRIS92NUQrDMAxD89mj7Kg73o7TvxWKlBalws7YmjDB+7AtSyXSUsr7DNZV0b1bUWB0T4sB6/LYcYFZX6hsUNYXSoPW13OH+3rH/n8K62z28xbSSJrALFJMUHNIDT8r5EKNnF1gdHe5AwvxUGcYNcgiPpc7vrAJANXHO2j+CT2Y6ZuwEHP18e72Joe+gYX6QLCnz5H9n6CQmAeH+yP03V9I2UcJoK/Xj5pDvQG9ftQcagKICcre5ymk0sWK+MMi6vZCig9EAxX1IyYvDbgqOaN+xHwuDVRg+56uSs7AFqiUDTDUZGxAxZ2GAAAAAElFTkSuQmCCCw==",
+      "pb_segment_time": "00:00:38.266",
+      "best_segment_time": "00:00:36.735",
+      "pb_split_time": "00:36:44.050",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 19,
       "name": "Ninja Gaiden",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/ninja_gaiden.png",
-      "pb_split_time": "00:49:47.1326716",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAKgEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAA4UlEQVQ4T5WTCQ6DMAwEQ/gnx1uBb5F2LE1kaCtRSyvfG8eBsu97O46joTO2bWu11sA9l1GWZWnrunbYNM9zAJuaXyg2gGEYuv0Upb2FURSuk7WjnufZ/axjB4gayQ0KMWsgN98n+DZezo3j2OPcXbKYwAQ2cHkZiHlrkVgiy0MsAJySc5KS87WwgwDJTYybfWw0ZI6Pj90JLAYQ4N8/JuIg1weBp3myTWw6+/lk7cKTMJokBKdp6k2IROYFscKpOQD8Iu8N4mMCHeFVMtiHNj368TPxROin4Bm1Lz/T/6jtBYfKOkO7mqguAAAAAElFTkSuQmCCCw==",
+      "pb_segment_time": "00:04:47.254",
+      "best_segment_time": "00:04:17.469",
+      "pb_split_time": "00:41:31.303",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 20,
       "name": "Missingno",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/missingno.png",
-      "pb_split_time": "00:50:47.2395298",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,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",
+      "pb_segment_time": "00:02:57.280",
+      "best_segment_time": "00:00:32.596",
+      "pb_split_time": "00:44:28.584",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 21,
       "name": "Mario Desert",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/mario_desert.png",
-      "pb_split_time": "00:54:32.5402016",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA6AAAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAn0lEQVQ4T62NyxHCMAxEXQIlUE5K4EgJlEIJKYMSKIMSOPqWjBLWfpY1hgEOO/rs6imdp7T8og2Qc971PNUa6HE/Ft3mQwugweBoVwEvuoJWTddLKr1m+dZ3AB0waGIvPwT4sIDs5YcA/4kHPFRtAP4bYfQ0dwD/ScFo7gAK2ZKVh+ylBsBPDEdzCKA5qupNBUDjXaUKwBuf6n+A75WWFcDUOidrcCi5AAAAAElFTkSuQmCCCw==",
+      "pb_segment_time": "00:02:38.899",
+      "best_segment_time": "00:02:17.328",
+      "pb_split_time": "00:47:07.483",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     },
     {
-      "index": 22,
       "name": "Solgryn (END)",
-      "icon_data_url": "",
-      "icon_path": "assets/Split_icons/solgryn_end.png",
-      "pb_split_time": "00:57:01.6363345",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
+      "icon_data_url": "data:image/png;base64,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",
+      "pb_segment_time": "00:05:40.592",
+      "best_segment_time": "00:03:38.619",
+      "pb_split_time": "00:52:48.075",
+      "history": {
+        "count": 0,
+        "avg": "-"
+      },
       "stream": {
+        "time_on_split": "-",
         "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+        "deaths": 0
       }
     }
   ],
-  "categories": [],
-  "_source_lss": "I Wanna Be The Boshy - Any% (No WW, DBO, EZ-Mode 2026).lss"
+  "_lastsplit_sig": ""
 }
