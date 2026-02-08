@@ -1,6 +1,6 @@
 {
   "schema": "fangamehub.speedrun.v1",
-  "updated_at_utc": "2026-02-08T09:51:50Z",
+  "updated_at_utc": "2026-02-06T18:24:46+00:00",
   "lifetime_splits": 0,
   "game": "I Wanna Be The Boshy",
   "category": "Any%",
@@ -35,8 +35,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/prehistorik.png"
+      }
     },
     {
       "name": "Hello Kitty",
@@ -52,8 +51,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/hello_kitty.png"
+      }
     },
     {
       "name": "Kirby's Adventure",
@@ -69,8 +67,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/kirbys_adventure.png"
+      }
     },
     {
       "name": "Ryu",
@@ -86,8 +83,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/ryu.png"
+      }
     },
     {
       "name": "Cheetahmen",
@@ -103,8 +99,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/cheetahmen.png"
+      }
     },
     {
       "name": "Mario",
@@ -120,8 +115,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/mario.png"
+      }
     },
     {
       "name": "VVVVVV",
@@ -137,8 +131,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/vvvvvv.png"
+      }
     },
     {
       "name": "Biollante",
@@ -154,8 +147,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/biollante.png"
+      }
     },
     {
       "name": "Wario Land",
@@ -171,8 +163,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/wario_land.png"
+      }
     },
     {
       "name": "Sonic",
@@ -188,8 +179,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/sonic.png"
+      }
     },
     {
       "name": "Castlevania",
@@ -205,8 +195,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/castlevania.png"
+      }
     },
     {
       "name": "Skeleton King",
@@ -222,8 +211,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/skeleton_king.png"
+      }
     },
     {
       "name": "Random World",
@@ -239,8 +227,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/random_world.png"
+      }
     },
     {
       "name": "Megaman",
@@ -256,8 +243,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/megaman.png"
+      }
     },
     {
       "name": "Megaman Stage",
@@ -273,8 +259,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/megaman_stage.png"
+      }
     },
     {
       "name": "Shang Tsung",
@@ -290,8 +275,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/shang_tsung.png"
+      }
     },
     {
       "name": "Kid Icarus",
@@ -307,8 +291,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/kid_icarus.png"
+      }
     },
     {
       "name": "Ganon",
@@ -324,8 +307,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/ganon.png"
+      }
     },
     {
       "name": "Ninja Gaiden",
@@ -341,8 +323,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/ninja_gaiden.png"
+      }
     },
     {
       "name": "Missingno",
@@ -358,8 +339,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/missingno.png"
+      }
     },
     {
       "name": "Mario Desert",
@@ -375,8 +355,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/mario_desert.png"
+      }
     },
     {
       "name": "Solgryn (END)",
@@ -392,8 +371,7 @@
         "time_on_split": "-",
         "visits": 0,
         "deaths": 0
-      },
-      "icon_path": "assets/Split_icons/solgryn_end.png"
+      }
     }
   ],
   "_lastsplit_sig": ""
