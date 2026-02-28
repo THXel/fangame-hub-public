@@ -472,13 +472,12 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
           const title = safeText(data.game || 'I Wanna Be The Boshy');
           const cat = safeText(data.category || '');
           const tm = safeText(data.timing_method || 'RealTime');
-          const upd = data.updated_at_utc ? safeText(data.updated_at_utc).replace('T',' ').replace('+00:00',' UTC') : '';
           boshyHdr.innerHTML = `
             <div class="boshyHdrLeft">
               ${gameIcon}
               <div>
                 <div class="boshyTitle"><span>${title}</span></div>
-                <div class="boshySub">${cat ? `${cat} • `:''}${tm}${upd ? ` • updated ${upd}`:''}</div>
+                <div class="boshySub">${cat ? `${cat} • `:''}${tm}</div>
               </div>
             </div>
           `;
@@ -486,17 +485,13 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 
         // Cards
         if(boshyCards){
-          const t = data.totals || {};
+
           const last = data.last_run || {};
           boshyCards.innerHTML =
             cardHTML('fa-solid fa-trophy', 'PB Total', fmtTime(data.pb_total), 'from .lss (RealTime)') +
             cardHTML('fa-solid fa-bolt', 'Sum of Best (Best Segments)', fmtTime(data.sum_of_best), 'sum of best segments') +
-            cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'last stream recap') +
-            cardHTML('fa-solid fa-chart-line', 'Delta (vs Comparison)', safeText(last.delta || '—'), 'vs comparison') +
-            cardHTML('fa-solid fa-rotate-left', 'Resets (Stream)', fmtNum(t.resets ?? 0), '') +
-            cardHTML('fa-solid fa-check', 'Finishes (Stream)', fmtNum(t.finishes ?? 0), '') +
-            cardHTML('fa-solid fa-list-ol', 'Splits (gesamt)', fmtNum(data.lifetime_splits ?? 0), '') +
-            cardHTML('fa-solid fa-skull', 'Deaths (Stream)', fmtNum(t.deaths ?? 0), 'overlay counter');
+            cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'from .lss AttemptHistory') +
+            cardHTML('fa-solid fa-chart-line', 'Delta (vs PB)', safeText(last.delta || '—'), 'computed from .lss');
         }
 
         const splits = data.splits.slice();
@@ -537,9 +532,6 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
   const histN = (sp.history && sp.history.count) ? sp.history.count : 0;
   const histAvg = sp.history && sp.history.avg ? fmtTime(sp.history.avg) : '—';
 
-  const streamTime = sp.stream && sp.stream.time_on_split ? fmtTime(sp.stream.time_on_split) : '—';
-  const streamVisits = sp.stream && sp.stream.visits !== undefined ? fmtNum(sp.stream.visits) : '—';
-  const streamDeaths = sp.stream && sp.stream.deaths !== undefined ? fmtNum(sp.stream.deaths) : '—';
   return `
     <tr>
       <td class="splitNameCell">
@@ -551,9 +543,6 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
       <td class="num">${pbCum}</td>
       <td class="num">${histAvg}</td>
       <td class="num">${histN}</td>
-      <td class="num">${streamTime}</td>
-      <td class="num">${streamVisits}</td>
-      <td class="num">${streamDeaths}</td>
     </tr>
   `;
 }
@@ -570,9 +559,6 @@ if(boshySplits){
             <th><i class='fa-solid fa-flag-checkered'></i> PB Split</th>
             <th><i class='fa-solid fa-chart-line'></i> Ø Segment</th>
             <th>n</th>
-            <th><i class='fa-solid fa-clock'></i> Stream Time</th>
-            <th><i class='fa-solid fa-repeat'></i> Visits</th>
-            <th><i class='fa-solid fa-skull'></i> Deaths</th>
           </tr>
         </thead>
         <tbody>
