@@ -1,393 +1,314 @@
 {
-  "schema": "fangamehub.speedrun.v1",
-  "updated_at_utc": "2026-02-03T22:10:59Z",
+  "schema": "boshy_speedrun/lss_only_v1",
+  "updated_at_utc": "2026-02-28T14:14:39Z",
   "game": "I Wanna Be The Boshy",
-  "category": "100%",
-  "timing_method": "Real Time",
-  "game_icon_data_url": "",
-  "lifetime_splits": 0,
-  "pb_total": "01:36:46.6262599",
-  "sum_of_best": "-",
-  "totals": {
-    "visits": 0,
-    "deaths": 0,
-    "stream_time": "-"
-  },
+  "category": "100 %",
+  "timing_method": "RealTime",
+  "pb_total": "",
+  "sum_of_best": "",
   "last_run": {
-    "finished": false,
-    "ended_at_utc": "",
-    "time": "-"
+    "final_time": "",
+    "delta": ""
   },
   "splits": [
     {
       "index": 1,
       "name": "Prehistorik",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/prehistorik.png",
-      "pb_split_time": "00:02:41.6711471",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 2,
       "name": "Hello Kitty",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/hello_kitty.png",
-      "pb_split_time": "00:03:27.8626770",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 3,
       "name": "Kirby's Adventure",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/kirbys_adventure.png",
-      "pb_split_time": "00:08:34.3944947",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 4,
       "name": "Ryu",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/ryu.png",
-      "pb_split_time": "00:10:33.0348203",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 5,
       "name": "Cheetahmen",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/cheetahmen.png",
-      "pb_split_time": "00:14:15.6770911",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 6,
       "name": "Mario",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/mario.png",
-      "pb_split_time": "00:17:04.8008828",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 7,
       "name": "VVVVVV",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/vvvvvv.png",
-      "pb_split_time": "00:19:12.6625315",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 8,
       "name": "Biollante",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/biollante.png",
-      "pb_split_time": "00:19:47.4577195",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 9,
       "name": "Wario Land",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/wario_land.png",
-      "pb_split_time": "00:23:42.6006359",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 10,
       "name": "Sonic",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/sonic.png",
-      "pb_split_time": "00:24:54.1797947",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 11,
       "name": "Castlevania",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/castlevania.png",
-      "pb_split_time": "00:30:27.5014679",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 12,
       "name": "Skeleton King",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/skeleton_king.png",
-      "pb_split_time": "00:34:30.8578086",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 13,
       "name": "Random World",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/random_world.png",
-      "pb_split_time": "00:41:00.1563592",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 14,
       "name": "Megaman",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/megaman.png",
-      "pb_split_time": "00:43:51.5050978",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 15,
       "name": "Megaman Stage",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/megaman_stage.png",
-      "pb_split_time": "00:48:36.1564480",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 16,
       "name": "Shang Tsung",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/shang_tsung.png",
-      "pb_split_time": "00:50:20.2357903",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 17,
       "name": "Kid Icarus",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/kid_icarus.png",
-      "pb_split_time": "00:56:31.5070170",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 18,
       "name": "Ganon",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/ganon.png",
-      "pb_split_time": "00:57:14.0403479",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 19,
       "name": "Ninja Gaiden",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/ninja_gaiden.png",
-      "pb_split_time": "01:05:28.1973017",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 20,
       "name": "Missingno",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/missingno.png",
-      "pb_split_time": "01:07:21.2289357",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 21,
       "name": "Mario Desert",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/mario_desert.png",
-      "pb_split_time": "01:14:23.3709040",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 22,
       "name": "Solgryn",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/solgryn.png",
-      "pb_split_time": "01:19:05.2147917",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     },
     {
       "index": 23,
       "name": "Cheetahman (END)",
-      "icon_data_url": "",
       "icon_path": "assets/Split_icons/cheetahman_end.png",
-      "pb_split_time": "01:36:46.6262599",
-      "pb_segment_time": "-",
-      "best_segment_time": "-",
-      "history": [],
-      "stream": {
-        "visits": 0,
-        "deaths": 0,
-        "deaths_segment": 0,
-        "time_segment": "-"
+      "icon_data_url": "",
+      "pb_split_time": "",
+      "pb_segment_time": "",
+      "best_segment_time": "",
+      "history": {
+        "count": 0,
+        "avg": ""
       }
     }
-  ],
-  "categories": [],
-  "_source_lss": "I Wanna Be The Boshy - 100 %.lss"
+  ]
 }
