@@ -22,8 +22,8 @@
     "used_df_diff": 23,
     "deaths_sum_played": 15108,
     "deaths_sum_all": 15116,
-    "total_minutes_played": 102,
-    "total_minutes_all": 104
+    "total_minutes_played": 103,
+    "total_minutes_all": 105
   },
   "games": [
     {
@@ -31,10 +31,10 @@
       "title": "I Wanna Be The Boshy",
       "status": "Completed",
       "deaths": ">9000",
-      "playtime_str": "19 min",
+      "playtime_str": "20 min",
       "playtime_override_text": ">9000min",
-      "playtime_min": 19,
-      "last_played_str": "2026-03-02 20:38",
+      "playtime_min": 20,
+      "last_played_str": "2026-03-02 21:00",
       "commented": "Yes",
       "rating_10": 9,
       "difficulty_100": 83,
@@ -46,7 +46,7 @@
       "youtube_url": "https://www.youtube.com/playlist?list=PLGfjpKqeaSlkhx0teiFMQVowa35z_0yse",
       "comment": "I Wanna Be the Boshy was my very first I Wanna Be The Guy fangame. I originally got inspired by watching the runner Witwix speedrun it at GDQ. Back then I didn’t even know I Wanna Be the Guy existed, and I was absolutely blown away: how can a game be that insanely hard, and how can someone clear it that fast?\nSo many moments had me going “WTF is happening?!” and that’s exactly what made me want to try it myself. But when I actually started playing… I didn’t even get past the first boss (Kirby). After what felt like 30 hours, I quit.\nFast forward five years: I started streaming on Twitch, gave it another shot, and finally beat it for the first time. And then I even ended up speedrunning it — which younger me would’ve thought was impossible.",
       "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11890_0000001d",
-      "last_played_sort_ts": 1772480280
+      "last_played_sort_ts": 1772481600
     },
     {
       "lutris_id": 48,
