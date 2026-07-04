@@ -23,18 +23,40 @@
     "deaths_sum_played": 15108,
     "deaths_sum_all": 15116,
     "total_minutes_played": 148,
-    "total_minutes_all": 150
+    "total_minutes_all": 151
   },
   "games": [
+    {
+      "lutris_id": 93,
+      "title": "Delicious Level Design Contest ",
+      "status": "Playing",
+      "deaths": "1094",
+      "playtime_str": "5 min",
+      "playtime_override_text": "01:01:54",
+      "playtime_min": 5,
+      "last_played_str": "2026-07-04 23:30",
+      "commented": "No",
+      "rating_10": 0,
+      "difficulty_100": 0,
+      "df_avg_rating": 9.6,
+      "df_avg_difficulty": 68.0,
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/45880_0000e272",
+      "custom_thumb_url": "",
+      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=45880",
+      "youtube_url": "",
+      "comment": "",
+      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/45880_0000e272",
+      "last_played_sort_ts": 1783200600
+    },
     {
       "lutris_id": 96,
       "title": "I wanna be the Little runner",
       "status": "Planned",
       "deaths": "",
-      "playtime_str": "",
+      "playtime_str": "1 min",
       "playtime_override_text": "",
-      "playtime_min": 0,
-      "last_played_str": "2026-07-04 22:55",
+      "playtime_min": 1,
+      "last_played_str": "2026-07-04 23:29",
       "commented": "No",
       "rating_10": 0,
       "difficulty_100": 0,
@@ -46,7 +68,7 @@
       "youtube_url": "",
       "comment": "",
       "thumb_public": "https://delicious-fruit.com/ratings/screenshots/10848_000002a3",
-      "last_played_sort_ts": 1783198500
+      "last_played_sort_ts": 1783200540
     },
     {
       "lutris_id": 16,
@@ -157,28 +179,6 @@
       "comment": "",
       "thumb_public": "https://delicious-fruit.com/ratings/screenshots/20214_00002fed",
       "last_played_sort_ts": 1772277780
-    },
-    {
-      "lutris_id": 93,
-      "title": "Delicious Level Design Contest ",
-      "status": "Playing",
-      "deaths": "1094",
-      "playtime_str": "5 min",
-      "playtime_override_text": "01:01:54",
-      "playtime_min": 5,
-      "last_played_str": "2026-02-02 20:19",
-      "commented": "No",
-      "rating_10": 0,
-      "difficulty_100": 0,
-      "df_avg_rating": 9.6,
-      "df_avg_difficulty": 68.0,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/45880_0000e272",
-      "custom_thumb_url": "",
-      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=45880",
-      "youtube_url": "",
-      "comment": "",
-      "thumb_public": "https://delicious-fruit.com/ratings/screenshots/45880_0000e272",
-      "last_played_sort_ts": 1770059940
     },
     {
       "lutris_id": 65,
