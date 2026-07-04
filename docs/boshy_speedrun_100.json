@@ -1,11 +1,11 @@
 {
   "schema": "boshy_speedrun/lss_only_v1",
-  "updated_at_utc": "2026-07-04T22:09:59Z",
+  "updated_at_utc": "2026-07-04T22:15:45Z",
   "game": "I Wanna Be The Boshy",
   "category": "100 %",
   "timing_method": "RealTime",
   "pb_total": "",
-  "sum_of_best": "",
+  "sum_of_best": "1:13:23.290",
   "last_run": {
     "final_time": "",
     "delta": ""
@@ -18,10 +18,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "2:25.849",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 13,
+        "avg": "2:48.822"
       }
     },
     {
@@ -31,10 +31,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "0:44.294",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 9,
+        "avg": "1:04.811"
       }
     },
     {
@@ -44,10 +44,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "4:06.630",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 8,
+        "avg": "6:35.704"
       }
     },
     {
@@ -57,10 +57,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "1:56.556",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 8,
+        "avg": "2:05.274"
       }
     },
     {
@@ -70,10 +70,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "2:46.999",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 8,
+        "avg": "5:13.393"
       }
     },
     {
@@ -83,10 +83,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "1:20.169",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 8,
+        "avg": "1:47.326"
       }
     },
     {
@@ -96,10 +96,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "2:07.861",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 7,
+        "avg": "3:27.107"
       }
     },
     {
@@ -109,10 +109,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "0:34.795",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 7,
+        "avg": "1:07.591"
       }
     },
     {
@@ -122,10 +122,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "3:55.142",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 7,
+        "avg": "5:30.423"
       }
     },
     {
@@ -135,10 +135,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "0:47.843",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 7,
+        "avg": "2:36.980"
       }
     },
     {
@@ -148,10 +148,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "5:33.321",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 6,
+        "avg": "8:01.388"
       }
     },
     {
@@ -161,10 +161,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "1:51.498",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 5,
+        "avg": "3:27.289"
       }
     },
     {
@@ -174,10 +174,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "1:30.743",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 5,
+        "avg": "8:53.594"
       }
     },
     {
@@ -187,10 +187,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "1:19.597",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 6,
+        "avg": "6:56.546"
       }
     },
     {
@@ -200,10 +200,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "4:31.850",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 6,
+        "avg": "5:33.055"
       }
     },
     {
@@ -213,10 +213,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "1:04.276",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 6,
+        "avg": "1:59.505"
       }
     },
     {
@@ -226,10 +226,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "4:47.658",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 5,
+        "avg": "5:39.595"
       }
     },
     {
@@ -239,10 +239,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "0:37.845",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 5,
+        "avg": "0:41.715"
       }
     },
     {
@@ -252,10 +252,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "6:14.674",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 4,
+        "avg": "8:48.220"
       }
     },
     {
@@ -265,10 +265,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "0:51.938",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 5,
+        "avg": "6:04.379"
       }
     },
     {
@@ -278,10 +278,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "4:31.836",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 5,
+        "avg": "8:50.144"
       }
     },
     {
@@ -291,10 +291,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "4:41.843",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 3,
+        "avg": "7:02.916"
       }
     },
     {
@@ -304,10 +304,10 @@
       "icon_data_url": "",
       "pb_split_time": "",
       "pb_segment_time": "",
-      "best_segment_time": "",
+      "best_segment_time": "15:00.073",
       "history": {
-        "count": 0,
-        "avg": ""
+        "count": 2,
+        "avg": "16:20.742"
       }
     }
   ]
