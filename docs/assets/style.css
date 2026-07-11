@@ -649,3 +649,38 @@ button.tabBtn[data-tab='boshy'] .fa-stopwatch{ color: rgba(120,200,255,.95); }
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
+
+
+/* DF tags */
+.dfTags{
+  margin-top:.58rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.30rem;
+  align-items:center;
+}
+
+.dfTagsLabel{
+  width:100%;
+  font-family:var(--pixel);
+  font-size:.68rem;
+  opacity:.78;
+  margin-bottom:.05rem;
+}
+
+.dfTag{
+  display:inline-flex;
+  align-items:center;
+  padding:.24rem .50rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.055);
+  font-family:var(--mono);
+  font-size:1rem;
+  line-height:1;
+}
+
+.dfTagMore{
+  opacity:.72;
+}
+
