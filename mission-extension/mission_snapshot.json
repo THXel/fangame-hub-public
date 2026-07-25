@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "version": "mission-ext-1",
+  "generated_at": "2026-07-25T16:55:31.048733+00:00",
+  "updated_at": "2026-07-25T15:11:05.702112+00:00",
+  "stale_after_minutes": 180,
+  "bridge_enabled": true,
+  "status": "active",
+  "enabled": true,
+  "active": true,
+  "completed": false,
+  "completed_at": "",
+  "title": "Play Kamlia 3",
+  "description": "TH muss Kamilia 3 spielen",
+  "mode": "separate",
+  "completion_rule": "all",
+  "overall": {
+    "percent": 0.0,
+    "label": "Gesamtübersicht",
+    "display": "3 Teilziele"
+  },
+  "goals": [
+    {
+      "key": "bits",
+      "label": "Bits",
+      "value": 0,
+      "goal": 20000,
+      "remaining": 20000,
+      "percent": 0.0,
+      "complete": false,
+      "display": "0 / 20.000"
+    },
+    {
+      "key": "subs",
+      "label": "Subs gesamt",
+      "value": 0,
+      "goal": 100,
+      "remaining": 100,
+      "percent": 0.0,
+      "complete": false,
+      "display": "0 / 100"
+    },
+    {
+      "key": "channel_points",
+      "label": "Kanalpunkte",
+      "value": 0,
+      "goal": 500000,
+      "remaining": 500000,
+      "percent": 0.0,
+      "complete": false,
+      "display": "0 / 500.000"
+    }
+  ],
+  "contribution_count": 0,
+  "thumbnail_file": "thumbnail.png",
+  "thumbnail_url": "https://thxel.github.io/fangame-hub-public/mission-extension/thumbnail.png",
+  "hub_url": "https://thxel.github.io/fangame-hub-public/"
+}
