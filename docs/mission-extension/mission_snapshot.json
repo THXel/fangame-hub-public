@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-07-25T16:55:31.048733+00:00",
+  "generated_at": "2026-07-25T20:34:20.523061+00:00",
   "updated_at": "2026-07-25T15:11:05.702112+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
@@ -10,8 +10,8 @@
   "active": true,
   "completed": false,
   "completed_at": "",
-  "title": "Play Kamlia 3",
-  "description": "TH muss Kamilia 3 spielen",
+  "title": "Play I Wanna Kill The Kamilia 3",
+  "description": "TH have to Play K3",
   "mode": "separate",
   "completion_rule": "all",
   "overall": {

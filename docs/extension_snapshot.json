@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25 16:59 UTC",
+  "updated": "2026-07-25 20:52 UTC",
   "source_updated": "",
   "version": "ext-3",
   "games": [
@@ -729,7 +729,7 @@
       "status": "Planned",
       "deaths": "",
       "playtime_str": "",
-      "playtime_override_text": "",
+      "playtime_override_text": "00:01:54",
       "last_played_str": "",
       "last_played_sort_ts": 0,
       "rating_10": 0.0,
@@ -740,7 +740,7 @@
       "custom_thumb_url": null,
       "thumb_public": "assets/thumbs/fangamehub_thumbnail-a4f4ff64f3.png",
       "df_url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://delicious-fruit.com/ratings/game_details.php%3Fid%3D14681%26rpage%3D5&ved=2ahUKEwiuj4rpicmVAxXdQfEDHbnVBnEQFnoECCIQAQ&usg=AOvVaw1ykn251CoqhLRAGBma6dM9",
-      "time": "",
+      "time": "00:01:54",
       "last_played": ""
     },
     {

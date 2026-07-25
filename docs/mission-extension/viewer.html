@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -15,23 +15,23 @@
     <div class="aurora" aria-hidden="true"></div>
     <div id="thumb" class="thumb" aria-hidden="true"></div>
     <header class="header">
-      <button id="hubLink" class="brand" type="button" title="THXel Fangame Hub öffnen">
+      <button id="hubLink" class="brand" type="button" title="Open THXel Fangame Hub">
         <span class="brand-icon">🐧</span>
         <span>PinguLexa Mission</span>
       </button>
-      <span id="state" class="state">LÄDT</span>
+      <span id="state" class="state">LOADING</span>
     </header>
 
     <section class="hero">
       <p class="eyebrow">COMMUNITY GOAL</p>
-      <h1 id="title">Community-Mission</h1>
-      <p id="description" class="description">Der aktuelle Stand wird geladen …</p>
+      <h1 id="title">Community Mission</h1>
+      <p id="description" class="description">Loading current progress…</p>
     </section>
 
     <section class="overall-card">
       <div class="overall-row">
-        <span id="overallLabel">Gesamtfortschritt</span>
-        <strong id="overallPercent">0 %</strong>
+        <span id="overallLabel">Overall Progress</span>
+        <strong id="overallPercent">0%</strong>
       </div>
       <div class="liquid-bar overall-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
         <div id="overallFill" class="liquid-fill"><span class="wave"></span><span class="shine"></span></div>
@@ -45,13 +45,13 @@
     <section id="goals" class="goals"></section>
 
     <footer class="footer">
-      <span id="updated">Noch nicht aktualisiert</span>
-      <button id="refresh" type="button">↻ Aktualisieren</button>
+      <span id="updated">Not updated yet</span>
+      <button id="refresh" type="button">↻ Refresh</button>
     </footer>
 
     <section id="error" class="error" hidden>
-      <strong>Mission gerade nicht erreichbar</strong>
-      <span>Der letzte veröffentlichte Stand konnte nicht geladen werden.</span>
+      <strong>Mission currently unavailable</strong>
+      <span>The latest published progress could not be loaded.</span>
     </section>
   </main>
 </body>

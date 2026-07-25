@@ -6,8 +6,20 @@
   let timer = null;
   let authorized = false;
 
-  const fmt = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });
-  const statusText = { active: "AKTIV", paused: "PAUSIERT", completed: "ERFÜLLT", disabled: "DEAKTIVIERT", stale: "VERALTET" };
+  const fmt = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 });
+  const statusText = {
+    active: "ACTIVE",
+    paused: "PAUSED",
+    completed: "COMPLETED",
+    disabled: "DISABLED",
+    stale: "OUTDATED"
+  };
+  const goalLabels = {
+    bits: "Bits",
+    subs: "Total Subs",
+    channel_points: "Channel Points",
+    combined: "Overall Progress"
+  };
 
   function safeUrl(value) {
     try {
@@ -31,7 +43,10 @@
     const timeout = setTimeout(() => controller.abort(), Number(cfg.requestTimeoutMs || 9000));
     try {
       const join = url.includes("?") ? "&" : "?";
-      const response = await fetch(`${url}${join}nocache=${Date.now()}`, { cache: "no-store", signal: controller.signal });
+      const response = await fetch(`${url}${join}nocache=${Date.now()}`, {
+        cache: "no-store",
+        signal: controller.signal
+      });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } finally { clearTimeout(timeout); }
@@ -46,7 +61,7 @@
       try { return await fetchWithTimeout(url); }
       catch (error) { lastError = error; }
     }
-    throw lastError || new Error("Keine Snapshot-URL konfiguriert");
+    throw lastError || new Error("No snapshot URL configured");
   }
 
   function isStale(data) {
@@ -62,6 +77,11 @@
     if (bar) bar.setAttribute("aria-valuenow", String(value));
   }
 
+  function publicGoalLabel(goal) {
+    const key = String(goal && goal.key || "");
+    return goalLabels[key] || String(goal && goal.label || "Goal");
+  }
+
   function renderGoals(goals) {
     const root = $("goals");
     root.replaceChildren();
@@ -70,19 +90,40 @@
       const article = document.createElement("article");
       article.className = `goal${goal.complete ? " complete" : ""}`;
       article.dataset.key = String(goal.key || "");
-      const head = document.createElement("div"); head.className = "goal-head";
-      const label = document.createElement("span"); label.textContent = String(goal.label || "Ziel");
-      const percent = document.createElement("strong"); percent.textContent = `${fmt.format(Number(goal.percent || 0))} %`;
+
+      const head = document.createElement("div");
+      head.className = "goal-head";
+      const label = document.createElement("span");
+      label.textContent = publicGoalLabel(goal);
+      const percent = document.createElement("strong");
+      percent.textContent = `${fmt.format(Number(goal.percent || 0))}%`;
       head.append(label, percent);
-      const bar = document.createElement("div"); bar.className = "liquid-bar"; bar.setAttribute("role", "progressbar"); bar.setAttribute("aria-valuemin", "0"); bar.setAttribute("aria-valuemax", "100");
-      const fill = document.createElement("div"); fill.className = "liquid-fill"; fill.innerHTML = '<span class="wave"></span><span class="shine"></span>'; bar.append(fill);
-      const foot = document.createElement("div"); foot.className = "goal-foot";
-      const display = document.createElement("span"); display.textContent = String(goal.display || "0 / 0");
-      const remaining = document.createElement("span"); remaining.textContent = goal.complete ? "✓ Ziel erreicht" : `Noch ${fmt.format(Number(goal.remaining || 0))}`;
+
+      const bar = document.createElement("div");
+      bar.className = "liquid-bar";
+      bar.setAttribute("role", "progressbar");
+      bar.setAttribute("aria-valuemin", "0");
+      bar.setAttribute("aria-valuemax", "100");
+      const fill = document.createElement("div");
+      fill.className = "liquid-fill";
+      fill.innerHTML = '<span class="wave"></span><span class="shine"></span>';
+      bar.append(fill);
+
+      const foot = document.createElement("div");
+      foot.className = "goal-foot";
+      const display = document.createElement("span");
+      display.textContent = `${fmt.format(Number(goal.value || 0))} / ${fmt.format(Number(goal.goal || 0))}`;
+      const remaining = document.createElement("span");
+      remaining.textContent = goal.complete
+        ? "✓ Goal reached"
+        : `${fmt.format(Number(goal.remaining || 0))} remaining`;
       foot.append(display, remaining);
-      article.append(head, bar, foot); root.append(article);
+
+      article.append(head, bar, foot);
+      root.append(article);
       setProgress(fill, goal.percent);
     }
+    return sourceGoals.length;
   }
 
   function render(data) {
@@ -90,20 +131,38 @@
     const status = stale ? "stale" : String(data.status || "paused");
     $("state").className = `state ${status}`;
     $("state").textContent = statusText[status] || status.toUpperCase();
-    $("title").textContent = String(data.title || "Community-Mission");
+    $("title").textContent = String(data.title || "Community Mission");
+
     const description = String(data.description || "");
-    $("description").textContent = description || (data.completed ? "Die Community-Mission wurde erfüllt!" : "Gemeinsam das Ziel erreichen.");
+    $("description").textContent = description || (
+      data.completed
+        ? "The community mission has been completed!"
+        : "Work together to unlock the goal."
+    );
+
     const overall = data.overall || {};
-    $("overallLabel").textContent = String(overall.label || "Gesamtfortschritt");
-    $("overallPercent").textContent = `${fmt.format(Number(overall.percent || 0))} %`;
-    $("overallDisplay").textContent = String(overall.display || "0 / 0");
-    $("remaining").textContent = data.completed ? "MISSION COMPLETE" : `${Number(data.contribution_count || 0)} Beiträge`;
+    $("overallLabel").textContent = "Overall Progress";
+    $("overallPercent").textContent = `${fmt.format(Number(overall.percent || 0))}%`;
+
+    const goalCount = renderGoals(data.goals);
+    const isSeparate = String(data.mode || "") === "separate";
+    $("overallDisplay").textContent = isSeparate
+      ? `${goalCount} goal${goalCount === 1 ? "" : "s"}`
+      : String(overall.display || "0 / 0");
+    $("remaining").textContent = data.completed
+      ? "MISSION COMPLETE"
+      : `${Number(data.contribution_count || 0)} contribution${Number(data.contribution_count || 0) === 1 ? "" : "s"}`;
     setProgress($("overallFill"), overall.percent);
-    renderGoals(data.goals);
+
     const thumbnail = safeUrl(data.thumbnail_url);
-    $("thumb").style.backgroundImage = thumbnail ? `url("${thumbnail.replaceAll('"', '%22')}")` : "none";
+    $("thumb").style.backgroundImage = thumbnail
+      ? `url("${thumbnail.replaceAll('"', '%22')}")`
+      : "none";
+
     const timestamp = Date.parse(data.generated_at || data.updated_at || "");
-    $("updated").textContent = Number.isFinite(timestamp) ? `Stand: ${new Date(timestamp).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" })}` : "Stand unbekannt";
+    $("updated").textContent = Number.isFinite(timestamp)
+      ? `Updated: ${new Date(timestamp).toLocaleString("en-US", { dateStyle: "short", timeStyle: "short" })}`
+      : "Update time unavailable";
     $("error").hidden = true;
     app.classList.remove("is-loading");
   }
@@ -128,7 +187,12 @@
   document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });
 
   if (window.Twitch && Twitch.ext && typeof Twitch.ext.onAuthorized === "function") {
-    Twitch.ext.onAuthorized(() => { if (!authorized) { authorized = true; start(); } });
+    Twitch.ext.onAuthorized(() => {
+      if (!authorized) {
+        authorized = true;
+        start();
+      }
+    });
     setTimeout(() => { if (!authorized) start(); }, 1200);
   } else { start(); }
 })();
