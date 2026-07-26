@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25 20:52 UTC",
+  "updated": "2026-07-26 16:24 UTC",
   "source_updated": "",
   "version": "ext-3",
   "games": [
@@ -7,11 +7,11 @@
       "lutris_id": 39,
       "title": "Collections-1024",
       "status": "Playing",
-      "deaths": "924",
+      "deaths": "982",
       "playtime_str": "2 min",
-      "playtime_override_text": "02:11:05",
-      "last_played_str": "2026-07-22 22:42",
-      "last_played_sort_ts": 1784752920,
+      "playtime_override_text": "02:23:52",
+      "last_played_str": "2026-07-26 00:25",
+      "last_played_sort_ts": 1785018300,
       "rating_10": 0.0,
       "difficulty_100": 0.0,
       "df_avg_rating": 8.4,
@@ -20,8 +20,8 @@
       "custom_thumb_url": null,
       "thumb_public": "assets/thumbs/collections-1024-2c7d40f5ef221c-cff6802619.jpg",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26633",
-      "time": "02:11:05",
-      "last_played": "2026-07-22 22:42"
+      "time": "02:23:52",
+      "last_played": "2026-07-26 00:25"
     },
     {
       "lutris_id": 93,

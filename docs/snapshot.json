@@ -20,12 +20,38 @@
     "used_df_rating": 26,
     "avg_df_diff": 48.41923076923077,
     "used_df_diff": 26,
-    "deaths_sum_played": 16425,
-    "deaths_sum_all": 16584,
+    "deaths_sum_played": 16483,
+    "deaths_sum_all": 16642,
     "total_minutes_played": 161,
     "total_minutes_all": 164
   },
   "games": [
+    {
+      "lutris_id": 39,
+      "title": "Collections-1024",
+      "status": "Playing",
+      "deaths": "982",
+      "playtime_str": "2 min",
+      "playtime_override_text": "02:23:52",
+      "playtime_min": 2,
+      "last_played_str": "2026-07-26 00:25",
+      "commented": "No",
+      "rating_10": 0.0,
+      "difficulty_100": 0.0,
+      "df_avg_rating": 8.4,
+      "df_avg_difficulty": 60.7,
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26633_00009672",
+      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26633",
+      "youtube_url": "",
+      "comment": "",
+      "thumb_public": "assets/thumbs/collections-1024-2c7d40f5ef221c-cff6802619.jpg",
+      "df_tags": [
+        "Avoidance (4)",
+        "Miku (2)",
+        "Collections-series (1)"
+      ],
+      "last_played_sort_ts": 1785018300
+    },
     {
       "lutris_id": 104,
       "title": "I wanna be the Octophobia",
@@ -166,32 +192,6 @@
         "Beginner_Friendly (9)"
       ],
       "last_played_sort_ts": 1784826060
-    },
-    {
-      "lutris_id": 39,
-      "title": "Collections-1024",
-      "status": "Playing",
-      "deaths": "924",
-      "playtime_str": "2 min",
-      "playtime_override_text": "02:11:05",
-      "playtime_min": 2,
-      "last_played_str": "2026-07-22 22:42",
-      "commented": "No",
-      "rating_10": 0.0,
-      "difficulty_100": 0.0,
-      "df_avg_rating": 8.4,
-      "df_avg_difficulty": 60.7,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26633_00009672",
-      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26633",
-      "youtube_url": "",
-      "comment": "",
-      "thumb_public": "assets/thumbs/collections-1024-2c7d40f5ef221c-cff6802619.jpg",
-      "df_tags": [
-        "Avoidance (4)",
-        "Miku (2)",
-        "Collections-series (1)"
-      ],
-      "last_played_sort_ts": 1784752920
     },
     {
       "lutris_id": 65,
