@@ -20,21 +20,21 @@
     "used_df_rating": 26,
     "avg_df_diff": 48.41923076923077,
     "used_df_diff": 26,
-    "deaths_sum_played": 16483,
-    "deaths_sum_all": 16642,
-    "total_minutes_played": 161,
-    "total_minutes_all": 164
+    "deaths_sum_played": 16838,
+    "deaths_sum_all": 16997,
+    "total_minutes_played": 163,
+    "total_minutes_all": 166
   },
   "games": [
     {
       "lutris_id": 39,
       "title": "Collections-1024",
       "status": "Playing",
-      "deaths": "982",
-      "playtime_str": "2 min",
-      "playtime_override_text": "02:23:52",
-      "playtime_min": 2,
-      "last_played_str": "2026-07-26 00:25",
+      "deaths": "1337",
+      "playtime_str": "4 min",
+      "playtime_override_text": "03:50:34",
+      "playtime_min": 4,
+      "last_played_str": "2026-07-27 22:56",
       "commented": "No",
       "rating_10": 0.0,
       "difficulty_100": 0.0,
@@ -50,7 +50,7 @@
         "Miku (2)",
         "Collections-series (1)"
       ],
-      "last_played_sort_ts": 1785018300
+      "last_played_sort_ts": 1785185760
     },
     {
       "lutris_id": 104,
