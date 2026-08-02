@@ -1,13 +1,13 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-08-01T18:29:40.012307+00:00",
-  "updated_at": "2026-08-01T18:29:40.008673+00:00",
+  "generated_at": "2026-08-02T15:09:43.033855+00:00",
+  "updated_at": "2026-08-02T15:09:43.030585+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
-  "status": "active",
+  "status": "paused",
   "enabled": true,
-  "active": true,
+  "active": false,
   "completed": false,
   "completed_at": "",
   "title": "Play I Wanna Kill The Kamilia 3",
@@ -15,7 +15,7 @@
   "mode": "separate",
   "completion_rule": "all",
   "overall": {
-    "percent": 0.133,
+    "percent": 0.0,
     "label": "Gesamtübersicht",
     "display": "3 Teilziele"
   },
@@ -43,15 +43,15 @@
     {
       "key": "channel_points",
       "label": "Kanalpunkte",
-      "value": 2000,
+      "value": 0,
       "goal": 500000,
-      "remaining": 498000,
-      "percent": 0.4,
+      "remaining": 500000,
+      "percent": 0.0,
       "complete": false,
-      "display": "2.000 / 500.000"
+      "display": "0 / 500.000"
     }
   ],
-  "contribution_count": 2,
+  "contribution_count": 0,
   "thumbnail_file": "thumbnail.png",
   "thumbnail_url": "https://thxel.github.io/fangame-hub-public/mission-extension/thumbnail.png",
   "hub_url": "https://thxel.github.io/fangame-hub-public/"
