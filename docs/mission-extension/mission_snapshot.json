@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-08-16T21:03:40.813660+00:00",
+  "generated_at": "2026-08-27T14:34:57.821165+00:00",
   "updated_at": "2026-08-02T15:09:43.030585+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
@@ -10,8 +10,8 @@
   "active": true,
   "completed": false,
   "completed_at": "",
-  "title": "Play I Wanna Kill The Kamilia 3",
-  "description": "TH have to Play K3",
+  "title": "12h Boshy Stream",
+  "description": "TH have to Play Boshy for 12 Hours",
   "mode": "separate",
   "completion_rule": "all",
   "overall": {
@@ -52,7 +52,7 @@
     }
   ],
   "contribution_count": 0,
-  "thumbnail_file": "",
-  "thumbnail_url": "",
+  "thumbnail_file": "thumbnail.jpg",
+  "thumbnail_url": "https://thxel.github.io/fangame-hub-public/mission-extension/thumbnail.jpg",
   "hub_url": "https://thxel.github.io/fangame-hub-public/"
 }
