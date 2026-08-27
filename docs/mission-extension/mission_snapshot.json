@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-08-27T15:07:33.235523+00:00",
+  "generated_at": "2026-08-27T15:08:48.534859+00:00",
   "updated_at": "2026-08-02T15:09:43.030585+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
@@ -11,7 +11,7 @@
   "completed": false,
   "completed_at": "",
   "title": "12h Boshy Stream",
-  "description": "TH have to Play Boshy for 12 Hours",
+  "description": "TH have to play Boshy for 12 Hours",
   "mode": "separate",
   "completion_rule": "all",
   "overall": {
