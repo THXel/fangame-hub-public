@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-08-27T15:08:48.534859+00:00",
+  "generated_at": "2026-08-27T15:19:01.639869+00:00",
   "updated_at": "2026-08-02T15:09:43.030585+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
@@ -44,11 +44,11 @@
       "key": "channel_points",
       "label": "Kanalpunkte",
       "value": 0,
-      "goal": 40000,
-      "remaining": 40000,
+      "goal": 50000,
+      "remaining": 50000,
       "percent": 0.0,
       "complete": false,
-      "display": "0 / 40.000"
+      "display": "0 / 50.000"
     }
   ],
   "contribution_count": 0,
