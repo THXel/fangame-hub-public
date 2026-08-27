@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-08-27T14:34:57.821165+00:00",
+  "generated_at": "2026-08-27T14:35:39.659978+00:00",
   "updated_at": "2026-08-02T15:09:43.030585+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
@@ -24,31 +24,31 @@
       "key": "bits",
       "label": "Bits",
       "value": 0,
-      "goal": 20000,
-      "remaining": 20000,
+      "goal": 5000,
+      "remaining": 5000,
       "percent": 0.0,
       "complete": false,
-      "display": "0 / 20.000"
+      "display": "0 / 5.000"
     },
     {
       "key": "subs",
       "label": "Subs gesamt",
       "value": 0,
-      "goal": 100,
-      "remaining": 100,
+      "goal": 50,
+      "remaining": 50,
       "percent": 0.0,
       "complete": false,
-      "display": "0 / 100"
+      "display": "0 / 50"
     },
     {
       "key": "channel_points",
       "label": "Kanalpunkte",
       "value": 0,
-      "goal": 500000,
-      "remaining": 500000,
+      "goal": 25000,
+      "remaining": 25000,
       "percent": 0.0,
       "complete": false,
-      "display": "0 / 500.000"
+      "display": "0 / 25.000"
     }
   ],
   "contribution_count": 0,
