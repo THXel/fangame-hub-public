@@ -660,8 +660,8 @@ function clampLeaderboardHeight(targetRows = 25){
     if(which==="100"){
       return list.find(c=>/100/i.test(c.name)) || null;
     }
-    // Any%: try match "Any" and optionally "No WW" / "DBO"
-    return list.find(c=>/any/i.test(c.name) && /ww|dbo|no/i.test(c.name)) 
+    // Require the selected route; never show another Any% category.
+    return list.find(c=>/any/i.test(c.name) && /no\s*ww/i.test(c.name) && /dbo/i.test(c.name))
         || null;
   }
 
