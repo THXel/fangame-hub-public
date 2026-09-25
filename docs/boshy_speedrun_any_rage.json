@@ -1,7 +1,8 @@
 {
   "schema": "boshy_speedrun/lss_only_v2",
-  "updated_at_utc": "2026-08-25T18:17:49Z",
+  "updated_at_utc": "2026-09-25T19:13:16Z",
   "game": "I Wanna Be The Boshy",
+  "mode": "any_rage",
   "category": "Rage Mode Any% (No WW, DBO)",
   "timing_method": "RealTime",
   "pb_total": "",
@@ -40,7 +41,7 @@
     {
       "index": 3,
       "name": "Kirby's Adventure",
-      "icon_path": "assets/Split_icons/kirbys_adventure.png",
+      "icon_path": "assets/Split_icons/kirby_s_adventure.png",
       "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAJQEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAAJcEhZcwAADsQAAA7EAZUrDhsAAADXSURBVFiF5ZdBDoQgDEW79Giz8KAeau4y6kIHGrC/8AuZjMlfEEQe7W8jIseziHxmSGZufkNkg+2r9f3Kxlo980WAdGGkNEQGEL15CgEBlMJpzafv6HkXADv/+nCPABHGc6UgohpMgFr+mSDNJmT7oMuEDB/AHvDk14JpNiECYglqREgTQk/bVAWoBxhRcAEwq+F3+gD75FAEUA8M6QMRUeiqAmb+KWXYk/9Lw/8Hmk34n31AV4IVmaf50rdggChVAUZAXPuYVzNPfi3p9dW74QxNvSGfe+8gWeiPGUL8XgAAAABJRU5ErkJgggs=",
       "pb_split_time": "",
       "pb_segment_time": "",

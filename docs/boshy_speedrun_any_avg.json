@@ -1,14 +1,15 @@
 {
   "schema": "boshy_speedrun/lss_only_v2",
-  "updated_at_utc": "2026-08-25T18:17:49Z",
+  "updated_at_utc": "2026-09-25T19:13:16Z",
   "game": "I Wanna Be The Boshy",
+  "mode": "any_avg",
   "category": "Average Any% (No WW, DBO)",
   "timing_method": "RealTime",
   "pb_total": "52:48.074",
   "sum_of_best": "37:40.280",
   "last_run": {
-    "final_time": "",
-    "delta": ""
+    "final_time": "1:16:48.204",
+    "delta": "24:00.130"
   },
   "splits": [
     {
@@ -40,7 +41,7 @@
     {
       "index": 3,
       "name": "Kirby's Adventure",
-      "icon_path": "assets/Split_icons/kirbys_adventure.png",
+      "icon_path": "assets/Split_icons/kirby_s_adventure.png",
       "icon_data_url": "data:image/png;base64,AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAJQEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAAJcEhZcwAADsQAAA7EAZUrDhsAAADXSURBVFiF5ZdBDoQgDEW79Giz8KAeau4y6kIHGrC/8AuZjMlfEEQe7W8jIseziHxmSGZufkNkg+2r9f3Kxlo980WAdGGkNEQGEL15CgEBlMJpzafv6HkXADv/+nCPABHGc6UgohpMgFr+mSDNJmT7oMuEDB/AHvDk14JpNiECYglqREgTQk/bVAWoBxhRcAEwq+F3+gD75FAEUA8M6QMRUeiqAmb+KWXYk/9Lw/8Hmk34n31AV4IVmaf50rdggChVAUZAXPuYVzNPfi3p9dW74QxNvSGfe+8gWeiPGUL8XgAAAABJRU5ErkJgggs=",
       "pb_split_time": "4:57.584",
       "pb_segment_time": "2:22.783",
@@ -287,7 +288,7 @@
     {
       "index": 22,
       "name": "Solgryn (END)",
-      "icon_path": "assets/Split_icons/solgryn_end.png",
+      "icon_path": "assets/Split_icons/solgryn.png",
       "icon_data_url": "data:image/png;base64,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",
       "pb_split_time": "52:48.074",
       "pb_segment_time": "5:40.591",

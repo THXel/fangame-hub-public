@@ -148,16 +148,16 @@
 </div>
 </div>
 </div>
-<div id="tab-boshy" style="display:none;"><section id="boshy-recorded-stats" style="margin:20px 0;padding:18px;border:1px solid #395061;border-radius:12px;overflow-x:auto"><h2>Boshy · Aufgezeichnete Runs</h2><p>Aufzeichnung seit 25.09.2026 · Stand 25.09.2026 18:28 UTC</p><p>Diese Run-Statistik beginnt mit der lokalen Aufzeichnung. Die historischen LiveSplit-Bestzeiten stehen weiterhin separat. Testläufe zählen nicht mit.</p><table><thead><tr><th>Kategorie</th><th>Versuche</th><th>Finish</th><th>Deaths</th><th>Golds</th><th>Bester vollständiger Run</th></tr></thead><tbody><tr><td>HARD-ON · 100%</td><td>1</td><td>0</td><td>0</td><td>0</td><td>—</td></tr></tbody></table><p>Ein Teil der Aufzeichnung ist unvollständig; Deaths können fehlen. Betroffene Abschnitte werden nicht verglichen.</p><h3>Entwicklung zum vorherigen vergleichbaren Stream</h3><p>Noch nicht genügend vergleichbare Streamdaten. Mindestens drei vollständige Passagen je Abschnitt und Stream sind erforderlich.</p></section>
+<div id="tab-boshy" style="display:none;">
 <h2><i class="fa-solid fa-stopwatch"></i> Boshy Speedrun</h2>
 <div aria-label="Boshy Categories" class="boshySubtabs" role="tablist">
 <button aria-selected="true" class="boshySubtab active" data-boshy-mode="any_ez" role="tab">Any% • Ez</button>
 <button aria-selected="false" class="boshySubtab" data-boshy-mode="any_avg" role="tab">Any% • Average</button>
 <button aria-selected="false" class="boshySubtab" data-boshy-mode="any_rage" role="tab">Any% • Rage</button>
 <button aria-selected="false" class="boshySubtab" data-boshy-mode="p100_hardon" role="tab">100% • Hardon</button>
-</div>
+</div><section id="boshy-recorded-stats" style="margin:20px 0;padding:18px;border:1px solid #395061;border-radius:12px;overflow-x:auto"><h3>Recorded runs &amp; stream trends</h3><p>Updated 2026-09-25 19:13 UTC. Recorded attempts are separate from the historical personal bests below. Test runs are excluded.</p><article data-recorded-mode="any_ez"><h4>Any% · EZ</h4><p>No regular attempts recorded for this category yet.</p><p>Stream trends need at least three complete passages per section in each of two streams.</p></article><article data-recorded-mode="any_avg" style="display:none"><h4>Any% · Average</h4><p>No regular attempts recorded for this category yet.</p><p>Stream trends need at least three complete passages per section in each of two streams.</p></article><article data-recorded-mode="any_rage" style="display:none"><h4>Any% · Rage</h4><p>No regular attempts recorded for this category yet.</p><p>Stream trends need at least three complete passages per section in each of two streams.</p></article><article data-recorded-mode="p100_hardon" style="display:none"><h4>100% · Hard-On</h4><table cellpadding="4" cellspacing="8"><tr><th>Attempts</th><th>Finishes</th><th>Deaths</th><th>Gold splits</th><th>Best complete run</th></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td><td>—</td></tr></table><p>Some recordings are incomplete. Deaths may be missing; affected sections are excluded from comparisons.</p><p>Stream trends need at least three complete passages per section in each of two streams.</p></article></section>
 <div class="card" id="boshyEmpty">
-  Noch keine Boshy-Speedrun-Daten gefunden. Lege <code>boshy_speedrun_any.json</code> in diesem Ordner ab (wird automatisch geladen).
+  No speedrun data available for this category.
 </div>
 <div id="boshyRoot" style="display:none;">
 <!-- Header -->
@@ -166,7 +166,7 @@
 </div>
 <!-- No-runs notice -->
 <div class="card boshyNoRunsCard" id="boshyNoRuns" style="display:none;">
-<div class="boshyNoRunsTitle"><i class="fa-solid fa-circle-info"></i> Noch keine Runs</div>
+<div class="boshyNoRunsTitle"><i class="fa-solid fa-circle-info"></i> No completed runs</div>
 <div class="boshyNoRunsText" id="boshyNoRunsText"></div>
 </div>
 <!-- Top: left stats / right SRC -->
@@ -369,7 +369,7 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         if(!isFinite(x) || !isFinite(y) || y<=0) return 0;
         return Math.max(0, Math.min(100, (x/y)*100));
       }
-      function safeText(s){ return (s===null||s===undefined) ? '' : String(s); }
+      function safeText(s){ return (s===null||s===undefined) ? '' : String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
       function parseTsToSeconds(ts){
         if(!ts || ts==='—' || ts==='-') return null;
@@ -420,8 +420,8 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
         if (boshyNoRuns){
           boshyNoRuns.style.display = hasRuns ? 'none' : '';
           if (!hasRuns && boshyNoRunsText){
-            const extra = (String(data.finished||'').toLowerCase() === 'true' || data.finished===true) ? '' : ' (noch nicht beendet)';
-            boshyNoRunsText.innerHTML = `Kategorie <b>${safeText(modeLabel)}</b>: Noch keine Runs vorhanden${extra}.`;
+            const extra = (String(data.finished||'').toLowerCase() === 'true' || data.finished===true) ? '' : ' (not finished yet)';
+            boshyNoRunsText.innerHTML = `Category <b>${safeText(modeLabel)}</b>: no completed runs recorded${extra}.`;
           }
         }
     function cleanDataUrl(u){
@@ -464,10 +464,10 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 
           const last = data.last_run || {};
           boshyCards.innerHTML =
-            cardHTML('fa-solid fa-trophy', 'PB Total', fmtTime(data.pb_total), 'from .lss (RealTime)') +
+            cardHTML('fa-solid fa-trophy', 'PB Total', fmtTime(data.pb_total), 'Personal best for this category') +
             cardHTML('fa-solid fa-bolt', 'Sum of Best (Best Segments)', fmtTime(data.sum_of_best), 'sum of best segments') +
-            cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'from .lss AttemptHistory') +
-            cardHTML('fa-solid fa-chart-line', 'Delta (vs PB)', safeText(last.delta || '—'), 'computed from .lss');
+            cardHTML('fa-solid fa-flag-checkered', 'Last Final', fmtTime(last.final_time), 'Latest completed attempt') +
+            cardHTML('fa-solid fa-chart-line', 'Delta (vs PB)', safeText(last.delta || '—'), 'Compared with the personal best');
         }
 
         const splits = data.splits.slice();
@@ -547,31 +547,29 @@ if(boshySplits){
 
       }
 
+      let boshyRequestToken=0;
       async function loadBoshy(mode){
-  const candidates = {
-    any_ez: ['boshy_speedrun_any_ez.json','boshy_speedrun_any.json'],
-    any_avg: ['boshy_speedrun_any_avg.json','boshy_speedrun_any.json'],
-    any_rage: ['boshy_speedrun_any_rage.json','boshy_speedrun_any.json'],
-    p100_hardon: ['boshy_speedrun_100.json','boshy_speedrun_100.json','boshy_speedrun_any.json'],
-  };
-  const list = candidates[mode] || ['boshy_speedrun_any.json'];
-  for(const path of list){
-    try{
-      const r = await fetch(path, {cache:'no-store'});
-      if(!r.ok) continue;
-      const data = await r.json();
-      data.__mode = mode;
-      data.__source = path;
-      renderBoshy(data);
-      return true;
-    }catch(e){}
+  const token=++boshyRequestToken;
+  const files={any_ez:'boshy_speedrun_any_ez.json',any_avg:'boshy_speedrun_any_avg.json',any_rage:'boshy_speedrun_any_rage.json',p100_hardon:'boshy_speedrun_100.json'};
+  if(boshyRoot)boshyRoot.style.display='none';
+  if(boshyEmpty){boshyEmpty.style.display='';boshyEmpty.textContent='Loading category…';}
+  try{
+    if(!files[mode])throw new Error('Unknown category');
+    const response=await fetch(files[mode],{cache:'no-store'});
+    if(!response.ok)throw new Error('Category data unavailable');
+    const data=await response.json();
+    if(token!==boshyRequestToken)return false;
+    if(data.mode!==mode)throw new Error('Category data does not match the selected mode');
+    data.__mode=mode;renderBoshy(data);return true;
+  }catch(error){
+    if(token!==boshyRequestToken)return false;
+    if(boshyEmpty){boshyEmpty.style.display='';boshyEmpty.textContent='No matching data for this category. '+error.message;}
+    if(boshyRoot)boshyRoot.style.display='none';return false;
   }
-  if(boshyEmpty) boshyEmpty.style.display = '';
-  if(boshyRoot) boshyRoot.style.display = 'none';
-  return false;
 }
 
 function setActiveBoshyMode(mode){
+  document.querySelectorAll('[data-recorded-mode]').forEach(panel=>{panel.style.display=panel.dataset.recordedMode===mode?'':'none';});
   document.querySelectorAll('.boshySubtab').forEach(btn=>{
     const on = btn.getAttribute('data-boshy-mode') === mode;
     btn.classList.toggle('active', on);
@@ -587,8 +585,6 @@ document.querySelectorAll('.boshySubtab').forEach(btn=>{
     boshyMode = btn.getAttribute('data-boshy-mode') || 'any_ez';
     setActiveBoshyMode(boshyMode);
     await loadBoshy(boshyMode);
-    try{ window.__boshyMode = boshyMode; }catch(e){}
-    try{ window.dispatchEvent(new CustomEvent('boshy_mode_changed', {detail:{mode:boshyMode}})); }catch(e){}
   });
 });
 
@@ -662,12 +658,11 @@ function clampLeaderboardHeight(targetRows = 25){
   function pickCategory(categories, which){
     const list = (categories||[]).filter(c=>c.type==="per-game");
     if(which==="100"){
-      return list.find(c=>/100/i.test(c.name)) || list.find(c=>/complete|all/i.test(c.name)) || list[0];
+      return list.find(c=>/100/i.test(c.name)) || null;
     }
     // Any%: try match "Any" and optionally "No WW" / "DBO"
     return list.find(c=>/any/i.test(c.name) && /ww|dbo|no/i.test(c.name)) 
-        || list.find(c=>/any/i.test(c.name))
-        || list[0];
+        || null;
   }
 
   async function getDifficultyVar(catId){
@@ -690,7 +685,7 @@ function clampLeaderboardHeight(targetRows = 25){
       const lab = String(obj.label||"").toLowerCase();
       return lab.includes(want);
     });
-    return hit ? hit[0] : (entries[0]?.[0] || null);
+    return hit ? hit[0] : null;
   }
 
   async function getLeaderboard(gameId, catId, varId, valId){
@@ -762,10 +757,12 @@ if(isMe) tr.classList.add("me");
     `;
   }
 
+  let leaderboardRequest=0;
   async function update(){
+    const requestId=++leaderboardRequest;
     if(!elStatus || !elRows || !elMeBox) return;
     try{
-      elStatus.textContent = "loading…";
+      elStatus.textContent = "loading…";elRows.replaceChildren();elMeBox.replaceChildren();
       const mode = (window.__boshyMode || "any_ez");
       const which = mode.startsWith("p100") ? "100" : "any";
       const diff = mode.includes("ez") ? "Ez" : (mode.includes("avg") ? "Average" : (mode.includes("rage") ? "Rage" : "Average"));
@@ -788,7 +785,9 @@ if(isMe) tr.classList.add("me");
         }
       }
 
+      if(which!=="100" && (!varId || !valId))throw new Error("No matching difficulty filter; leaderboard hidden");
       const lb = await getLeaderboard(game.id, cat.id, varId, valId);
+      if(requestId!==leaderboardRequest)return;
       renderRows(lb);
 
       const user = await getUserByName(ME_NAME);
@@ -800,13 +799,15 @@ if(isMe) tr.classList.add("me");
         if(!varId || !valId) return true;
         return (r?.values || {})[varId] === valId;
       });
+      if(requestId!==leaderboardRequest)return;
       renderMe(pbMatch, label);
 
       elStatus.textContent = "ok";
     requestAnimationFrame(() => clampLeaderboardHeight(25));
     }catch(e){
+      if(requestId!==leaderboardRequest)return;
       elStatus.textContent = "error";
-      elMeBox.innerHTML = `<div class="pill boshy-muted">API error: ${String(e.message||e)}</div>`;
+      elMeBox.innerHTML = `<div class="pill boshy-muted">API error: ${String(e.message||e).replace(/[<>&]/g, "")}</div>`;
       elRows.innerHTML = "";
     }
   }
