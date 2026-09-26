@@ -480,8 +480,8 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 	        function normalizeIconPath(rawName, srcPath){
 	          const p = (srcPath && String(srcPath).trim()) ? String(srcPath).trim() : '';
 	          if(p){
-	            // e.g. solgryn_end.png -> solgryn.png
-	            return p.replace(/_end(\.[a-z0-9]+)$/i, '$1');
+	            // Preserve real filenames, including the _end suffix.
+	            return p;
 	          }
 	          if(!rawName) return '';
 	          const base = String(rawName)
@@ -498,8 +498,9 @@ window.addEventListener('hashchange', () => setTab(normalizeHash(), false));
 	  // Prefer a real PNG path if available; otherwise fall back to embedded data.
 	  const srcPath = (sp.icon_path && String(sp.icon_path).trim()) ? String(sp.icon_path).trim() : '';
 	  const srcData = cleanDataUrl(sp.icon_data_url);
-	  const src = normalizeIconPath(rawName, srcPath) || srcData;
-	  const icon = src ? `<img class="splitIcon" src="${src}" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'splitIconPh'}));">` : `<div class="splitIconPh"></div>`;
+	  const fallback = normalizeIconPath(rawName, srcPath);
+	  const src = srcData || fallback;
+	  const icon = src ? `<img class="splitIcon" src="${safeText(src)}" data-fallback="${safeText(srcData ? fallback : '')}" alt="" loading="lazy" decoding="async" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}else{this.replaceWith(Object.assign(document.createElement('div'),{className:'splitIconPh'}));}">` : `<div class="splitIconPh"></div>`;
   const name = displayName;
   const pbSeg = fmtTime(sp.pb_segment_time);
   const bestSeg = fmtTime(sp.best_segment_time);
