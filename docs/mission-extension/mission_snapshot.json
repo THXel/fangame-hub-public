@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-10-22T18:30:26.954078+00:00",
-  "updated_at": "2026-10-22T18:30:26.950398+00:00",
+  "generated_at": "2026-10-22T18:32:14.989823+00:00",
+  "updated_at": "2026-10-22T18:32:14.986447+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
   "status": "active",
@@ -15,7 +15,7 @@
   "mode": "separate",
   "completion_rule": "all",
   "overall": {
-    "percent": 9.333,
+    "percent": 10.0,
     "label": "Gesamtübersicht",
     "display": "3 Teilziele"
   },
@@ -43,15 +43,15 @@
     {
       "key": "channel_points",
       "label": "Kanalpunkte",
-      "value": 5000,
+      "value": 6000,
       "goal": 50000,
-      "remaining": 45000,
-      "percent": 10.0,
+      "remaining": 44000,
+      "percent": 12.0,
       "complete": false,
-      "display": "5.000 / 50.000"
+      "display": "6.000 / 50.000"
     }
   ],
-  "contribution_count": 14,
+  "contribution_count": 15,
   "thumbnail_file": "thumbnail.webp",
   "thumbnail_url": "https://thxel.github.io/fangame-hub-public/mission-extension/thumbnail.webp",
   "hub_url": "https://thxel.github.io/fangame-hub-public/"
