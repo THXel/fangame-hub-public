@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27 13:53 UTC",
+  "updated": "2026-10-27 14:52 UTC",
   "source_updated": "",
   "version": "ext-3",
   "games": [
@@ -179,10 +179,10 @@
       "title": "Boshy Randomizer",
       "status": "Planned",
       "deaths": null,
-      "playtime_str": "1 min",
+      "playtime_str": "2 min",
       "playtime_override_text": null,
-      "last_played_str": "2026-10-27 11:19",
-      "last_played_sort_ts": 1793096377,
+      "last_played_str": "2026-10-27 15:52",
+      "last_played_sort_ts": 1793112725,
       "rating_10": null,
       "difficulty_100": null,
       "df_avg_rating": null,
@@ -190,8 +190,8 @@
       "df_thumb_url": "",
       "thumb_public": "",
       "df_url": "",
-      "time": "1 min",
-      "last_played": "2026-10-27 11:19"
+      "time": "2 min",
+      "last_played": "2026-10-27 15:52"
     },
     {
       "lutris_id": 1,
