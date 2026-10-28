@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28 17:15 UTC",
+  "updated": "2026-10-28 17:52 UTC",
   "source_updated": "",
   "version": "ext-3",
   "games": [
@@ -175,33 +175,14 @@
       "last_played": "2026-01-18 17:17"
     },
     {
-      "lutris_id": 90,
-      "title": "Boshy Randomizer",
-      "status": "Planned",
-      "deaths": null,
-      "playtime_str": "2 min",
-      "playtime_override_text": null,
-      "last_played_str": "2026-10-28 18:14",
-      "last_played_sort_ts": 1793207668,
-      "rating_10": null,
-      "difficulty_100": null,
-      "df_avg_rating": null,
-      "df_avg_difficulty": null,
-      "df_thumb_url": "",
-      "thumb_public": "",
-      "df_url": "",
-      "time": "2 min",
-      "last_played": "2026-10-28 18:14"
-    },
-    {
       "lutris_id": 1,
       "title": "I Wanna Be The Boshy",
       "status": "Completed",
       "deaths": ">9000",
       "playtime_str": "1 h 23 min",
       "playtime_override_text": ">9000min",
-      "last_played_str": "2026-10-26 09:35",
-      "last_played_sort_ts": 1793003754,
+      "last_played_str": "2026-10-28 18:51",
+      "last_played_sort_ts": 1793209912,
       "rating_10": 9.0,
       "difficulty_100": 83.0,
       "df_avg_rating": 8.0,
@@ -210,7 +191,26 @@
       "thumb_public": "https://delicious-fruit.com/ratings/screenshots/11890_000028bf",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=11890",
       "time": ">9000min",
-      "last_played": "2026-10-26 09:35"
+      "last_played": "2026-10-28 18:51"
+    },
+    {
+      "lutris_id": 90,
+      "title": "Boshy Randomizer",
+      "status": "Planned",
+      "deaths": null,
+      "playtime_str": "2 min",
+      "playtime_override_text": null,
+      "last_played_str": "2026-10-28 18:51",
+      "last_played_sort_ts": 1793209901,
+      "rating_10": null,
+      "difficulty_100": null,
+      "df_avg_rating": null,
+      "df_avg_difficulty": null,
+      "df_thumb_url": "",
+      "thumb_public": "",
+      "df_url": "",
+      "time": "2 min",
+      "last_played": "2026-10-28 18:51"
     },
     {
       "lutris_id": 16,
