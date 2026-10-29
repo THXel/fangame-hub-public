@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 16:37 UTC",
+  "updated": "2026-10-29 19:43 UTC",
   "source_updated": "",
   "version": "ext-3",
   "games": [
@@ -178,11 +178,11 @@
       "lutris_id": 42,
       "title": "I Wanna Start A Party",
       "status": "Completed",
-      "deaths": "",
-      "playtime_str": "7 min",
-      "playtime_override_text": "02:30:58",
-      "last_played_str": "2026-10-29 17:36",
-      "last_played_sort_ts": 1793291797,
+      "deaths": "1",
+      "playtime_str": "9 min",
+      "playtime_override_text": "05:09:50",
+      "last_played_str": "2026-10-29 20:42",
+      "last_played_sort_ts": 1793302956,
       "rating_10": 10.0,
       "difficulty_100": 39.0,
       "df_avg_rating": 9.8,
@@ -190,8 +190,8 @@
       "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26245_000082c7",
       "thumb_public": "assets/panel-thumbs/48cefbf4aff378baec9b140e.png",
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26245",
-      "time": "02:30:58",
-      "last_played": "2026-10-29 17:36"
+      "time": "05:09:50",
+      "last_played": "2026-10-29 20:42"
     },
     {
       "lutris_id": 90,
