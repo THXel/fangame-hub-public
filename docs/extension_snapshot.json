@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28 21:11 UTC",
+  "updated": "2026-10-29 16:32 UTC",
   "source_updated": "",
   "version": "ext-3",
   "games": [
@@ -175,6 +175,25 @@
       "last_played": "2026-01-18 17:17"
     },
     {
+      "lutris_id": 42,
+      "title": "I Wanna Start A Party",
+      "status": "Completed",
+      "deaths": "",
+      "playtime_str": "6 min",
+      "playtime_override_text": "02:26:34",
+      "last_played_str": "2026-10-29 17:32",
+      "last_played_sort_ts": 1793291523,
+      "rating_10": 10.0,
+      "difficulty_100": 39.0,
+      "df_avg_rating": 9.8,
+      "df_avg_difficulty": 22.0,
+      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26245_000082c7",
+      "thumb_public": "assets/panel-thumbs/48cefbf4aff378baec9b140e.png",
+      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26245",
+      "time": "02:26:34",
+      "last_played": "2026-10-29 17:32"
+    },
+    {
       "lutris_id": 90,
       "title": "Boshy Randomizer",
       "status": "Planned",
@@ -268,25 +287,6 @@
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=27996",
       "time": "00:08:03",
       "last_played": "2026-08-21 22:44"
-    },
-    {
-      "lutris_id": 42,
-      "title": "I Wanna Start A Party",
-      "status": "Completed",
-      "deaths": "",
-      "playtime_str": "6 min",
-      "playtime_override_text": "02:26:34",
-      "last_played_str": "2026-08-20 20:33",
-      "last_played_sort_ts": 1787250835,
-      "rating_10": 10.0,
-      "difficulty_100": 39.0,
-      "df_avg_rating": 9.8,
-      "df_avg_difficulty": 22.0,
-      "df_thumb_url": "https://delicious-fruit.com/ratings/screenshots/26245_000082c7",
-      "thumb_public": "assets/panel-thumbs/48cefbf4aff378baec9b140e.png",
-      "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26245",
-      "time": "02:26:34",
-      "last_played": "2026-08-20 20:33"
     },
     {
       "lutris_id": 107,
