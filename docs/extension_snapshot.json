@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 19:43 UTC",
+  "updated": "2026-10-30 15:59 UTC",
   "source_updated": "",
   "version": "ext-3",
   "games": [
@@ -192,25 +192,6 @@
       "df_url": "https://delicious-fruit.com/ratings/game_details.php?id=26245",
       "time": "05:09:50",
       "last_played": "2026-10-29 20:42"
-    },
-    {
-      "lutris_id": 90,
-      "title": "Boshy Randomizer",
-      "status": "Planned",
-      "deaths": null,
-      "playtime_str": "3 min",
-      "playtime_override_text": null,
-      "last_played_str": "2026-10-28 22:10",
-      "last_played_sort_ts": 1793221855,
-      "rating_10": null,
-      "difficulty_100": null,
-      "df_avg_rating": null,
-      "df_avg_difficulty": null,
-      "df_thumb_url": "",
-      "thumb_public": "",
-      "df_url": "",
-      "time": "3 min",
-      "last_played": "2026-10-28 22:10"
     },
     {
       "lutris_id": 1,
