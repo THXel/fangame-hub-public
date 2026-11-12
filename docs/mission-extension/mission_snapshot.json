@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "version": "mission-ext-1",
-  "generated_at": "2026-11-12T18:34:28.140090+00:00",
-  "updated_at": "2026-11-12T18:34:28.136868+00:00",
+  "generated_at": "2026-11-12T18:37:28.466856+00:00",
+  "updated_at": "2026-11-12T18:37:28.463606+00:00",
   "stale_after_minutes": 180,
   "bridge_enabled": true,
   "status": "active",
@@ -15,7 +15,7 @@
   "mode": "separate",
   "completion_rule": "all",
   "overall": {
-    "percent": 14.467,
+    "percent": 14.633,
     "label": "Gesamtübersicht",
     "display": "3 Teilziele"
   },
@@ -23,12 +23,12 @@
     {
       "key": "bits",
       "label": "Bits",
-      "value": 870,
+      "value": 895,
       "goal": 5000,
-      "remaining": 4130,
-      "percent": 17.4,
+      "remaining": 4105,
+      "percent": 17.9,
       "complete": false,
-      "display": "870 / 5.000"
+      "display": "895 / 5.000"
     },
     {
       "key": "subs",
@@ -51,7 +51,7 @@
       "display": "8.000 / 50.000"
     }
   ],
-  "contribution_count": 23,
+  "contribution_count": 24,
   "thumbnail_file": "thumbnail.webp",
   "thumbnail_url": "https://thxel.github.io/fangame-hub-public/mission-extension/thumbnail.webp",
   "hub_url": "https://thxel.github.io/fangame-hub-public/"
